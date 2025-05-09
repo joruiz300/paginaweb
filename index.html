@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo-link"> <!-- Mantener href="#" para el logo por si se quiere que lleve al inicio -->
+            <a href="#" class="logo-link"> 
                 <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="Math AI Logo" class="logo">
                 <span>Math AI</span>
             </a>
@@ -23,7 +23,6 @@
                     <li><a href="#proceso">Proceso</a></li>
                     <li><a href="#porque-nosotros">¿Por qué nosotros?</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <!-- Este li se ocultará en desktop con CSS y se mostrará en el menú desplegable móvil -->
                     <li class="nav-cta-mobile-dropdown">
                         <div class="btn-container">
                             <div class="btn-bg"></div>
@@ -37,7 +36,6 @@
                     </li>
                 </ul>
             </nav>
-            <!-- Botón de consulta para Desktop y Mobile (antes del toggle) -->
             <div class="header-actions">
                 <div class="btn-container nav-cta-always-visible">
                     <div class="btn-bg"></div>
@@ -56,7 +54,15 @@
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
+        <section id="hero" class="hero-section section-with-svg-bg">
+            <!-- SVG Decorator para Hero (Ejemplo) -->
+            <div class="section-svg-decorator bottom-left animate-on-scroll" style="transform: rotate(45deg); opacity: 0.05;">
+                <svg width="150" height="150" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 50C0 22.3858 22.3858 0 50 0V0C77.6142 0 100 22.3858 100 50V50C100 77.6142 77.6142 100 50 100V100C22.3858 100 0 77.6142 0 50V50Z" fill="var(--primary-orange)"/></svg>
+            </div>
+             <div class="section-svg-decorator top-right animate-on-scroll" style="opacity: 0.03; transform: translateX(30px) translateY(-30px) rotate(-30deg);">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M100 0L122.451 61.8034H180.902L139.226 100L150 120L100 150L50 120L60.7745 100L19.0983 61.8034H77.549L100 0Z" fill="var(--primary-orange)"/></svg>
+            </div>
+
             <div class="container text-center">
                 <h1 class="animate-on-scroll">Libera el Verdadero Potencial de tu Empresa con <span class="text-orange">Automatización Inteligente</span></h1>
                 <p class="animate-on-scroll">Implementamos sistemas avanzados de automatización e IA a medida para eliminar tareas manuales, optimizar tus procesos clave y multiplicar tus resultados.</p>
@@ -72,15 +78,13 @@
             </div>
         </section>
 
-        <!-- SECCIÓN POWERED BY ACTUALIZADA -->
         <section id="powered-by" class="powered-by-section">
-            <div class="container text-center">
+            <div class="container text-center powered-by-title-container">
+                 <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746403062/63061e57af6211fb49ecc47b_c94kcv.png" alt="N8N Logo Estático" class="n8n-static-logo animate-on-scroll">
                 <h3 class="animate-on-scroll">Powered by</h3>
             </div>
             <div class="logos-slider-container animate-on-scroll">
                 <div class="logos-slider">
-                    <!-- Logos duplicados para el efecto de scroll infinito -->
-                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="N8N Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407958/63c52c2190250dd34bd6a9b0_l8ynxc.png" alt="OpenAI Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408000/Claude_AI_logo.svg_phoucs.png" alt="Claude Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407304/6160525c76000b00045a7d82_t9cxml.png" alt="WhatsApp Logo">
@@ -91,7 +95,6 @@
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407481/5b3c8f349357a48ff2188196_x0a5o5.png" alt="Google Sheets Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407251/62c6e2c47a58a4aa1fb77090_owxw0m.png" alt="Airtable Logo">
                     <!-- Repetir logos -->
-                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="N8N Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407958/63c52c2190250dd34bd6a9b0_l8ynxc.png" alt="OpenAI Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408000/Claude_AI_logo.svg_phoucs.png" alt="Claude Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407304/6160525c76000b00045a7d82_t9cxml.png" alt="WhatsApp Logo">
@@ -105,7 +108,10 @@
             </div>
         </section>
 
-        <section id="pain-points" class="pain-points-section">
+        <section id="pain-points" class="pain-points-section section-with-svg-bg">
+            <div class="section-svg-decorator top-left animate-on-scroll">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.226 23.4315L85.3553 29.2893L70.1777 48.5685L76.5685 72.6447L50 63L23.4315 72.6447L29.8223 48.5685L14.6447 29.2893L38.774 23.4315L50 0Z" fill="var(--primary-orange)"/></svg>
+            </div>
             <div class="container text-center">
                 <h2 class="animate-on-scroll">¿Atrapado en la <span class="text-orange">Rutina Manual</span>?</h2>
                 <h3 class="animate-on-scroll">¿Tus Herramientas <span class="text-orange">no Colaboran</span>?</h3>
@@ -131,7 +137,10 @@
             </div>
         </section>
 
-        <section id="servicios" class="impact-areas-summary-section">
+        <section id="servicios" class="impact-areas-summary-section section-with-svg-bg">
+            <div class="section-svg-decorator bottom-right animate-on-scroll">
+                 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="50" stroke="var(--primary-orange)" stroke-width="3"/><circle cx="60" cy="60" r="30" fill="var(--primary-orange)"/></svg>
+            </div>
             <div class="container">
                 <h2 class="text-center animate-on-scroll">Áreas de <span class="text-orange">Impacto</span></h2>
                 <p class="section-subtitle text-center animate-on-scroll">Analizamos a fondo tu operación para aplicar nuestras capacidades avanzadas donde generan el mayor impacto.</p>
@@ -156,7 +165,13 @@
             </div>
         </section>
         
-        <section class="impact-areas-detail-section">
+        <section class="impact-areas-detail-section section-with-svg-bg">
+            <div class="section-svg-decorator top-right animate-on-scroll" style="transform: scaleX(-1) rotate(15deg);">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 0L61.226 23.4315L85.3553 29.2893L70.1777 48.5685L76.5685 72.6447L50 63L23.4315 72.6447L29.8223 48.5685L14.6447 29.2893L38.774 23.4315L50 0Z" fill="var(--primary-orange)" /></svg>
+            </div>
+             <div class="section-svg-decorator bottom-left animate-on-scroll" style="transform: translateY(-40px) translateX(-30px) rotate(-60deg); opacity: 0.04;">
+                <svg width="130" height="130" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="20" fill="var(--primary-orange)"/></svg>
+            </div>
             <div class="container">
                 <h2 class="text-center animate-on-scroll">Áreas de Impacto: Cómo Aplicamos <span class="text-orange">N8N + IA a Medida</span></h2>
                 <p class="section-subtitle text-center animate-on-scroll">En Math-AI, no creemos en soluciones genéricas. Analizamos a fondo tu operación para aplicar nuestras capacidades avanzadas donde generan el mayor impacto.</p>
@@ -198,7 +213,10 @@
             </div>
         </section>
 
-        <section id="proceso" class="process-section">
+        <section id="proceso" class="process-section section-with-svg-bg">
+            <div class="section-svg-decorator top-left animate-on-scroll" style="transform: scaleY(-1) translateX(-50px) rotate(25deg); opacity: 0.05;">
+                 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="50" stroke="var(--primary-orange)" stroke-width="3"/><circle cx="60" cy="60" r="30" fill="var(--primary-orange)"/></svg>
+            </div>
             <div class="container">
                 <h2 class="text-center animate-on-scroll">Tu Camino hacia la <span class="text-orange">Automatización:</span></h2>
                 <h3 class="text-center section-subtitle-alt animate-on-scroll">Simple y Efectivo</h3>
@@ -223,7 +241,10 @@
             </div>
         </section>
 
-        <section id="porque-nosotros" class="advantage-section">
+        <section id="porque-nosotros" class="advantage-section section-with-svg-bg">
+             <div class="section-svg-decorator bottom-right animate-on-scroll" style="transform: translateX(40px) translateY(30px) rotate(75deg); opacity: 0.04;">
+                <svg width="160" height="160" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="80" height="80" rx="10" stroke="var(--primary-orange)" stroke-width="2"/><rect x="30" y="30" width="40" height="40" rx="5" fill="var(--primary-orange)"/></svg>
+            </div>
             <div class="container">
                 <h2 class="text-center animate-on-scroll">La Ventaja <span class="text-orange">Math-AI:</span></h2>
                 <h3 class="text-center section-subtitle-alt animate-on-scroll">Más Allá de la Automatización</h3>
@@ -282,7 +303,10 @@
             </div>
         </section>
 
-        <section id="faq" class="faq-section">
+        <section id="faq" class="faq-section section-with-svg-bg">
+             <div class="section-svg-decorator top-right animate-on-scroll" style="opacity: 0.03; transform: translateX(30px) translateY(-30px) rotate(-30deg);">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M100 0L122.451 61.8034H180.902L139.226 100L150 120L100 150L50 120L60.7745 100L19.0983 61.8034H77.549L100 0Z" fill="var(--primary-orange)"/></svg>
+            </div>
             <div class="container">
                 <h2 class="text-center animate-on-scroll">¿Dudas Comunes? <span class="text-orange">Aquí las Resolvemos.</span></h2>
                 <p class="text-center section-subtitle animate-on-scroll">Respuestas a las preguntas más frecuentes sobre nuestros servicios de automatización e IA.</p>
@@ -379,7 +403,7 @@
             </div>
             <div class="footer-links">
                 <p>© 2025 Math-AI. Todos los derechos reservados.</p>
-                <a href="#">Política de Privacidad</a> <!-- Considerar agregar href="#" a estos para evitar saltos si no tienen destino aun -->
+                <a href="#">Política de Privacidad</a> 
                 <a href="#">Términos y Condiciones</a>
                 <a href="mailto:contacto@math-ai.com">contacto@math-ai.com</a>
             </div>

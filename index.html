@@ -13,20 +13,21 @@
 <body>
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo-link">
+            <a href="#" class="logo-link"> <!-- Mantener href="#" para el logo por si se quiere que lleve al inicio -->
                 <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="Math AI Logo" class="logo">
                 <span>Math AI</span>
             </a>
-            <nav>
+            <nav class="main-nav">
                 <ul class="nav-links">
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#proceso">Proceso</a></li>
                     <li><a href="#porque-nosotros">¿Por qué nosotros?</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li class="nav-cta-mobile">
+                    <!-- Este li se ocultará en desktop con CSS y se mostrará en el menú desplegable móvil -->
+                    <li class="nav-cta-mobile-dropdown">
                         <div class="btn-container">
                             <div class="btn-bg"></div>
-                            <a href="#" class="btn-consulta"
+                            <a class="btn-consulta cal-popup-trigger"
                                data-cal-link="jr/meet"
                                data-cal-namespace="meet"
                                data-cal-config='{"layout":"month_view"}'>
@@ -35,19 +36,22 @@
                         </div>
                     </li>
                 </ul>
-                <div class="btn-container nav-cta-desktop">
+            </nav>
+            <!-- Botón de consulta para Desktop y Mobile (antes del toggle) -->
+            <div class="header-actions">
+                <div class="btn-container nav-cta-always-visible">
                     <div class="btn-bg"></div>
-                    <a href="#" class="btn-consulta"
+                    <a class="btn-consulta cal-popup-trigger"
                        data-cal-link="jr/meet"
                        data-cal-namespace="meet"
                        data-cal-config='{"layout":"month_view"}'>
                         Consulta Gratuita
                     </a>
                 </div>
-            </nav>
-            <button class="nav-toggle" aria-label="Abrir menú">
-                <span class="hamburger"></span>
-            </button>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -58,7 +62,7 @@
                 <p class="animate-on-scroll">Implementamos sistemas avanzados de automatización e IA a medida para eliminar tareas manuales, optimizar tus procesos clave y multiplicar tus resultados.</p>
                 <div class="btn-container animate-on-scroll">
                     <div class="btn-bg"></div>
-                    <a href="#" class="btn-consulta"
+                    <a class="btn-consulta cal-popup-trigger"
                        data-cal-link="jr/meet"
                        data-cal-namespace="meet"
                        data-cal-config='{"layout":"month_view"}'>
@@ -68,10 +72,14 @@
             </div>
         </section>
 
+        <!-- SECCIÓN POWERED BY ACTUALIZADA -->
         <section id="powered-by" class="powered-by-section">
             <div class="container text-center">
                 <h3 class="animate-on-scroll">Powered by</h3>
-                <div class="logos-grid animate-on-scroll">
+            </div>
+            <div class="logos-slider-container animate-on-scroll">
+                <div class="logos-slider">
+                    <!-- Logos duplicados para el efecto de scroll infinito -->
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="N8N Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407958/63c52c2190250dd34bd6a9b0_l8ynxc.png" alt="OpenAI Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408000/Claude_AI_logo.svg_phoucs.png" alt="Claude Logo">
@@ -79,7 +87,18 @@
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407570/5842a629a6515b1e0ad75afa_ak1eg4.png" alt="HubSpot Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408057/Salesforce.com_logo.svg_p5u3yn.png" alt="Salesforce Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408109/5cb480b85f1b6d3fbadece78_rsiobd.png" alt="Slack Logo">
-                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407699/580b57fcd9996e24bc43c51f_rqrz7l.png" alt="Google Cloud Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407699/580b57fcd9996e24bc43c51f_rqrz7l.png" alt="Google Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407481/5b3c8f349357a48ff2188196_x0a5o5.png" alt="Google Sheets Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407251/62c6e2c47a58a4aa1fb77090_owxw0m.png" alt="Airtable Logo">
+                    <!-- Repetir logos -->
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="N8N Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407958/63c52c2190250dd34bd6a9b0_l8ynxc.png" alt="OpenAI Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408000/Claude_AI_logo.svg_phoucs.png" alt="Claude Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407304/6160525c76000b00045a7d82_t9cxml.png" alt="WhatsApp Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407570/5842a629a6515b1e0ad75afa_ak1eg4.png" alt="HubSpot Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408057/Salesforce.com_logo.svg_p5u3yn.png" alt="Salesforce Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746408109/5cb480b85f1b6d3fbadece78_rsiobd.png" alt="Slack Logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407699/580b57fcd9996e24bc43c51f_rqrz7l.png" alt="Google Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407481/5b3c8f349357a48ff2188196_x0a5o5.png" alt="Google Sheets Logo">
                     <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746407251/62c6e2c47a58a4aa1fb77090_owxw0m.png" alt="Airtable Logo">
                 </div>
@@ -169,7 +188,7 @@
                 <p class="animate-on-scroll">Descubre si tu negocio puede beneficiarse de nuestras soluciones de automatización inteligente. Te ofrecemos un diagnóstico sin compromiso.</p>
                 <div class="btn-container animate-on-scroll">
                     <div class="btn-bg"></div>
-                    <a href="#" class="btn-consulta"
+                    <a class="btn-consulta cal-popup-trigger"
                        data-cal-link="jr/meet"
                        data-cal-namespace="meet"
                        data-cal-config='{"layout":"month_view"}'>
@@ -253,7 +272,7 @@
                 <p class="animate-on-scroll">Nuestros expertos están listos para resolver todas tus dudas sobre automatización y cómo puede transformar tu negocio.</p>
                 <div class="btn-container animate-on-scroll">
                     <div class="btn-bg"></div>
-                    <a href="#" class="btn-consulta"
+                    <a class="btn-consulta cal-popup-trigger"
                        data-cal-link="jr/meet"
                        data-cal-namespace="meet"
                        data-cal-config='{"layout":"month_view"}'>
@@ -311,7 +330,7 @@
                         </button>
                         <div class="faq-answer">
                             <p>Agenda tu Diagnóstico Gratuito. 
-                                <a href="#" class="text-orange btn-consulta-inline" 
+                                <a class="text-orange btn-consulta-inline cal-popup-trigger" 
                                    data-cal-link="jr/meet"
                                    data-cal-namespace="meet"
                                    data-cal-config='{"layout":"month_view"}'>Puedes hacerlo haciendo clic aquí</a>.
@@ -329,7 +348,7 @@
                     </div>
                 </div>
                 <p class="text-center final-cta-text animate-on-scroll">O Agenda Directamente Aquí tu Consulta Gratuita. 
-                    <a href="#" class="text-orange btn-consulta-inline"
+                    <a class="text-orange btn-consulta-inline cal-popup-trigger"
                        data-cal-link="jr/meet"
                        data-cal-namespace="meet"
                        data-cal-config='{"layout":"month_view"}'>Haciendo clic aquí</a>
@@ -337,7 +356,7 @@
                 <div class="text-center animate-on-scroll">
                     <div class="btn-container">
                         <div class="btn-bg"></div>
-                        <a href="#" class="btn-consulta"
+                        <a class="btn-consulta cal-popup-trigger"
                            data-cal-link="jr/meet"
                            data-cal-namespace="meet"
                            data-cal-config='{"layout":"month_view"}'>
@@ -360,7 +379,7 @@
             </div>
             <div class="footer-links">
                 <p>© 2025 Math-AI. Todos los derechos reservados.</p>
-                <a href="#">Política de Privacidad</a>
+                <a href="#">Política de Privacidad</a> <!-- Considerar agregar href="#" a estos para evitar saltos si no tienen destino aun -->
                 <a href="#">Términos y Condiciones</a>
                 <a href="mailto:contacto@math-ai.com">contacto@math-ai.com</a>
             </div>

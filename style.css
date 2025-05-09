@@ -14,8 +14,9 @@
     --border-color: #2a3652;
     --font-primary: 'Space Grotesk', sans-serif;
     --font-secondary: 'Work Sans', sans-serif;
-    --powered-by-bg: #FFFFFF; /* Nuevo: Fondo blanco para la sección de logos */
-    --powered-by-text: #333333; /* Nuevo: Texto oscuro para el título "Powered by" */
+    --powered-by-bg: #FFFFFF; 
+    --powered-by-text: #333333; 
+    --btn-bg-offset: 2px; /* Variable para el offset del botón */
 }
 
 html {
@@ -41,6 +42,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: var(--text-light);
     margin-bottom: 1rem;
+    position: relative; /* Para asegurar que estén sobre SVGs de fondo si es necesario */
+    z-index: 1;
 }
 
 h1 { font-size: 2.8rem; line-height: 1.2; }
@@ -52,6 +55,8 @@ p {
     margin-bottom: 1rem;
     color: var(--text-medium);
     font-weight: 400;
+    position: relative; /* Para asegurar que estén sobre SVGs de fondo si es necesario */
+    z-index: 1;
 }
 
 a {
@@ -60,7 +65,7 @@ a {
     transition: color 0.3s ease;
 }
 
-a:not(.btn-consulta):hover { /* Evitar que afecte al texto del botón Cal */
+a:not(.btn-consulta):hover { 
     color: #ff8533; 
 }
 
@@ -74,7 +79,49 @@ a:not(.btn-consulta):hover { /* Evitar que afecte al texto del botón Cal */
 
 section {
     padding: 60px 0;
+    position: relative; /* Para los SVGs decorativos */
+    overflow: hidden; /* Para que los SVGs no desborden si son grandes */
 }
+
+/* --- DECORADORES SVG PARA SECCIONES --- */
+.section-with-svg-bg { /* Clase a añadir a las secciones con SVGs */
+    position: relative;
+}
+.section-svg-decorator {
+    position: absolute;
+    z-index: 0; 
+    opacity: 0.05; /* Opacidad base muy sutil */
+    pointer-events: none; 
+}
+.section-svg-decorator.top-left { top: -30px; left: -30px; }
+.section-svg-decorator.top-right { top: -30px; right: -30px; }
+.section-svg-decorator.bottom-left { bottom: -30px; left: -30px; }
+.section-svg-decorator.bottom-right { bottom: -30px; right: -30px; }
+
+.section-svg-decorator svg {
+    display: block;
+    width: auto; 
+    /* Aplicar opacidad directamente en el SVG en el HTML si es fill-opacity */
+    /* ej: <svg ...><path fill-opacity="0.1" .../></svg> */
+}
+/* Animación de entrada para los SVGs */
+.section-svg-decorator.animate-on-scroll {
+    opacity: 0; /* Inicia invisible */
+    transform: scale(0.7) rotate(-20deg); /* Inicia más pequeño y rotado */
+    transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+}
+.section-svg-decorator.animate-on-scroll.is-visible {
+    opacity: 0.05; /* Opacidad final cuando es visible (ajustar según el SVG específico) */
+    transform: scale(1) rotate(0deg); /* Estado final */
+}
+/* Si los SVGs tienen fill o stroke en el CSS, se puede controlar la opacidad aquí: */
+.section-svg-decorator svg path,
+.section-svg-decorator svg circle,
+.section-svg-decorator svg rect {
+    /* fill-opacity: 0.1; */ /* Ejemplo si se define el color de fill en el SVG */
+    /* stroke-opacity: 0.2; */ /* Ejemplo si se define el color de stroke en el SVG */
+}
+
 
 .section-subtitle {
     font-size: 1.1rem;
@@ -83,6 +130,8 @@ section {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2.5rem;
+    position: relative; 
+    z-index: 1;
 }
 .section-subtitle-alt {
     font-size: 1.4rem;
@@ -90,13 +139,15 @@ section {
     color: var(--text-light);
     margin-top: -0.8rem;
     margin-bottom: 0.5rem;
+    position: relative; 
+    z-index: 1;
 }
 
 /* --- HEADER --- */
 header {
     background-color: rgba(10, 15, 31, 0.85);
     backdrop-filter: blur(10px);
-    padding: 10px 0; /* Reducido un poco para mejor ajuste vertical */
+    padding: 10px 0; 
     position: fixed;
     width: 100%;
     top: 0;
@@ -118,7 +169,7 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-light);
-    margin-right: auto; /* Empuja otros elementos a la derecha */
+    margin-right: auto; 
 }
 .logo-link:hover {
     color: var(--text-light);
@@ -129,8 +180,8 @@ header {
     margin-right: 10px;
 }
 
-.main-nav { /* Contenedor para los links de navegación */
-    margin-left: 20px; /* Espacio entre logo y links */
+.main-nav { 
+    margin-left: 20px; 
 }
 
 .nav-links {
@@ -151,25 +202,25 @@ header {
     font-family: var(--font-primary);
     font-weight: 500;
     font-size: 0.95rem;
-    padding: 5px 0; /* Añadir padding para mejor click target */
+    padding: 5px 0; 
 }
 
 .nav-links a:not(.btn-consulta):hover, .nav-links a.active:not(.btn-consulta) {
     color: var(--primary-orange);
 }
 
-.header-actions { /* Contenedor para el botón CTA y el toggle */
+.header-actions { 
     display: flex;
     align-items: center;
-    margin-left: 25px; /* Espacio entre nav links y este grupo */
+    margin-left: 25px; 
 }
 
-.nav-cta-always-visible .btn-consulta { /* Estilo para el botón del header */
+.nav-cta-always-visible .btn-consulta { 
     font-size: 15px;
     padding: 10px 20px;
 }
 
-.nav-cta-mobile-dropdown { /* Se mostrará en el menú desplegable móvil */
+.nav-cta-mobile-dropdown { 
     display: none; 
 }
 
@@ -179,7 +230,7 @@ header {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    margin-left: 15px; /* Espacio entre el botón CTA y el toggle en mobile */
+    margin-left: 15px; 
 }
 .hamburger {
     display: block;
@@ -207,7 +258,7 @@ header {
 .nav-open .hamburger::after { transform: rotate(-45deg); bottom: 0; }
 
 
-/* --- ESTILOS BOTONES CAL.COM --- */
+/* --- ESTILOS BOTONES CAL.COM (OFFSET AJUSTADO) --- */
 .btn-container {
     position: relative;
     display: inline-block;
@@ -216,7 +267,6 @@ header {
     transition: filter 0.3s ease;
     vertical-align: middle;
     box-sizing: border-box;
-    /* margin-top y margin-bottom eliminados para control más granular */
 }
 
 .btn-consulta {
@@ -225,11 +275,11 @@ header {
     font-weight: 400;
     font-size: 17px; 
     letter-spacing: 0.2px;
-    color: white !important; /* Forzar blanco sobre el 'a' general */
+    color: white !important; 
     background: linear-gradient(170deg, #2B0D61, #3A1180);
     padding: 12px 26px; 
     border-radius: 6px;
-    text-decoration: none !important; /* Forzar sin subrayado */
+    text-decoration: none !important;
     border: none;
     display: inline-block;
     z-index: 1;
@@ -246,7 +296,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    transform: translate(3px, 3px); 
+    transform: translate(var(--btn-bg-offset), var(--btn-bg-offset)); 
     background-color: #FF6B00;
     border-radius: 6px;
     z-index: 0;
@@ -265,7 +315,7 @@ header {
     box-shadow: 0 2px 10px rgba(58, 17, 128, 0.3);
 }
 .btn-container:hover .btn-bg {
-    transform: scaleX(0) translate(3px, 3px);
+    transform: scaleX(0) translate(var(--btn-bg-offset), var(--btn-bg-offset));
     opacity: 0;
 }
 .btn-container:active .btn-consulta {
@@ -303,10 +353,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 100px; /* Aumentado para compensar header más alto */
-    /* background: linear-gradient(rgba(10, 15, 31, 0.7), rgba(10, 15, 31, 0.9)), url('...') no-repeat center center/cover; */
+    padding-top: 100px;
 }
-.hero-section .btn-container { /* Espacio para el botón en hero */
+.hero-section .btn-container { 
     margin-top: 20px;
 }
 
@@ -316,18 +365,29 @@ header {
 .hero-section p {
     font-size: 1.2rem;
     max-width: 700px;
-    margin: 0 auto 1.5rem auto; /* Reducido margen inferior */
+    margin: 0 auto 1.5rem auto; 
 }
 
-/* --- POWERED BY SECTION --- */
+/* --- POWERED BY SECTION (AJUSTES) --- */
 .powered-by-section {
-    background-color: var(--powered-by-bg); /* Fondo blanco */
-    padding: 40px 0; /* Ajuste de padding */
-    overflow: hidden; /* Para contener el carrusel y el efecto de fade */
+    background-color: var(--powered-by-bg); 
+    padding: 40px 0; 
+    overflow: hidden; 
 }
-.powered-by-section .container.text-center h3 { /* Título "Powered by" */
-    color: var(--powered-by-text); /* Texto oscuro */
-    margin-bottom: 2.5rem; /* Más espacio debajo del título */
+.powered-by-title-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 2.5rem;
+}
+.n8n-static-logo {
+    height: 30px; 
+    width: auto;
+}
+.powered-by-title-container h3 { 
+    color: var(--powered-by-text); 
+    margin-bottom: 0; 
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -336,7 +396,7 @@ header {
 .logos-slider-container {
     width: 100%;
     overflow: hidden;
-    position: relative; /* Para el efecto de fade */
+    position: relative; 
 }
 
 .logos-slider-container::before,
@@ -345,64 +405,62 @@ header {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100px; /* Ancho del degradado */
+    width: 100px; 
     z-index: 2;
-    pointer-events: none; /* Para no interferir con el hover de los logos si están debajo */
+    pointer-events: none; 
 }
 
-.logos-slider-container::before { /* Fade a la izquierda */
+.logos-slider-container::before { 
     left: 0;
     background: linear-gradient(to right, var(--powered-by-bg) 20%, transparent 100%);
 }
 
-.logos-slider-container::after { /* Fade a la derecha */
+.logos-slider-container::after { 
     right: 0;
     background: linear-gradient(to left, var(--powered-by-bg) 20%, transparent 100%);
 }
 
-
 .logos-slider {
     display: flex;
-    width: calc(200px * 20); /* (Ancho aprox de logo + gap) * (número de logos * 2 para duplicado) */
-    animation: scrollLogos 40s linear infinite;
+    /* (Ancho logo + margen*2) * num_logos_visibles_aprox * 2 (para duplicado) */
+    /* 9 logos en el carrusel. Estimado: (logo 100px + margen 40px*2 = 180px) */
+    width: calc(180px * 9 * 2); /* 180px por item * 9 logos * 2 sets */
+    animation: scrollLogos 35s linear infinite; 
 }
 
 .logos-slider img {
-    height: 45px; /* Aumentado ligeramente el tamaño del logo */
-    margin: 0 40px; /* Espacio entre logos */
-    filter: grayscale(50%) opacity(0.7); /* Menos agresivo el grayscale */
-    transition: filter 0.3s ease, transform 0.3s ease;
-    flex-shrink: 0; /* Evita que los logos se encojan */
+    height: 40px; 
+    margin: 0 40px; 
+    filter: none; 
+    opacity: 1;
+    transition: transform 0.3s ease; 
+    flex-shrink: 0; 
 }
 
-.logos-slider:hover img {
-    filter: grayscale(0%) opacity(1);
-}
 .logos-slider img:hover {
-    transform: scale(1.1); /* Efecto hover individual */
+    transform: scale(1.1); 
 }
-
 
 @keyframes scrollLogos {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Se mueve la mitad del ancho total (un set de logos) */
+        transform: translateX(-50%); 
     }
 }
-/* Pausar animación en hover del contenedor */
 .logos-slider-container:hover .logos-slider {
     animation-play-state: paused;
 }
 
-
-/* --- CARDS GRID (Used in Pain Points, Impact Summary) --- */
+/* --- CARDS GRID, IMPACT AREAS, ETC. --- */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 3rem;
+    position: relative; 
+    z-index: 1;
 }
 .card {
     background-color: var(--card-bg);
@@ -420,9 +478,10 @@ header {
     margin-bottom: 0.8rem;
 }
 
-/* --- IMPACT AREAS DETAIL --- */
 .feature-list {
     margin-top: 3rem;
+    position: relative; 
+    z-index: 1;
 }
 .feature-item {
     background-color: var(--card-bg);
@@ -435,7 +494,6 @@ header {
     color: var(--text-light);
 }
 
-/* --- CTA SECTION --- */
 .cta-section {
     background-color: var(--card-bg);
 }
@@ -444,10 +502,21 @@ header {
 }
 .cta-section p {
     max-width: 600px;
-    margin: 0 auto 1.5rem auto; /* Reducido el margen para acercar el botón */
+    margin: 0 auto 1.5rem auto; 
 }
-.cta-section .btn-container { /* Espacio para los botones en CTA */
+.cta-section .btn-container { 
     margin-top: 10px;
+}
+
+.process-section .container > h2, .process-section .container > h3, .process-section .container > p,
+.advantage-section .container > h2, .advantage-section .container > h3, .advantage-section .container > p,
+.faq-section .container > h2, .faq-section .container > p {
+    position: relative;
+    z-index: 1;
+}
+.process-steps, .advantage-categories, .faq-list, .final-cta-text {
+    position: relative;
+    z-index: 1;
 }
 
 /* --- PROCESS SECTION --- */
@@ -565,7 +634,7 @@ header {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
 }
-.faq-section .btn-container { /* Espacio para el botón en FAQ */
+.faq-section .btn-container { 
     margin-top: 10px;
 }
 
@@ -623,33 +692,44 @@ footer {
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+/* No animar los decoradores SVG con esta regla general, tienen la suya */
+.section-svg-decorator.animate-on-scroll {
+    /* Se anula aquí para que no entre en conflicto con su propia animación */
+    opacity: 0; /* Su estado inicial se maneja por su propia regla .animate-on-scroll */
+    transform: scale(0.7) rotate(-20deg);
+}
 
 .animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
+/* Estado visible para los decoradores SVG */
+.section-svg-decorator.animate-on-scroll.is-visible {
+    opacity: 0.05; /* Opacidad final cuando es visible (ajustar según el SVG específico) */
+    transform: scale(1) rotate(0deg); /* Estado final */
+}
 
 
 /* --- RESPONSIVE --- */
-@media (max-width: 992px) { /* Ajustado breakpoint para mejor manejo del nav */
+@media (max-width: 992px) { 
     .main-nav {
-        display: none; /* Ocultar links de navegación principales */
+        display: none; 
     }
-    .nav-links.nav-open .nav-cta-mobile-dropdown { /* Mostrar CTA en menú desplegable */
+    .nav-links.nav-open .nav-cta-mobile-dropdown { 
         display: block;
-        text-align: center; /* Centrar el botón container */
+        text-align: center; 
         padding: 10px 0;
     }
     .nav-links.nav-open .nav-cta-mobile-dropdown .btn-consulta {
-        font-size: 16px; /* Tamaño consistente con otros botones */
+        font-size: 16px; 
         padding: 12px 24px;
     }
 
     .nav-toggle {
-        display: block; /* Mostrar hamburguesa */
+        display: block; 
     }
     
-    .nav-links { /* Estilos para el menú desplegable */
+    .nav-links { 
         position: absolute;
         top: 100%; 
         left: 0;
@@ -660,11 +740,11 @@ footer {
         padding: 10px 0;
         border-top: 1px solid var(--border-color);
         max-height: 0;
-        overflow-y: auto; /* Para scroll si hay muchos items */
+        overflow-y: auto; 
         transition: max-height 0.4s ease-out, padding 0.4s ease-out;
     }
     .nav-links.nav-open {
-        max-height: calc(100vh - 70px); /* Altura del viewport menos el header aprox. */
+        max-height: calc(100vh - 70px); 
         padding: 10px 0;
     }
 
@@ -674,15 +754,14 @@ footer {
         text-align: center; 
     }
     .nav-links li:first-child {
-        margin-top: 10px; /* Espacio al inicio del menú desplegable */
+        margin-top: 10px; 
     }
     
-    /* Botón CTA siempre visible al lado del toggle en mobile */
     .nav-cta-always-visible {
-        display: inline-block; /* Asegurar que esté visible */
+        display: inline-block; 
     }
      .nav-cta-always-visible .btn-consulta {
-        font-size: 14px; /* Ligeramente más pequeño en mobile header */
+        font-size: 14px; 
         padding: 8px 16px;
     }
 
@@ -690,21 +769,16 @@ footer {
     h2 { font-size: 2rem; }
     .logos-slider img { height: 35px; margin: 0 30px; }
     .logos-slider-container::before, .logos-slider-container::after { width: 60px; }
-
+    .n8n-static-logo { height: 25px; }
+    .section-svg-decorator svg { max-width: 90px; max-height: 90px; }
 }
 
 @media (max-width: 768px) {
     .hero-section { min-height: 70vh; padding-top: 80px;}
     .hero-section p { font-size: 1.1rem; }
 
-    .cards-grid {
+    .cards-grid, .process-steps, .advantage-categories {
         grid-template-columns: 1fr; 
-    }
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
-    .advantage-categories {
-        grid-template-columns: 1fr;
     }
     .category { margin-bottom: 20px; }
 
@@ -712,27 +786,19 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    .footer-info {
-        margin-bottom: 20px;
-    }
-    .footer-links {
-        text-align: center;
-    }
-    .footer-links a {
-        margin: 5px 10px;
-    }
+    .footer-info { margin-bottom: 20px; }
+    .footer-links { text-align: center; }
+    .footer-links a { margin: 5px 10px; }
 
     .btn-consulta {
         font-size: 16px; 
         padding: 11px 22px;
     }
-    .btn-bg {
-        transform: translate(2px, 2px);
-    }
-    .btn-container:hover .btn-bg {
-        transform: scaleX(0) translate(2px, 2px);
-    }
+    /* El --btn-bg-offset ya es 2px, se mantiene ese valor */
+    
     .logos-slider img { height: 30px; margin: 0 25px; }
+    .n8n-static-logo { height: 22px; }
+    .section-svg-decorator svg { max-width: 70px; max-height: 70px; } 
 }
 
 @media (max-width: 480px) { 
@@ -745,12 +811,14 @@ footer {
         font-size: 14px;
         padding: 10px 20px;
     }
-    .nav-cta-always-visible .btn-consulta { /* Aún más pequeño en header muy chico */
+    .nav-cta-always-visible .btn-consulta { 
         font-size: 13px;
         padding: 7px 12px;
     }
-     .nav-toggle { margin-left: 10px; } /* Menos espacio aún */
+     .nav-toggle { margin-left: 10px; } 
     
     .logos-slider img { height: 28px; margin: 0 20px; }
     .logos-slider-container::before, .logos-slider-container::after { width: 40px; }
+    .n8n-static-logo { height: 20px; }
+    .section-svg-decorator svg { max-width: 50px; max-height: 50px; }
 }

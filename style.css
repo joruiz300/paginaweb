@@ -9,11 +9,13 @@
     --bg-color: #0a0f1f;
     --primary-orange: #FF6B00;
     --text-light: #FFFFFF;
-    --text-medium: #adb5bd; /* A slightly dimmer white for secondary text */
-    --card-bg: #121a30; /* Slightly lighter than main bg for cards */
-    --border-color: #2a3652; /* For subtle borders */
+    --text-medium: #adb5bd;
+    --card-bg: #121a30;
+    --border-color: #2a3652;
     --font-primary: 'Space Grotesk', sans-serif;
     --font-secondary: 'Work Sans', sans-serif;
+    --powered-by-bg: #FFFFFF; /* Nuevo: Fondo blanco para la sección de logos */
+    --powered-by-text: #333333; /* Nuevo: Texto oscuro para el título "Powered by" */
 }
 
 html {
@@ -25,7 +27,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-light);
     line-height: 1.7;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden; 
 }
 
 .container {
@@ -36,7 +38,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
-    font-weight: 600; /* SemiBold for Space Grotesk */
+    font-weight: 600;
     color: var(--text-light);
     margin-bottom: 1rem;
 }
@@ -49,7 +51,7 @@ h4 { font-size: 1.3rem; }
 p {
     margin-bottom: 1rem;
     color: var(--text-medium);
-    font-weight: 400; /* Regular for Work Sans */
+    font-weight: 400;
 }
 
 a {
@@ -58,8 +60,8 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #ff8533; /* Lighter orange on hover */
+a:not(.btn-consulta):hover { /* Evitar que afecte al texto del botón Cal */
+    color: #ff8533; 
 }
 
 .text-orange {
@@ -92,9 +94,9 @@ section {
 
 /* --- HEADER --- */
 header {
-    background-color: rgba(10, 15, 31, 0.85); /* Slightly transparent */
+    background-color: rgba(10, 15, 31, 0.85);
     backdrop-filter: blur(10px);
-    padding: 15px 0;
+    padding: 10px 0; /* Reducido un poco para mejor ajuste vertical */
     position: fixed;
     width: 100%;
     top: 0;
@@ -116,6 +118,7 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-light);
+    margin-right: auto; /* Empuja otros elementos a la derecha */
 }
 .logo-link:hover {
     color: var(--text-light);
@@ -126,28 +129,47 @@ header {
     margin-right: 10px;
 }
 
+.main-nav { /* Contenedor para los links de navegación */
+    margin-left: 20px; /* Espacio entre logo y links */
+}
+
 .nav-links {
     list-style: none;
     display: flex;
-    align-items: center; /* Alinea verticalmente los items del nav */
+    align-items: center;
 }
 
 .nav-links li {
     margin-left: 25px;
 }
+.nav-links li:first-child {
+    margin-left: 0;
+}
 
-.nav-links a:not(.btn-consulta) { /* Evitar aplicar a los links dentro del botón nuevo */
+.nav-links a:not(.btn-consulta) {
     color: var(--text-medium);
     font-family: var(--font-primary);
     font-weight: 500;
     font-size: 0.95rem;
+    padding: 5px 0; /* Añadir padding para mejor click target */
 }
 
 .nav-links a:not(.btn-consulta):hover, .nav-links a.active:not(.btn-consulta) {
     color: var(--primary-orange);
 }
 
-.nav-cta-mobile {
+.header-actions { /* Contenedor para el botón CTA y el toggle */
+    display: flex;
+    align-items: center;
+    margin-left: 25px; /* Espacio entre nav links y este grupo */
+}
+
+.nav-cta-always-visible .btn-consulta { /* Estilo para el botón del header */
+    font-size: 15px;
+    padding: 10px 20px;
+}
+
+.nav-cta-mobile-dropdown { /* Se mostrará en el menú desplegable móvil */
     display: none; 
 }
 
@@ -157,6 +179,7 @@ header {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    margin-left: 15px; /* Espacio entre el botón CTA y el toggle en mobile */
 }
 .hamburger {
     display: block;
@@ -184,7 +207,7 @@ header {
 .nav-open .hamburger::after { transform: rotate(-45deg); bottom: 0; }
 
 
-/* --- ESTILOS NUEVOS PARA BOTONES CAL.COM --- */
+/* --- ESTILOS BOTONES CAL.COM --- */
 .btn-container {
     position: relative;
     display: inline-block;
@@ -193,21 +216,20 @@ header {
     transition: filter 0.3s ease;
     vertical-align: middle;
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-top y margin-bottom eliminados para control más granular */
 }
 
 .btn-consulta {
     position: relative;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 17px; /* Tamaño base del botón */
+    font-size: 17px; 
     letter-spacing: 0.2px;
-    color: white;
+    color: white !important; /* Forzar blanco sobre el 'a' general */
     background: linear-gradient(170deg, #2B0D61, #3A1180);
-    padding: 12px 26px; /* Padding base */
+    padding: 12px 26px; 
     border-radius: 6px;
-    text-decoration: none;
+    text-decoration: none !important; /* Forzar sin subrayado */
     border: none;
     display: inline-block;
     z-index: 1;
@@ -217,13 +239,6 @@ header {
     white-space: nowrap;
     box-sizing: border-box;
 }
-
-/* Reducir tamaño para el botón en el nav de desktop */
-.nav-cta-desktop .btn-consulta {
-    font-size: 15px;
-    padding: 10px 20px;
-}
-
 
 .btn-bg {
     position: absolute;
@@ -281,8 +296,6 @@ header {
 .btn-consulta-inline:hover {
     color: #ff8533;
 }
-/* --- FIN ESTILOS NUEVOS PARA BOTONES CAL.COM --- */
-
 
 /* --- HERO SECTION --- */
 .hero-section {
@@ -290,8 +303,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 120px; /* Account for fixed header */
+    padding-top: 100px; /* Aumentado para compensar header más alto */
     /* background: linear-gradient(rgba(10, 15, 31, 0.7), rgba(10, 15, 31, 0.9)), url('...') no-repeat center center/cover; */
+}
+.hero-section .btn-container { /* Espacio para el botón en hero */
+    margin-top: 20px;
 }
 
 .hero-section h1 {
@@ -300,38 +316,86 @@ header {
 .hero-section p {
     font-size: 1.2rem;
     max-width: 700px;
-    margin: 0 auto 2.5rem auto;
+    margin: 0 auto 1.5rem auto; /* Reducido margen inferior */
 }
 
 /* --- POWERED BY SECTION --- */
 .powered-by-section {
-    background-color: var(--card-bg); 
+    background-color: var(--powered-by-bg); /* Fondo blanco */
+    padding: 40px 0; /* Ajuste de padding */
+    overflow: hidden; /* Para contener el carrusel y el efecto de fade */
 }
-.powered-by-section h3 {
-    margin-bottom: 2rem;
+.powered-by-section .container.text-center h3 { /* Título "Powered by" */
+    color: var(--powered-by-text); /* Texto oscuro */
+    margin-bottom: 2.5rem; /* Más espacio debajo del título */
     font-size: 1.2rem;
-    color: var(--text-medium);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.logos-grid {
+
+.logos-slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* Para el efecto de fade */
+}
+
+.logos-slider-container::before,
+.logos-slider-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Ancho del degradado */
+    z-index: 2;
+    pointer-events: none; /* Para no interferir con el hover de los logos si están debajo */
+}
+
+.logos-slider-container::before { /* Fade a la izquierda */
+    left: 0;
+    background: linear-gradient(to right, var(--powered-by-bg) 20%, transparent 100%);
+}
+
+.logos-slider-container::after { /* Fade a la derecha */
+    right: 0;
+    background: linear-gradient(to left, var(--powered-by-bg) 20%, transparent 100%);
+}
+
+
+.logos-slider {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+    width: calc(200px * 20); /* (Ancho aprox de logo + gap) * (número de logos * 2 para duplicado) */
+    animation: scrollLogos 40s linear infinite;
 }
-.logos-grid img {
-    height: 40px;
-    max-width: 150px;
-    filter: grayscale(80%) brightness(1.5);
-    opacity: 0.8;
-    transition: filter 0.3s ease, opacity 0.3s ease;
+
+.logos-slider img {
+    height: 45px; /* Aumentado ligeramente el tamaño del logo */
+    margin: 0 40px; /* Espacio entre logos */
+    filter: grayscale(50%) opacity(0.7); /* Menos agresivo el grayscale */
+    transition: filter 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0; /* Evita que los logos se encojan */
 }
-.logos-grid img:hover {
-    filter: grayscale(0%) brightness(1);
-    opacity: 1;
+
+.logos-slider:hover img {
+    filter: grayscale(0%) opacity(1);
 }
+.logos-slider img:hover {
+    transform: scale(1.1); /* Efecto hover individual */
+}
+
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Se mueve la mitad del ancho total (un set de logos) */
+    }
+}
+/* Pausar animación en hover del contenedor */
+.logos-slider-container:hover .logos-slider {
+    animation-play-state: paused;
+}
+
 
 /* --- CARDS GRID (Used in Pain Points, Impact Summary) --- */
 .cards-grid {
@@ -380,7 +444,10 @@ header {
 }
 .cta-section p {
     max-width: 600px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 1.5rem auto; /* Reducido el margen para acercar el botón */
+}
+.cta-section .btn-container { /* Espacio para los botones en CTA */
+    margin-top: 10px;
 }
 
 /* --- PROCESS SECTION --- */
@@ -498,6 +565,10 @@ header {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
 }
+.faq-section .btn-container { /* Espacio para el botón en FAQ */
+    margin-top: 10px;
+}
+
 
 /* --- FOOTER --- */
 footer {
@@ -560,61 +631,70 @@ footer {
 
 
 /* --- RESPONSIVE --- */
-@media (max-width: 992px) {
-    h1 { font-size: 2.4rem; }
-    h2 { font-size: 2rem; }
-    .logos-grid img { height: 35px; }
-}
+@media (max-width: 992px) { /* Ajustado breakpoint para mejor manejo del nav */
+    .main-nav {
+        display: none; /* Ocultar links de navegación principales */
+    }
+    .nav-links.nav-open .nav-cta-mobile-dropdown { /* Mostrar CTA en menú desplegable */
+        display: block;
+        text-align: center; /* Centrar el botón container */
+        padding: 10px 0;
+    }
+    .nav-links.nav-open .nav-cta-mobile-dropdown .btn-consulta {
+        font-size: 16px; /* Tamaño consistente con otros botones */
+        padding: 12px 24px;
+    }
 
-@media (max-width: 768px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.8rem; }
+    .nav-toggle {
+        display: block; /* Mostrar hamburguesa */
+    }
     
-    .nav-links {
+    .nav-links { /* Estilos para el menú desplegable */
         position: absolute;
         top: 100%; 
         left: 0;
         width: 100%;
         background-color: var(--card-bg);
         flex-direction: column;
-        align-items: center; /* Centra los li horizontalmente */
-        padding: 10px 0; /* Reducido padding vertical */
+        align-items: center;
+        padding: 10px 0;
         border-top: 1px solid var(--border-color);
         max-height: 0;
-        overflow: hidden;
+        overflow-y: auto; /* Para scroll si hay muchos items */
         transition: max-height 0.4s ease-out, padding 0.4s ease-out;
     }
     .nav-links.nav-open {
-        max-height: 500px; 
+        max-height: calc(100vh - 70px); /* Altura del viewport menos el header aprox. */
         padding: 10px 0;
     }
 
     .nav-links li {
-        margin: 10px 0; /* Espacio vertical entre links */
-        width: 100%; /* Para que el text-align:center del li funcione */
-        text-align: center; /* Centra el contenido del li (el 'a' o el 'btn-container') */
+        margin: 10px 0; 
+        width: 100%; 
+        text-align: center; 
     }
-    .nav-toggle {
-        display: block;
-        z-index: 1001; 
+    .nav-links li:first-child {
+        margin-top: 10px; /* Espacio al inicio del menú desplegable */
     }
-    .nav-cta-desktop {
-        display: none; 
+    
+    /* Botón CTA siempre visible al lado del toggle en mobile */
+    .nav-cta-always-visible {
+        display: inline-block; /* Asegurar que esté visible */
     }
-    .nav-cta-mobile {
-        display: block; /* Se mostrará el li */
-        padding: 5px 0; /* Ajuste padding para el li del botón */
-    }
-    .nav-links .nav-cta-mobile .btn-container {
-        display: inline-block; /* Para que se centre dentro del li */
-    }
-     .nav-links .nav-cta-mobile .btn-consulta { /* Ajuste para el botón en menú móvil */
-        font-size: 15px;
-        padding: 10px 20px;
+     .nav-cta-always-visible .btn-consulta {
+        font-size: 14px; /* Ligeramente más pequeño en mobile header */
+        padding: 8px 16px;
     }
 
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 2rem; }
+    .logos-slider img { height: 35px; margin: 0 30px; }
+    .logos-slider-container::before, .logos-slider-container::after { width: 60px; }
 
-    .hero-section { min-height: 70vh; padding-top: 100px;}
+}
+
+@media (max-width: 768px) {
+    .hero-section { min-height: 70vh; padding-top: 80px;}
     .hero-section p { font-size: 1.1rem; }
 
     .cards-grid {
@@ -641,12 +721,9 @@ footer {
     .footer-links a {
         margin: 5px 10px;
     }
-    .logos-grid { gap: 25px; }
-    .logos-grid img { height: 30px; }
 
-    /* Ajustes responsivos para btn-container y btn-bg */
-    .btn-consulta { /* Aplica a todos los .btn-consulta en pantallas <768px */
-        font-size: 16px; /* Un poco más pequeño */
+    .btn-consulta {
+        font-size: 16px; 
         padding: 11px 22px;
     }
     .btn-bg {
@@ -655,19 +732,25 @@ footer {
     .btn-container:hover .btn-bg {
         transform: scaleX(0) translate(2px, 2px);
     }
+    .logos-slider img { height: 30px; margin: 0 25px; }
 }
 
-@media (max-width: 480px) { /* Breakpoint más pequeño */
+@media (max-width: 480px) { 
     h1 { font-size: 1.8rem; }
     h2 { font-size: 1.6rem; }
     .section-subtitle { font-size: 1rem; }
     .hero-section p { font-size: 1rem; }
     
-    .btn-consulta { /* Aún más pequeño para pantallas muy chicas */
+    .btn-consulta {
         font-size: 14px;
         padding: 10px 20px;
     }
-    /* El translate del .btn-bg de 2px, 2px de la media query anterior debería estar bien */
+    .nav-cta-always-visible .btn-consulta { /* Aún más pequeño en header muy chico */
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+     .nav-toggle { margin-left: 10px; } /* Menos espacio aún */
     
-    .logos-grid img { height: 25px; }
+    .logos-slider img { height: 28px; margin: 0 20px; }
+    .logos-slider-container::before, .logos-slider-container::after { width: 40px; }
 }

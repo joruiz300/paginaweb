@@ -27,8 +27,8 @@
                         <div class="btn-container">
                             <div class="btn-bg"></div>
                             <a class="btn-consulta cal-popup-trigger"
-                               data-cal-link="jr/meet"
-                               data-cal-namespace="meet"
+                               data-cal-link="math-ai/reunion-inicial"
+                               data-cal-namespace="reunion-inicial"
                                data-cal-config='{"layout":"month_view"}'>
                                 Consulta Gratuita
                             </a>
@@ -40,8 +40,8 @@
                 <div class="btn-container nav-cta-always-visible">
                     <div class="btn-bg"></div>
                     <a class="btn-consulta cal-popup-trigger"
-                       data-cal-link="jr/meet"
-                       data-cal-namespace="meet"
+                       data-cal-link="math-ai/reunion-inicial"
+                       data-cal-namespace="reunion-inicial"
                        data-cal-config='{"layout":"month_view"}'>
                         Consulta Gratuita
                     </a>
@@ -69,8 +69,8 @@
                 <div class="btn-container animate-on-scroll">
                     <div class="btn-bg"></div>
                     <a class="btn-consulta cal-popup-trigger"
-                       data-cal-link="jr/meet"
-                       data-cal-namespace="meet"
+                       data-cal-link="math-ai/reunion-inicial"
+                       data-cal-namespace="reunion-inicial"
                        data-cal-config='{"layout":"month_view"}'>
                         Agenda tu Diagnóstico Gratuito
                     </a>
@@ -204,8 +204,8 @@
                 <div class="btn-container animate-on-scroll">
                     <div class="btn-bg"></div>
                     <a class="btn-consulta cal-popup-trigger"
-                       data-cal-link="jr/meet"
-                       data-cal-namespace="meet"
+                       data-cal-link="math-ai/reunion-inicial"
+                       data-cal-namespace="reunion-inicial"
                        data-cal-config='{"layout":"month_view"}'>
                         Quiero ver el Calendario de Disponibilidad
                     </a>
@@ -294,8 +294,8 @@
                 <div class="btn-container animate-on-scroll">
                     <div class="btn-bg"></div>
                     <a class="btn-consulta cal-popup-trigger"
-                       data-cal-link="jr/meet"
-                       data-cal-namespace="meet"
+                       data-cal-link="math-ai/reunion-inicial"
+                       data-cal-namespace="reunion-inicial"
                        data-cal-config='{"layout":"month_view"}'>
                         Agenda tu Diagnóstico Gratuito
                     </a>
@@ -355,8 +355,8 @@
                         <div class="faq-answer">
                             <p>Agenda tu Diagnóstico Gratuito. 
                                 <a class="text-orange btn-consulta-inline cal-popup-trigger" 
-                                   data-cal-link="jr/meet"
-                                   data-cal-namespace="meet"
+                                   data-cal-link="math-ai/reunion-inicial"
+                                   data-cal-namespace="reunion-inicial"
                                    data-cal-config='{"layout":"month_view"}'>Puedes hacerlo haciendo clic aquí</a>.
                             </p>
                         </div>
@@ -373,16 +373,16 @@
                 </div>
                 <p class="text-center final-cta-text animate-on-scroll">O Agenda Directamente Aquí tu Consulta Gratuita. 
                     <a class="text-orange btn-consulta-inline cal-popup-trigger"
-                       data-cal-link="jr/meet"
-                       data-cal-namespace="meet"
+                       data-cal-link="math-ai/reunion-inicial"
+                       data-cal-namespace="reunion-inicial"
                        data-cal-config='{"layout":"month_view"}'>Haciendo clic aquí</a>
                 </p>
                 <div class="text-center animate-on-scroll">
                     <div class="btn-container">
                         <div class="btn-bg"></div>
                         <a class="btn-consulta cal-popup-trigger"
-                           data-cal-link="jr/meet"
-                           data-cal-namespace="meet"
+                           data-cal-link="math-ai/reunion-inicial"
+                           data-cal-namespace="reunion-inicial"
                            data-cal-config='{"layout":"month_view"}'>
                             Agenda tu Diagnóstico Gratuito
                         </a>
@@ -410,13 +410,15 @@
         </div>
     </footer>
 
-    <!-- Cal element-click embed code begins -->
+    <!-- CÓDIGO ACTUALIZADO: Cal.com element-click embed code begins -->
     <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://cal.mathai.agency/embed/embed.js", "init");
-    Cal("init", "meet", {origin:"https://cal.mathai.agency"});
-    Cal.ns.meet("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      
+      Cal("init", "reunion-inicial", {origin:"https://cal.com"});
+    
+      Cal.ns["reunion-inicial"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
-    <!-- Cal element-click embed code ends -->
+    <!-- Cal.com element-click embed code ends -->
 
     <script src="script.js"></script>
 </body>

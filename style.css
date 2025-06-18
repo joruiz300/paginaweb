@@ -822,3 +822,626 @@ footer {
     .n8n-static-logo { height: 20px; }
     .section-svg-decorator svg { max-width: 50px; max-height: 50px; }
 }
+
+/* === ANIMACIONES PARA TARJETAS === */
+/* === ANIMACIONES DE ENTRADA DIFERENCIADAS === */
+
+/* Animación de entrada para tarjetas de problemas */
+.card-problem:not(.is-visible) {
+    opacity: 0;
+}
+
+.card-problem {
+    transition: opacity 0.6s ease-out;
+}
+
+.card-problem.is-visible {
+    opacity: 1;
+}
+
+/* Shimmer effect ultra-sutil para problemas */
+.shimmer-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.03),
+        transparent
+    );
+    animation: shimmer 4s ease-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes shimmer {
+    to { left: 100%; }
+}
+
+/* Animación de entrada para tarjetas de solución */
+.card-solution {
+    transition: opacity 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-solution.solution-entering {
+    opacity: 0;
+}
+
+.card-solution.is-visible {
+    opacity: 1;
+}
+
+/* Eliminado - Los efectos complejos interfieren con la sutileza */
+
+/* Icono flotante ultra-sutil */
+.solution-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 107, 0, 0.08);
+    border: 1px solid rgba(255, 107, 0, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.35s ease;
+    pointer-events: none;
+}
+
+.card-solution.is-visible .solution-icon {
+    opacity: 0.6;
+    transform: scale(1);
+}
+
+.card-solution:hover .solution-icon {
+    opacity: 0.3;
+    transform: scale(0.9);
+}
+
+/* Efectos hover eliminados - Ahora gestionados en el sistema profesional */
+
+/* Badge animado del hero */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.1), rgba(255, 107, 0, 0.05));
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.badge-icon {
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Hero CTA wrapper */
+.hero-cta-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.primary-cta {
+    display: inline-flex;
+    align-items: center;
+}
+
+.cta-arrow {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.primary-cta:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+.secondary-cta {
+    color: var(--text-medium);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.secondary-cta:hover {
+    color: var(--primary-orange);
+}
+
+.secondary-cta-icon {
+    transition: transform 0.3s ease;
+}
+
+.secondary-cta:hover .secondary-cta-icon {
+    transform: translateX(3px);
+}
+
+/* Trust indicators */
+.hero-trust-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Animación de título */
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.title-line {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#dynamic-word {
+    background: linear-gradient(135deg, var(--primary-orange), #ff8533);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+/* Efecto de brillo en el contador */
+.counter {
+    background: linear-gradient(135deg, var(--primary-orange), #ff8533);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* === SISTEMA DE TARJETAS CON TAMAÑO FIJO === */
+/* Base estática sin cambios de layout */
+.card-problem,
+.card-solution {
+    /* Tamaño fijo para evitar saltos */
+    height: 280px;
+    padding: 40px !important;
+    position: relative;
+    overflow: hidden;
+    
+    /* Sin transiciones en la tarjeta base */
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Eliminado - no es necesario este contenedor */
+
+/* Títulos con posición absoluta para centrado */
+.card-problem h4,
+.card-solution h4 {
+    /* Posicionamiento absoluto centrado */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: calc(100% - 80px);
+    z-index: 2;
+    
+    /* Transición suave */
+    transition: all 0.4s ease-out;
+    
+    /* Tipografía */
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--primary-orange);
+}
+
+/* Contenido siempre en posición absoluta */
+.card-problem p,
+.card-solution p {
+    /* Posicionamiento absoluto */
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    
+    /* Estado inicial oculto */
+    opacity: 0;
+    visibility: hidden;
+    
+    /* Transición */
+    transition: 
+        opacity 0.4s ease-out,
+        visibility 0.4s ease-out,
+        transform 0.4s ease-out,
+        top 0.4s ease-out;
+    
+    /* Tipografía */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-medium);
+}
+
+/* === HOVER SIN CAMBIOS DE LAYOUT === */
+
+/* TARJETAS DE PROBLEMAS - Solo movimiento interno */
+.card-problem:hover h4 {
+    /* Título se mueve arriba sin cambiar layout */
+    top: 30px;
+    left: 40px;
+    transform: translate(0, 0);
+    text-align: left;
+    font-size: 1.25rem;
+}
+
+.card-problem:hover p {
+    /* Contenido aparece abajo */
+    top: 80px;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.1s;
+}
+
+/* TARJETAS DE SOLUCIÓN - Animación más dinámica */
+.card-solution:hover h4 {
+    /* Título con movimiento diagonal */
+    top: 25px;
+    left: 45px;
+    transform: translate(0, 0);
+    text-align: left;
+    font-size: 1.2rem;
+    color: #ff8533;
+}
+
+.card-solution:hover p {
+    /* Contenido con entrada lateral */
+    top: 75px;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.15s;
+}
+
+/* === DIFERENCIACIÓN VISUAL ÚNICA === */
+
+/* TARJETAS DE PROBLEMAS - Estilo más sobrio */
+.card-problem {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-problem:hover {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(20, 28, 42, 0.95) 100%);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 107, 0, 0.15);
+}
+
+/* Indicador lateral para problemas */
+.card-problem::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--primary-orange), transparent);
+    transform: scaleY(0);
+    transition: transform 0.4s ease-out;
+}
+
+.card-problem:hover::before {
+    transform: scaleY(1);
+}
+
+/* TARJETAS DE SOLUCIÓN - Estilo más vibrante */
+.card-solution {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(25, 35, 50, 0.98) 100%);
+    border: 1px solid rgba(255, 107, 0, 0.08);
+}
+
+.card-solution:hover {
+    background: linear-gradient(135deg, rgba(20, 28, 42, 0.98) 0%, rgba(30, 40, 55, 0.95) 100%);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(255, 107, 0, 0.05);
+    border-color: rgba(255, 107, 0, 0.25);
+}
+
+/* Brillo sutil para soluciones */
+.card-solution::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 107, 0, 0.05),
+        transparent
+    );
+    transition: left 0.8s ease-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card-solution:hover::after {
+    left: 100%;
+}
+
+/* === RESPONSIVE OPTIMIZADO === */
+@media (max-width: 768px) {
+    .card-problem,
+    .card-solution {
+        height: auto;
+        min-height: 180px;
+        padding: 28px !important;
+    }
+    
+    /* Contenido visible y estático en móvil */
+    .card-problem h4,
+    .card-solution h4 {
+        position: static;
+        transform: none;
+        text-align: left;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+    
+    .card-problem p,
+    .card-solution p {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        margin: 0;
+    }
+    
+    /* Sin hover effects en móvil */
+    .card-problem:hover h4,
+    .card-solution:hover h4 {
+        top: auto;
+        left: auto;
+        font-size: 1.2rem;
+    }
+    
+    .card-problem:hover p,
+    .card-solution:hover p {
+        top: auto;
+    }
+    
+    /* Sin animaciones complejas en móvil */
+    .card-problem::before,
+    .card-solution::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-problem,
+    .card-solution {
+        padding: 24px !important;
+    }
+    
+    .card-problem h4,
+    .card-solution h4 {
+        font-size: 1.1rem;
+    }
+    
+    .card-problem p,
+    .card-solution p {
+        font-size: 0.9rem;
+    }
+}
+
+/* === OVERRIDES PROFESIONALES POSICIONAMIENTO TARJETAS (DESKTOP) === */
+@media (min-width: 769px) {
+    /* Ajustar altura flexible */
+    .card-problem,
+    .card-solution {
+        min-height: 280px; /* Mantiene uniformidad pero permite crecer */
+        height: auto;
+    }
+
+    /* Reiniciar posicionamiento absoluto y permitir flujo normal */
+    .card-problem h4,
+    .card-solution h4,
+    .card-problem p,
+    .card-solution p {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        width: 100% !important;
+    }
+
+    /* Títulos centrados, párrafos alineados a la izquierda */
+    .card-problem h4,
+    .card-solution h4 {
+        text-align: center !important;
+        margin-bottom: 1rem;
+    }
+
+    .card-problem p,
+    .card-solution p {
+        text-align: left;
+    }
+
+    /* Párrafos ocultos inicialmente, se muestran con fade al hover sin mover layout */
+    .card-problem p,
+    .card-solution p {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+    }
+    .card-problem:hover p,
+    .card-solution:hover p {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Evitar movimiento del título al hover */
+    .card-problem:hover h4,
+    .card-solution:hover h4 {
+        transform: none !important;
+    }
+}
+
+/* === MEJORAS PROFESIONALES DE ANIMACIONES === */
+/* Implementadas según análisis UX/UI */
+
+@media (min-width: 769px) {
+    /* Micro-animación profesional para títulos */
+    .card-problem h4,
+    .card-solution h4 {
+        transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                    color 0.3s ease,
+                    transform 0.3s ease !important;
+    }
+    
+    /* Efecto hover sutil y elegante */
+    .card-problem:hover h4 {
+        margin-top: -0.5rem;
+        color: #ff8533;
+        transform: translateY(-2px) !important;
+    }
+    
+    .card-solution:hover h4 {
+        margin-top: -0.7rem;
+        color: #ff9944;
+        transform: translateY(-3px) scale(1.02) !important;
+    }
+    
+    /* Preparación para imágenes de fondo */
+    .card-problem,
+    .card-solution {
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 40%;
+        background-blend-mode: overlay;
+    }
+    
+    /* Pattern decorativo sutil */
+    .card-problem::after,
+    .card-solution::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle at center, 
+                    rgba(255, 107, 0, 0.03) 0%, 
+                    transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        transition: transform 0.6s ease, opacity 0.3s ease;
+    }
+    
+    .card-problem:hover::after {
+        transform: scale(1.2) translate(-10px, -10px);
+        opacity: 0.5;
+    }
+    
+    .card-solution:hover::after {
+        transform: scale(1.3) rotate(45deg);
+        opacity: 0.7;
+    }
+    
+    /* Mejora del indicador lateral para card-problem */
+    .card-problem::before {
+        background: linear-gradient(to bottom, 
+                    transparent 0%, 
+                    rgba(255, 107, 0, 0.5) 50%, 
+                    transparent 100%);
+        width: 4px;
+        box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+    }
+    
+    /* Animación de entrada escalonada mejorada */
+    .cards-grid .card-problem:nth-child(1) { animation-delay: 0.1s; }
+    .cards-grid .card-problem:nth-child(2) { animation-delay: 0.2s; }
+    .cards-grid .card-problem:nth-child(3) { animation-delay: 0.3s; }
+    .cards-grid .card-problem:nth-child(4) { animation-delay: 0.4s; }
+    
+    /* Transición suave para párrafos con blur */
+    .card-problem p,
+    .card-solution p {
+        transition: opacity 0.4s ease-out,
+                    visibility 0.4s ease-out,
+                    filter 0.4s ease-out !important;
+        filter: blur(3px);
+    }
+    
+    .card-problem:hover p,
+    .card-solution:hover p {
+        filter: blur(0);
+    }
+}
+
+/* Animación de respiración sutil para tarjetas */
+@keyframes breathe {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% { 
+        transform: scale(1.01); 
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Aplicar solo a tarjetas visibles */
+.card-problem.is-visible,
+.card-solution.is-visible {
+    animation: breathe 4s ease-in-out infinite;
+    animation-delay: var(--animation-delay, 0s);
+}
+
+/* Desactivar en hover para no interferir */
+.card-problem:hover,
+.card-solution:hover {
+    animation-play-state: paused;
+}
+
+/* === FIN MEJORAS PROFESIONALES === */

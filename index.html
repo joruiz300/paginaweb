@@ -4,6 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math AI - Automatización Inteligente</title>
+    
+    <!-- Google Analytics 4 - Math AI Agency -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWV7YB90M5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Configuración con modo de consentimiento para GDPR
+      gtag('consent', 'default', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'denied',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'granted',
+        'security_storage': 'granted'
+      });
+
+      gtag('config', 'G-LWV7YB90M5', {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
+      });
+
+      // Tracking de eventos personalizados
+      gtag('event', 'page_view', {
+        'page_title': 'Math AI - Automatización Inteligente',
+        'page_location': window.location.href
+      });
+    </script>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,16 +95,37 @@
             </div>
 
             <div class="container text-center">
-                <h1 class="animate-on-scroll">Libera el Verdadero Potencial de tu Empresa con <span class="text-orange">Automatización Inteligente</span></h1>
+                <div class="hero-badge animate-on-scroll">
+                    <span class="badge-icon">✨</span>
+                    <span>Automatización inteligente con N8N</span>
+                </div>
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="title-line">Libera el Verdadero Potencial de tu</span>
+                    <span class="title-line">Empresa con <span id="dynamic-word">Automatización</span></span>
+                </h1>
                 <p class="animate-on-scroll">Implementamos sistemas avanzados de automatización e IA a medida para eliminar tareas manuales, optimizar tus procesos clave y multiplicar tus resultados.</p>
-                <div class="btn-container animate-on-scroll">
-                    <div class="btn-bg"></div>
-                    <a class="btn-consulta cal-popup-trigger"
-                       data-cal-link="math-ai/reunion-inicial"
-                       data-cal-namespace="reunion-inicial"
-                       data-cal-config='{"layout":"month_view"}'>
-                        Agenda tu Diagnóstico Gratuito
+                <div class="hero-cta-wrapper">
+                    <div class="btn-container primary-cta animate-on-scroll">
+                        <div class="btn-bg"></div>
+                        <a class="btn-consulta cal-popup-trigger"
+                           data-cal-link="math-ai/reunion-inicial"
+                           data-cal-namespace="reunion-inicial"
+                           data-cal-config='{"layout":"month_view"}'>
+                            Diagnóstico Gratuito
+                            <svg class="cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="#proceso" class="secondary-cta animate-on-scroll">
+                        Ver cómo funciona
+                        <span class="secondary-cta-icon">→</span>
                     </a>
+                </div>
+                <div class="hero-trust-indicators">
+                    <span class="trust-item">✓ Expertos en N8N e IA</span>
+                    <span class="trust-item">✓ Resultados desde el día 1</span>
+                    <span class="trust-item">✓ ROI garantizado</span>
                 </div>
             </div>
         </section>
@@ -117,19 +169,19 @@
                 <h3 class="animate-on-scroll">¿Tus Herramientas <span class="text-orange">no Colaboran</span>?</h3>
                 <p class="section-subtitle animate-on-scroll">Reconocemos los obstáculos que frenan tu productividad y crecimiento. Es hora de superarlos.</p>
                 <div class="cards-grid">
-                    <div class="card animate-on-scroll">
+                    <div class="card card-problem animate-on-scroll">
                         <h4>Tiempo Perdido</h4>
                         <p>Horas valiosas desperdiciadas en tareas manuales y repetitivas que podrían automatizarse.</p>
                     </div>
-                    <div class="card animate-on-scroll">
+                    <div class="card card-problem animate-on-scroll">
                         <h4>Sistemas Desconectados</h4>
                         <p>Herramientas y plataformas que no se comunican entre sí, creando silos de información.</p>
                     </div>
-                    <div class="card animate-on-scroll">
+                    <div class="card card-problem animate-on-scroll">
                         <h4>Errores Costosos</h4>
                         <p>Procesos manuales propensos a errores que generan pérdidas financieras y de reputación.</p>
                     </div>
-                    <div class="card animate-on-scroll">
+                    <div class="card card-problem animate-on-scroll">
                         <h4>Freno al Crecimiento</h4>
                         <p>Imposibilidad de escalar operaciones por dependencia de procesos manuales limitados.</p>
                     </div>
@@ -145,19 +197,19 @@
                 <h2 class="text-center animate-on-scroll">Áreas de <span class="text-orange">Impacto</span></h2>
                 <p class="section-subtitle text-center animate-on-scroll">Analizamos a fondo tu operación para aplicar nuestras capacidades avanzadas donde generan el mayor impacto.</p>
                 <div class="cards-grid">
-                    <div class="card animate-on-scroll">
+                    <div class="card card-solution animate-on-scroll">
                         <h4>Optimización de Flujos</h4>
                         <p>Diseñamos flujos de trabajo N8N totalmente personalizados para automatizar tus procesos más críticos.</p>
                     </div>
-                    <div class="card animate-on-scroll">
+                    <div class="card card-solution animate-on-scroll">
                         <h4>IA Estratégica</h4>
                         <p>Incorporamos IA para resolver desafíos concretos y multiplicar tus resultados.</p>
                     </div>
-                    <div class="card animate-on-scroll">
+                    <div class="card card-solution animate-on-scroll">
                         <h4>Enfoque en ROI</h4>
                         <p>Medimos el éxito por el impacto financiero y operativo que generamos en tu negocio.</p>
                     </div>
-                    <div class="card animate-on-scroll">
+                    <div class="card card-solution animate-on-scroll">
                         <h4>Enfoque Consultivo</h4>
                         <p>Somos tus socios estratégicos, ayudándote a identificar las mejores oportunidades de automatización.</p>
                     </div>
@@ -421,5 +473,56 @@
     <!-- Cal.com element-click embed code ends -->
 
     <script src="script.js"></script>
+    
+    <!-- Google Analytics - Event Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track clicks en botones de Cal.com
+        document.querySelectorAll('.cal-popup-trigger').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const buttonText = this.textContent.trim();
+                gtag('event', 'cta_click', {
+                    'event_category': 'engagement',
+                    'event_label': buttonText,
+                    'button_type': 'cal_com_cta'
+                });
+            });
+        });
+
+        // Track scroll profundo (90% de la página)
+        let scrollTracked = false;
+        window.addEventListener('scroll', function() {
+            if (!scrollTracked && (window.scrollY + window.innerHeight) >= document.body.offsetHeight * 0.9) {
+                gtag('event', 'scroll_90_percent', {
+                    'event_category': 'engagement',
+                    'event_label': 'deep_scroll'
+                });
+                scrollTracked = true;
+            }
+        });
+
+        // Track clicks en enlaces de navegación
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const section = this.getAttribute('href').substring(1);
+                gtag('event', 'navigation_click', {
+                    'event_category': 'navigation',
+                    'event_label': section
+                });
+            });
+        });
+
+        // Track apertura de FAQ
+        document.querySelectorAll('.faq-question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const questionText = this.textContent.trim().substring(0, 50) + '...';
+                gtag('event', 'faq_open', {
+                    'event_category': 'engagement',
+                    'event_label': questionText
+                });
+            });
+        });
+    });
+    </script>
 </body>
 </html>

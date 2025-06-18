@@ -129,3 +129,96 @@ document.addEventListener('DOMContentLoaded', function() {
     */
 
 });
+
+// ========================================
+// ANIMACIONES MEJORADAS
+// ========================================
+(function() {
+    // Observador mejorado para animaciones
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    if (animateElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const parent = entry.target.closest('.cards-grid');
+                    if (parent) {
+                        const cards = parent.querySelectorAll('.card');
+                        const cardIndex = Array.from(cards).indexOf(entry.target);
+                        
+                        // Animación diferente para cada tipo de tarjeta
+                        if (entry.target.classList.contains('card-problem')) {
+                            // Problemas: aparecen de abajo hacia arriba con fade
+                            setTimeout(() => {
+                                entry.target.classList.add('is-visible');
+                                
+                                // Agregar efecto shimmer sutil
+                                if (!entry.target.querySelector('.shimmer-effect')) {
+                                    const shimmer = document.createElement('div');
+                                    shimmer.className = 'shimmer-effect';
+                                    entry.target.appendChild(shimmer);
+                                }
+                            }, cardIndex * 80);
+                            
+                        } else if (entry.target.classList.contains('card-solution')) {
+                            // Soluciones: aparecen con efecto de escala y rotación sutil
+                            entry.target.classList.add('solution-entering');
+                            
+                            setTimeout(() => {
+                                entry.target.classList.remove('solution-entering');
+                                entry.target.classList.add('is-visible');
+                                
+                                // Agregar iconos flotantes
+                                if (!entry.target.querySelector('.solution-icon')) {
+                                    const icon = document.createElement('div');
+                                    icon.className = 'solution-icon';
+                                    const icons = ['⚡', '🧠', '📈', '💡'];
+                                    icon.textContent = icons[cardIndex] || '✨';
+                                    entry.target.appendChild(icon);
+                                }
+                            }, cardIndex * 120 + 200);
+                        } else {
+                            // Otras tarjetas
+                            setTimeout(() => {
+                                entry.target.classList.add('is-visible');
+                            }, cardIndex * 100);
+                        }
+                    } else {
+                        entry.target.classList.add('is-visible');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach(el => observer.observe(el));
+    }
+})();
+
+// ========================================
+// EFECTO DE PALABRA DINÁMICA
+// ========================================
+(function() {
+    const dynamicWord = document.getElementById('dynamic-word');
+    if (!dynamicWord) return;
+    
+    const words = ['Automatización', 'IA Avanzada', 'Eficiencia', 'Innovación'];
+    let currentIndex = 0;
+    
+    function changeWord() {
+        dynamicWord.style.opacity = '0';
+        dynamicWord.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % words.length;
+            dynamicWord.textContent = words[currentIndex];
+            dynamicWord.style.opacity = '1';
+            dynamicWord.style.transform = 'translateY(0)';
+        }, 300);
+    }
+    
+    // Cambiar palabra cada 3 segundos
+    setInterval(changeWord, 3000);
+    
+    // Estilo de transición
+    dynamicWord.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+})();

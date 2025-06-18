@@ -1,7 +1,6 @@
-/* === LEAD MAGNET STYLES === */
-/* Estilos específicos para lead-magnet-flujo-calor.html */
+/* === LEAD MAGNET STYLES - MINIMALISTA === */
 
-/* Variables específicas para lead magnet */
+/* Variables */
 :root {
     --lead-primary: #FF6B00;
     --lead-bg: #0a0f1f;
@@ -12,13 +11,14 @@
     --lead-border: #2a3652;
 }
 
-/* Body específico para lead magnet */
+/* Body */
 .lead-magnet-page {
     background: linear-gradient(135deg, var(--lead-bg) 0%, #0d1421 100%);
     min-height: 100vh;
+    font-family: 'Work Sans', sans-serif;
 }
 
-/* === HEADER SIMPLIFICADO === */
+/* === HEADER === */
 .lead-header {
     background: rgba(10, 15, 31, 0.95);
     backdrop-filter: blur(10px);
@@ -47,12 +47,12 @@
 
 /* === HERO SECTION === */
 .lead-hero {
-    padding: 120px 0 80px;
+    padding: 120px 0 60px;
     text-align: center;
 }
 
 .hero-content {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, rgba(255, 107, 0, 0.1), rgba(255, 107, 0, 0.05));
+    background: rgba(255, 107, 0, 0.1);
     border: 1px solid rgba(255, 107, 0, 0.3);
     border-radius: 30px;
     padding: 8px 20px;
@@ -69,13 +69,9 @@
     margin-bottom: 2rem;
 }
 
-.badge-icon {
-    font-size: 1.1rem;
-}
-
 .hero-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     line-height: 1.2;
     color: var(--lead-text);
@@ -84,164 +80,104 @@
 
 .highlight {
     color: var(--lead-primary);
-    position: relative;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--lead-text-light);
-    max-width: 800px;
-    margin: 0 auto 3rem;
     line-height: 1.6;
+    margin-bottom: 3rem;
 }
 
-/* === VALUE PREVIEW === */
-.value-preview {
+/* === COMPONENTES DEL SISTEMA === */
+.system-components {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin: 4rem 0;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
 }
 
-.diagram-placeholder {
-    background: linear-gradient(135deg, var(--lead-card), rgba(25, 35, 50, 0.8));
-    border: 2px solid var(--lead-border);
-    border-radius: 12px;
-    padding: 3rem 2rem;
+.component {
     text-align: center;
-}
-
-.diagram-placeholder h3 {
-    color: var(--lead-primary);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.diagram-placeholder p {
-    color: var(--lead-text-light);
-    font-size: 1rem;
-}
-
-.value-points {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.value-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.value-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
+.component-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
 }
 
-.value-item h4 {
+.component h3 {
     color: var(--lead-text);
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
 }
 
-.value-item p {
+.component p {
     color: var(--lead-text-light);
     font-size: 0.9rem;
     margin: 0;
 }
 
-/* === CONTENT GATE === */
-.content-gate {
-    padding: 80px 0;
-    background: linear-gradient(135deg, rgba(18, 26, 48, 0.5), rgba(15, 20, 35, 0.8));
+/* === FORMULARIO === */
+.lead-form-section {
+    padding: 60px 0 80px;
+    background: rgba(18, 26, 48, 0.3);
 }
 
-.gate-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1200px;
+.form-container {
+    max-width: 600px;
     margin: 0 auto;
-    align-items: start;
 }
 
-.gate-info h2 {
+.form-content {
+    background: var(--lead-card);
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--lead-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.form-content h2 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--lead-text);
     margin-bottom: 1rem;
 }
 
-.gate-info p {
+.form-content p {
     color: var(--lead-text-light);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-.benefits-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem 0;
-}
-
-.benefits-list li {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--lead-text-light);
-    font-size: 1rem;
-}
-
-.benefits-list li:last-child {
-    border-bottom: none;
-}
-
-.benefits-list strong {
-    color: var(--lead-text);
-}
-
-/* === FORMULARIO === */
-.gate-form {
-    position: relative;
-}
-
-.lead-form {
-    background: var(--lead-card);
-    padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--lead-border);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.form-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.form-header h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
-    color: var(--lead-text);
-    margin-bottom: 0.5rem;
-}
-
-.form-header p {
-    color: var(--lead-text-light);
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.form-group {
     margin-bottom: 1.5rem;
 }
 
-.form-group input {
+.benefits-simple {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.benefits-simple li {
+    color: var(--lead-text-light);
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.minimal-form {
+    margin-top: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-input {
     width: 100%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
@@ -250,15 +186,16 @@
     color: var(--lead-text);
     font-size: 1rem;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-.form-group input:focus {
+.form-input:focus {
     outline: none;
     border-color: var(--lead-primary);
     box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
 }
 
-.form-group input::placeholder {
+.form-input::placeholder {
     color: var(--lead-text-light);
 }
 
@@ -273,8 +210,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    margin-top: 1rem;
 }
 
 .submit-btn:hover {
@@ -300,11 +236,12 @@
 
 /* === SUCCESS STATE === */
 .success-state {
-    background: var(--lead-card);
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--lead-success);
+    display: none;
+}
+
+.success-content {
     text-align: center;
+    padding: 2rem 0;
 }
 
 .success-icon {
@@ -312,47 +249,34 @@
     margin-bottom: 1rem;
 }
 
-.success-state h3 {
+.success-content h3 {
     color: var(--lead-success);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.success-state p {
+.success-content p {
     color: var(--lead-text-light);
-    margin-bottom: 0;
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    color: var(--lead-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #ff8533;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     .lead-hero {
-        padding: 100px 0 60px;
+        padding: 100px 0 40px;
     }
     
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .value-preview {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .gate-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .lead-form {
-        padding: 2rem 1.5rem;
-    }
-    
-    .diagram-placeholder {
-        padding: 2rem 1rem;
-    }
-}
-
-@media (max-width: 480px) {
     .hero-title {
         font-size: 1.8rem;
     }
@@ -361,11 +285,35 @@
         font-size: 1rem;
     }
     
-    .content-gate {
-        padding: 60px 0;
+    .system-components {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
-    .lead-form {
-        padding: 1.5rem;
+    .component {
+        padding: 1rem;
+    }
+    
+    .form-content {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .lead-form-section {
+        padding: 40px 0 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .form-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .form-content h2 {
+        font-size: 1.5rem;
     }
 } 

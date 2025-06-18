@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mathai.agency/sitemap.xml
+
+# Block access to admin/private areas (when they exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_/
+Disallow: /temp/
+
+# Allow search engines to access CSS and JS
+Allow: /style.css
+Allow: /script.js
+Allow: /*.css$
+Allow: /*.js$
+
+# Crawl delay for bots (in seconds)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10 

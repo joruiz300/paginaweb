@@ -19,255 +19,16 @@
     <link rel="stylesheet" href="lead-magnet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" type="image/png">
-    
-    <style>
-        .contenido-page {
-            background: linear-gradient(135deg, 
-                rgba(255, 69, 0, 0.02) 0%, 
-                rgba(255, 255, 255, 1) 50%, 
-                rgba(255, 69, 0, 0.02) 100%);
-            min-height: 100vh;
-        }
-        
-        .welcome-header {
-            background: var(--flujo-gradient);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .welcome-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .welcome-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .user-welcome {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-            display: inline-block;
-        }
-        
-        .contenido-principal {
-            padding: 4rem 0;
-        }
-        
-        .section-navegacion {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .nav-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: rgba(255, 69, 0, 0.05);
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--flujo-dark);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--flujo-primary);
-        }
-        
-        .nav-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(255, 69, 0, 0.2);
-        }
-        
-        .nav-icon {
-            font-size: 2rem;
-            width: 60px;
-            height: 60px;
-            background: var(--flujo-gradient);
-            color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .nav-info h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .nav-info p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin: 0;
-        }
-        
-        .content-section {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--flujo-dark);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .section-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--flujo-gradient);
-            color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-        
-        .download-area {
-            background: rgba(255, 69, 0, 0.05);
-            border: 2px dashed var(--flujo-primary);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-        
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--flujo-gradient);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--flujo-shadow);
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--flujo-shadow-hover);
-        }
-        
-        .code-block {
-            background: #1a1a1a;
-            color: #f8f8f2;
-            padding: 2rem;
-            border-radius: 10px;
-            overflow-x: auto;
-            margin: 1rem 0;
-            font-family: 'Courier New', monospace;
-            line-height: 1.5;
-        }
-        
-        .checklist {
-            display: grid;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(255, 69, 0, 0.05);
-            border-radius: 10px;
-        }
-        
-        .checklist-checkbox {
-            width: 24px;
-            height: 24px;
-            border: 2px solid var(--flujo-primary);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 0.25rem;
-        }
-        
-        .checklist-text {
-            flex: 1;
-        }
-        
-        .next-steps {
-            background: var(--flujo-gradient);
-            color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 4rem;
-        }
-        
-        .cta-implementation {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: white;
-            color: var(--flujo-primary);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-implementation:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .content-section {
-                padding: 2rem;
-                margin: 0 1rem 2rem 1rem;
-            }
-            
-            .welcome-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
 </head>
 <body class="flujo-calor-page contenido-page">
+    
     <!-- Header de bienvenida -->
     <header class="welcome-header">
         <div class="container">
             <h1 class="welcome-title">🎉 ¡Acceso Activado al FLUJO CALOR!</h1>
-            <p class="welcome-subtitle">Tu sistema completo de automatización de leads está listo</p>
+            <p class="welcome-subtitle">Tu sistema completo de automatización de leads está listo para implementar</p>
             <div class="user-welcome" id="userWelcome">
                 <span>¡Hola! Aquí está todo lo que necesitas 👇</span>
             </div>
@@ -279,13 +40,13 @@
             
             <!-- Navegación rápida -->
             <section class="section-navegacion">
-                <h2 style="text-align: center; margin-bottom: 2rem; color: var(--flujo-dark);">Acceso Directo al Contenido</h2>
+                <h2 class="nav-title">🚀 Acceso Directo al Contenido</h2>
                 <div class="nav-grid">
                     <a href="#estrategia" class="nav-item">
                         <div class="nav-icon">🎯</div>
                         <div class="nav-info">
                             <h3>1. Estrategia del Flujo</h3>
-                            <p>Las 5 etapas explicadas</p>
+                            <p>Las 5 etapas del FLUJO CALOR explicadas paso a paso</p>
                         </div>
                     </a>
                     
@@ -293,7 +54,7 @@
                         <div class="nav-icon">🤖</div>
                         <div class="nav-info">
                             <h3>2. Prompts de IA</h3>
-                            <p>3 prompts listos para usar</p>
+                            <p>3 prompts optimizados listos para copiar y usar</p>
                         </div>
                     </a>
                     
@@ -301,7 +62,7 @@
                         <div class="nav-icon">⚙️</div>
                         <div class="nav-info">
                             <h3>3. Plantilla N8N</h3>
-                            <p>Archivo .json para importar</p>
+                            <p>Archivo .json completo para importar directamente</p>
                         </div>
                     </a>
                     
@@ -309,7 +70,7 @@
                         <div class="nav-icon">✅</div>
                         <div class="nav-info">
                             <h3>4. Guía de Implementación</h3>
-                            <p>Checklist paso a paso</p>
+                            <p>Checklist interactivo paso a paso</p>
                         </div>
                     </a>
                 </div>
@@ -322,47 +83,58 @@
                     La Estrategia del FLUJO CALOR
                 </h2>
                 
-                <p style="font-size: 1.2rem; color: var(--flujo-dark); opacity: 0.8; margin-bottom: 2rem;">
-                    Antes de implementar el flujo técnico, necesitas entender la lógica estratégica. Un buen sistema de automatización no son solo nodos conectados; es una <strong>estrategia de negocio</strong> operativa.
+                <p class="section-description">
+                    Antes de implementar el flujo técnico, necesitas entender la <strong>lógica estratégica</strong>. 
+                    Un buen sistema de automatización no son solo nodos conectados; es una estrategia de negocio operativa.
                 </p>
                 
-                <div style="background: rgba(255, 69, 0, 0.05); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
-                    <h3 style="color: var(--flujo-primary); margin-bottom: 1rem;">🔥 Las 5 Etapas del FLUJO CALOR:</h3>
+                <div class="etapas-container">
+                    <h3 class="etapas-header">🔥 Las 5 Etapas del FLUJO CALOR</h3>
                     
-                    <div style="display: grid; gap: 1.5rem;">
-                        <div style="border-left: 4px solid var(--flujo-primary); padding-left: 1rem;">
-                            <h4><strong>🎣 Etapa 1: Captura y Disparo Inmediato</strong></h4>
-                            <p><strong>Trigger:</strong> Webhook/Cal.com/Formulario web<br>
-                            <strong>Velocidad:</strong> &lt;30 segundos desde captura<br>
-                            <strong>Objetivo:</strong> Activación instantánea del flujo</p>
+                    <div class="etapas-grid">
+                        <div class="etapa-card">
+                            <h4 class="etapa-title">🎣 Etapa 1: Captura y Disparo Inmediato</h4>
+                            <div class="etapa-details">
+                                <p><strong>Trigger:</strong> Webhook/Cal.com/Formulario web</p>
+                                <p><strong>Velocidad:</strong> <30 segundos desde captura</p>
+                                <p><strong>Objetivo:</strong> Activación instantánea del flujo</p>
+                            </div>
                         </div>
                         
-                        <div style="border-left: 4px solid var(--flujo-primary); padding-left: 1rem;">
-                            <h4><strong>🧠 Etapa 2: Enriquecimiento Inteligente</strong></h4>
-                            <p><strong>Proceso:</strong> Análisis de IA de la información capturada<br>
-                            <strong>Output:</strong> Puntuación, categorización y contexto del lead<br>
-                            <strong>Herramienta:</strong> OpenAI + prompts específicos</p>
+                        <div class="etapa-card">
+                            <h4 class="etapa-title">🧠 Etapa 2: Enriquecimiento Inteligente</h4>
+                            <div class="etapa-details">
+                                <p><strong>Proceso:</strong> Análisis de IA de la información capturada</p>
+                                <p><strong>Output:</strong> Puntuación, categorización y contexto del lead</p>
+                                <p><strong>Herramienta:</strong> OpenAI + prompts específicos</p>
+                            </div>
                         </div>
                         
-                        <div style="border-left: 4px solid var(--flujo-primary); padding-left: 1rem;">
-                            <h4><strong>🚦 Etapa 3: Decisión Automatizada</strong></h4>
-                            <p><strong>Logic:</strong> Segmentación basada en puntuación de IA<br>
-                            <strong>Caminos:</strong> Lead Caliente | Lead Tibio | Lead Frío<br>
-                            <strong>Criterio:</strong> ICP matching + urgencia detectada</p>
+                        <div class="etapa-card">
+                            <h4 class="etapa-title">🚦 Etapa 3: Decisión Automatizada</h4>
+                            <div class="etapa-details">
+                                <p><strong>Logic:</strong> Segmentación basada en puntuación de IA</p>
+                                <p><strong>Caminos:</strong> Lead Caliente | Lead Tibio | Lead Frío</p>
+                                <p><strong>Criterio:</strong> ICP matching + urgencia detectada</p>
+                            </div>
                         </div>
                         
-                        <div style="border-left: 4px solid var(--flujo-primary); padding-left: 1rem;">
-                            <h4><strong>⚡ Etapa 4: Acción Personalizada</strong></h4>
-                            <p><strong>CRM Update:</strong> Datos estructurados + scoring<br>
-                            <strong>Team Alert:</strong> Notificación con contexto inteligente<br>
-                            <strong>Lead Response:</strong> Email personalizado automático</p>
+                        <div class="etapa-card">
+                            <h4 class="etapa-title">⚡ Etapa 4: Acción Personalizada</h4>
+                            <div class="etapa-details">
+                                <p><strong>CRM Update:</strong> Datos estructurados + scoring</p>
+                                <p><strong>Team Alert:</strong> Notificación con contexto inteligente</p>
+                                <p><strong>Lead Response:</strong> Email personalizado automático</p>
+                            </div>
                         </div>
                         
-                        <div style="border-left: 4px solid var(--flujo-primary); padding-left: 1rem;">
-                            <h4><strong>🗓️ Etapa 5: Seguimiento Proactivo</strong></h4>
-                            <p><strong>Recordatorios:</strong> Para citas agendadas<br>
-                            <strong>Nurturing:</strong> Para leads no listos aún<br>
-                            <strong>Analytics:</strong> Tracking completo del funnel</p>
+                        <div class="etapa-card">
+                            <h4 class="etapa-title">🗓️ Etapa 5: Seguimiento Proactivo</h4>
+                            <div class="etapa-details">
+                                <p><strong>Recordatorios:</strong> Para citas agendadas</p>
+                                <p><strong>Nurturing:</strong> Para leads no listos aún</p>
+                                <p><strong>Analytics:</strong> Tracking completo del funnel</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -375,14 +147,22 @@
                     Los 3 Prompts de IA Optimizados
                 </h2>
                 
-                <p style="font-size: 1.2rem; color: var(--flujo-dark); opacity: 0.8; margin-bottom: 2rem;">
-                    Estos prompts son el componente más valioso. Son el "software" que se ejecuta dentro del nodo de OpenAI en tu flujo N8N.
+                <p class="section-description">
+                    Estos prompts son el <strong>componente más valioso</strong>. Son el "software" que se ejecuta 
+                    dentro del nodo de OpenAI en tu flujo N8N. Cópialos directamente y personalízalos.
                 </p>
                 
-                <!-- Prompt 1 -->
-                <div style="margin: 3rem 0;">
-                    <h3 style="color: var(--flujo-primary); margin-bottom: 1rem;">🔍 Prompt 1: Cualificación General y Puntuación</h3>
-                    <div class="code-block">## ROL
+                <!-- Prompt 1: Cualificación General -->
+                <div class="prompt-container">
+                    <div class="prompt-header">
+                        <h3 class="prompt-title">🔍 Prompt 1: Cualificación General y Puntuación</h3>
+                        <p class="prompt-description">
+                            Analiza y puntúa leads automáticamente según tu ICP y criterios de negocio
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyToClipboard('prompt1')">📋 Copiar</button>
+<div id="prompt1">## ROL
 Eres un Asistente de Ventas B2B experto en cualificar leads para una agencia de automatización llamada Math AI Agency.
 
 ## TAREA
@@ -405,17 +185,25 @@ Analiza la siguiente información de un nuevo lead. Tu objetivo es:
 
 ## OUTPUT (Solo responde con este formato JSON)
 {
-  "puntuacion_lead": &lt;número_del_1_al_10&gt;,
-  "necesidad_principal": "&lt;resumen_de_la_necesidad&gt;",
-  "nombre_empresa": "&lt;nombre_de_la_empresa&gt;",
-  "resumen_slack": "&lt;resumen_de_20_palabras_para_el_equipo&gt;"
+  "puntuacion_lead": <número_del_1_al_10>,
+  "necesidad_principal": "<resumen_de_la_necesidad>",
+  "nombre_empresa": "<nombre_de_la_empresa>",
+  "resumen_slack": "<resumen_de_20_palabras_para_el_equipo>"
 }</div>
+                    </div>
                 </div>
                 
-                <!-- Prompt 2 -->
-                <div style="margin: 3rem 0;">
-                    <h3 style="color: var(--flujo-primary); margin-bottom: 1rem;">⏱️ Prompt 2: Detección de Urgencia</h3>
-                    <div class="code-block">## ROL
+                <!-- Prompt 2: Detección de Urgencia -->
+                <div class="prompt-container">
+                    <div class="prompt-header">
+                        <h3 class="prompt-title">⏱️ Prompt 2: Detección de Urgencia</h3>
+                        <p class="prompt-description">
+                            Detecta automáticamente el nivel de urgencia e intención de compra del lead
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyToClipboard('prompt2')">📋 Copiar</button>
+<div id="prompt2">## ROL
 Eres un analista de ventas especializado en detectar la intención de compra y la urgencia en las comunicaciones de un prospecto.
 
 ## TAREA
@@ -427,15 +215,23 @@ Analiza la descripción de la necesidad del lead y clasifica su nivel de urgenci
 
 ## OUTPUT (Solo responde con este formato JSON)
 {
-  "nivel_urgencia": "&lt;Alta|Media|Baja&gt;",
-  "señal_detectada": "&lt;frase_o_palabra_clave_que_justifica_el_nivel&gt;"
+  "nivel_urgencia": "<Alta|Media|Baja>",
+  "señal_detectada": "<frase_o_palabra_clave_que_justifica_el_nivel>"
 }</div>
+                    </div>
                 </div>
                 
-                <!-- Prompt 3 -->
-                <div style="margin: 3rem 0;">
-                    <h3 style="color: var(--flujo-primary); margin-bottom: 1rem;">🎯 Prompt 3: Análisis de Encaje con el ICP</h3>
-                    <div class="code-block">## ROL
+                <!-- Prompt 3: Análisis de ICP -->
+                <div class="prompt-container">
+                    <div class="prompt-header">
+                        <h3 class="prompt-title">🎯 Prompt 3: Análisis de Encaje con el ICP</h3>
+                        <p class="prompt-description">
+                            Evalúa automáticamente si el lead encaja con tu perfil de cliente ideal
+                        </p>
+                    </div>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyToClipboard('prompt3')">📋 Copiar</button>
+<div id="prompt3">## ROL
 Eres un Director de Estrategia que debe decidir si un nuevo lead encaja con el perfil de cliente ideal de la agencia.
 
 ## TAREA
@@ -449,14 +245,18 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
 
 ## OUTPUT (Solo responde con este formato JSON)
 {
-  "encaje_icp": "&lt;Ideal|Bueno|Bajo&gt;",
-  "justificacion": "&lt;breve_explicación_de_por_qué_encaja_o_no&gt;"
+  "encaje_icp": "<Ideal|Bueno|Bajo>",
+  "justificacion": "<breve_explicación_de_por_qué_encaja_o_no>"
 }</div>
+                    </div>
                 </div>
                 
                 <div class="download-area">
-                    <h4 style="margin-bottom: 1rem;">📋 Copia estos prompts directamente a tus nodos de OpenAI en N8N</h4>
-                    <p>Recuerda personalizar las variables {{}} según tu configuración específica</p>
+                    <h4 class="download-title">📋 Personalización de los Prompts</h4>
+                    <p class="download-description">
+                        Recuerda adaptar las variables {{}} según tu configuración específica de N8N. 
+                        Cambia "Math AI Agency" por tu empresa e ICP por tu cliente ideal.
+                    </p>
                 </div>
             </section>
 
@@ -467,13 +267,13 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                     Plantilla N8N Lista para Importar
                 </h2>
                 
-                <p style="font-size: 1.2rem; color: var(--flujo-dark); opacity: 0.8; margin-bottom: 2rem;">
-                    El flujo completo de N8N listo para que lo importes y personalices según tus herramientas.
+                <p class="section-description">
+                    El flujo completo de N8N estructurado y listo para que lo importes y personalices según tus herramientas específicas.
                 </p>
                 
                 <div class="download-area">
-                    <h3 style="margin-bottom: 1rem;">📥 Descarga la Plantilla</h3>
-                    <p style="margin-bottom: 2rem;">Archivo .json listo para importar en tu instancia de N8N</p>
+                    <h3 class="download-title">📥 Descarga la Plantilla</h3>
+                    <p class="download-description">Archivo .json optimizado listo para importar en tu instancia de N8N</p>
                     <a href="#" class="download-btn" onclick="downloadN8NTemplate()">
                         <span>📁</span>
                         <span>Descargar flujo-calor-n8n.json</span>
@@ -481,25 +281,25 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                     </a>
                 </div>
                 
-                <div style="background: rgba(255, 69, 0, 0.05); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
-                    <h4 style="color: var(--flujo-primary); margin-bottom: 1rem;">⚠️ Importante antes de importar:</h4>
-                    <p>Esta plantilla es una base conceptual poderosa, no una solución "plug-and-play". Para que funcione necesitarás:</p>
-                    <ul style="margin: 1rem 0; padding-left: 2rem;">
-                        <li>✅ Configurar tus propias credenciales API</li>
-                        <li>✅ Adaptar los prompts a tu negocio específico</li>
-                        <li>✅ Conectar tus herramientas (CRM, Slack, etc.)</li>
-                        <li>✅ Personalizar las variables del flujo</li>
+                <div class="highlight-box">
+                    <h4><span style="color: var(--flujo-primary);">⚠️</span> Importante antes de importar:</h4>
+                    <p>Esta plantilla es una <strong>base conceptual poderosa</strong>, no una solución "plug-and-play". Para que funcione necesitarás:</p>
+                    <ul class="instruction-list">
+                        <li><strong>Configurar tus propias credenciales API</strong> (OpenAI, CRM, Slack, etc.)</li>
+                        <li><strong>Adaptar los prompts</strong> a tu negocio específico e ICP</li>
+                        <li><strong>Conectar tus herramientas</strong> (CRM, Slack, email service, etc.)</li>
+                        <li><strong>Personalizar las variables</strong> del flujo según tu configuración</li>
                     </ul>
                 </div>
                 
-                <h4 style="margin: 2rem 0 1rem 0;">📋 Instrucciones de Importación:</h4>
-                <ol style="padding-left: 2rem; line-height: 1.8;">
+                <h3><span style="color: var(--flujo-primary);">📋</span> Instrucciones de Importación:</h3>
+                <ol class="instruction-list">
                     <li><strong>Descarga el archivo JSON</strong> usando el botón de arriba</li>
                     <li><strong>Abre tu N8N:</strong> Ve a Workflows → Import → From File</li>
-                    <li><strong>Selecciona el archivo</strong> flujo-calor-n8n.json</li>
-                    <li><strong>Configura credenciales:</strong> OpenAI, Slack, CRM, etc.</li>
+                    <li><strong>Selecciona el archivo</strong> flujo-calor-n8n.json descargado</li>
+                    <li><strong>Configura credenciales:</strong> OpenAI, Slack, CRM, email service</li>
                     <li><strong>Personaliza los prompts</strong> con tu información específica</li>
-                    <li><strong>Prueba con un lead de ejemplo</strong> antes de activar</li>
+                    <li><strong>Prueba con un lead de ejemplo</strong> antes de activar en producción</li>
                 </ol>
             </section>
 
@@ -510,119 +310,119 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                     Checklist de Implementación
                 </h2>
                 
-                <p style="font-size: 1.2rem; color: var(--flujo-dark); opacity: 0.8; margin-bottom: 2rem;">
-                    Sigue este checklist paso a paso para implementar tu FLUJO CALOR correctamente.
+                <p class="section-description">
+                    Sigue este checklist interactivo paso a paso para implementar tu FLUJO CALOR correctamente y sin errores.
                 </p>
                 
-                <h3 style="margin: 2rem 0 1rem 0; color: var(--flujo-primary);">📋 Pre-Implementación</h3>
+                <h3><span style="color: var(--flujo-primary);">📋</span> Pre-Implementación</h3>
                 <div class="checklist">
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>N8N instalado y funcionando</strong><br>
-                            <small>Asegúrate de tener acceso a una instancia de N8N operativa</small>
+                            <strong>N8N instalado y funcionando</strong>
+                            <small>Asegúrate de tener acceso a una instancia de N8N operativa con permisos de administrador</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>API Keys obtenidas</strong><br>
-                            <small>OpenAI, CRM (HubSpot/Pipedrive), Slack, email service</small>
+                            <strong>API Keys obtenidas</strong>
+                            <small>OpenAI, CRM (HubSpot/Pipedrive), Slack, servicio de email con límites apropiados</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Formulario web o Cal.com configurado</strong><br>
-                            <small>El punto de entrada para capturar leads</small>
+                            <strong>Formulario web o Cal.com configurado</strong>
+                            <small>El punto de entrada para capturar leads con los campos necesarios</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Webhook endpoint definido</strong><br>
-                            <small>URL donde tu formulario enviará los datos</small>
+                            <strong>Webhook endpoint definido</strong>
+                            <small>URL específica donde tu formulario enviará los datos de leads</small>
                         </div>
                     </div>
                 </div>
                 
-                <h3 style="margin: 2rem 0 1rem 0; color: var(--flujo-primary);">⚙️ Durante la Implementación</h3>
+                <h3><span style="color: var(--flujo-primary);">⚙️</span> Durante la Implementación</h3>
                 <div class="checklist">
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Flujo importado correctamente</strong><br>
-                            <small>Sin errores de importación en N8N</small>
+                            <strong>Flujo importado correctamente</strong>
+                            <small>Sin errores de importación en N8N, todos los nodos visibles</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Credenciales configuradas</strong><br>
-                            <small>Todas las integraciones funcionando</small>
+                            <strong>Credenciales configuradas</strong>
+                            <small>Todas las integraciones funcionando y autenticadas correctamente</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Prompts personalizados</strong><br>
-                            <small>Adaptados a tu ICP y modelo de negocio</small>
+                            <strong>Prompts personalizados</strong>
+                            <small>Adaptados a tu ICP específico y modelo de negocio</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Variables editadas</strong><br>
-                            <small>Nombres de empresa, URLs, configuraciones específicas</small>
+                            <strong>Variables editadas</strong>
+                            <small>Nombres de empresa, URLs, configuraciones específicas personalizadas</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Prueba completada</strong><br>
-                            <small>Test end-to-end con datos de ejemplo</small>
+                            <strong>Prueba completada</strong>
+                            <small>Test end-to-end con datos de ejemplo reales y verificación de outputs</small>
                         </div>
                     </div>
                 </div>
                 
-                <h3 style="margin: 2rem 0 1rem 0; color: var(--flujo-primary);">🚀 Post-Implementación</h3>
+                <h3><span style="color: var(--flujo-primary);">🚀</span> Post-Implementación</h3>
                 <div class="checklist">
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Equipo entrenado</strong><br>
-                            <small>Todo el equipo sabe cómo usar el nuevo proceso</small>
+                            <strong>Equipo entrenado</strong>
+                            <small>Todo el equipo de ventas sabe cómo interpretar y usar las notificaciones</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Métricas configuradas</strong><br>
-                            <small>Tracking de conversión, tiempo de respuesta, scoring</small>
+                            <strong>Métricas configuradas</strong>
+                            <small>Tracking de conversión, tiempo de respuesta, scoring y ROI del sistema</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Documentación creada</strong><br>
-                            <small>Proceso documentado para futuras referencias</small>
+                            <strong>Documentación creada</strong>
+                            <small>Proceso documentado para futuras referencias y nuevos miembros del equipo</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Plan de optimización</strong><br>
-                            <small>Estrategia para mejorar el sistema continuamente</small>
+                            <strong>Plan de optimización establecido</strong>
+                            <small>Estrategia para revisar y mejorar el sistema continuamente</small>
                         </div>
                     </div>
                 </div>
@@ -630,17 +430,21 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
 
             <!-- Call to Action Final -->
             <section class="next-steps">
-                <h2 style="margin-bottom: 1rem;">🚀 ¿Listo para el Siguiente Nivel?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    Ya tienes la arquitectura y las herramientas para construir un sistema de captación de leads de élite.
+                <h2>🚀 ¿Listo para el Siguiente Nivel?</h2>
+                <p>
+                    Ya tienes la arquitectura y las herramientas para construir un <strong>sistema de captación de leads de élite</strong>. 
+                    Pero sabemos que la implementación técnica puede ser desafiante.
                 </p>
                 
-                <p style="margin-bottom: 2rem;">
-                    Si al ver esto piensas: <strong>"Entiendo el poder de esto, pero no tengo el tiempo o la experiencia para implementarlo y mantenerlo a la perfección..."</strong>
+                <p>
+                    Si al ver esto piensas: <strong>"Entiendo el poder de esto, pero no tengo el tiempo o la experiencia 
+                    para implementarlo y mantenerlo a la perfección..."</strong>
                 </p>
                 
-                <p style="margin-bottom: 2rem;">
-                    En Math AI Agency, ese es nuestro trabajo. Tomamos esta arquitectura y la convertimos en un sistema robusto, a medida y totalmente gestionado para tu negocio.
+                <p>
+                    En Math AI Agency, <strong>ese es exactamente nuestro trabajo</strong>. Tomamos esta arquitectura y la convertimos en un 
+                    sistema robusto, a medida y totalmente gestionado para tu negocio, permitiéndote centrarte en 
+                    lo que mejor sabes hacer: construir relaciones y cerrar ventas.
                 </p>
                 
                 <a href="https://cal.com/math-ai/diagnostico-gratuito" class="cta-implementation" target="_blank">
@@ -649,9 +453,7 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                     <span>→</span>
                 </a>
                 
-                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-                    Sin compromiso. Solo valor puro.
-                </p>
+                <p>Sin compromiso. Solo valor puro.</p>
             </section>
         </div>
     </main>
@@ -659,12 +461,16 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
     <!-- Footer simple -->
     <footer class="simple-footer">
         <div class="container">
-            <p>© 2025 Math AI Agency • Automatización que funciona • <a href="/" style="color: white; opacity: 0.8;">Volver al inicio</a></p>
+            <p>© 2025 Math AI Agency • Automatización que funciona • 
+               <a href="/" style="color: white; opacity: 0.8; text-decoration: none;">Volver al inicio</a>
+            </p>
         </div>
     </footer>
 
     <script>
-        // Verificar acceso del usuario
+        // ====== FUNCIONALIDADES PROFESIONALES ======
+        
+        // Verificar acceso del usuario y personalizar experiencia
         function checkUserAccess() {
             const userData = localStorage.getItem('flujoCalorUser');
             if (userData) {
@@ -674,79 +480,220 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                     welcomeElement.innerHTML = `<span>¡Hola <strong>${user.nombre}</strong>! Aquí está todo lo que necesitas 👇</span>`;
                 }
                 
-                // Track access
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'flujo_calor_content_access', {
-                        event_category: 'flujo_calor',
-                        user_name: user.nombre,
-                        access_time: Date.now() - user.accessTime
-                    });
-                }
+                // Track access con datos del usuario
+                trackEvent('flujo_calor_content_access', {
+                    user_name: user.nombre,
+                    access_time: Date.now() - user.accessTime,
+                    had_webhook_error: user.webhookError || false
+                });
             }
         }
         
-        // Función para descargar plantilla N8N
+        // Función mejorada para copiar prompts al clipboard
+        function copyToClipboard(promptId) {
+            const promptText = document.getElementById(promptId).textContent;
+            navigator.clipboard.writeText(promptText).then(function() {
+                // Feedback visual mejorado
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ ¡Copiado!';
+                btn.style.background = 'var(--flujo-success)';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = 'var(--flujo-primary)';
+                }, 2000);
+                
+                // Track copy action
+                trackEvent('flujo_calor_prompt_copied', {
+                    prompt_id: promptId,
+                    prompt_length: promptText.length
+                });
+                
+            }).catch(function() {
+                // Fallback para navegadores que no soportan clipboard
+                alert('Prompt copiado. Usa Ctrl+V para pegarlo en N8N.');
+            });
+        }
+        
+        // Función mejorada para descargar plantilla N8N
         function downloadN8NTemplate() {
-            // Crear contenido JSON de ejemplo
+            // Crear contenido JSON más completo y realista
             const n8nTemplate = {
                 "name": "FLUJO CALOR - Math AI Agency",
+                "version": 1,
                 "nodes": [
                     {
-                        "parameters": {},
-                        "name": "Webhook Trigger",
+                        "parameters": {
+                            "httpMethod": "POST",
+                            "path": "flujo-calor-webhook",
+                            "responseMode": "responseNode",
+                            "responseData": "allEntries"
+                        },
+                        "name": "🎣 Webhook - Captura Lead",
                         "type": "n8n-nodes-base.webhook",
                         "typeVersion": 1,
-                        "position": [250, 300]
+                        "position": [240, 300],
+                        "id": "webhook-node"
                     },
                     {
                         "parameters": {
                             "model": "gpt-4",
                             "messages": {
-                                "chatInput": "// Aquí van los prompts de cualificación que descargaste arriba"
+                                "chatInput": "// PROMPT 1: Cualificación - Pega aquí el Prompt 1 que copiaste arriba"
                             }
                         },
-                        "name": "OpenAI - Cualificación",
+                        "name": "🧠 IA - Cualificación",
                         "type": "n8n-nodes-base.openAi",
                         "typeVersion": 1,
-                        "position": [450, 300]
+                        "position": [460, 220],
+                        "id": "openai-cualificacion"
                     },
                     {
-                        "parameters": {},
-                        "name": "Decisión - Scoring",
+                        "parameters": {
+                            "model": "gpt-4",
+                            "messages": {
+                                "chatInput": "// PROMPT 2: Urgencia - Pega aquí el Prompt 2 que copiaste arriba"
+                            }
+                        },
+                        "name": "⏱️ IA - Urgencia",
+                        "type": "n8n-nodes-base.openAi",
+                        "typeVersion": 1,
+                        "position": [460, 340],
+                        "id": "openai-urgencia"
+                    },
+                    {
+                        "parameters": {
+                            "model": "gpt-4",
+                            "messages": {
+                                "chatInput": "// PROMPT 3: ICP - Pega aquí el Prompt 3 que copiaste arriba"
+                            }
+                        },
+                        "name": "🎯 IA - Encaje ICP",
+                        "type": "n8n-nodes-base.openAi",
+                        "typeVersion": 1,
+                        "position": [460, 460],
+                        "id": "openai-icp"
+                    },
+                    {
+                        "parameters": {
+                            "conditions": {
+                                "number": [
+                                    {
+                                        "value1": "={{$json.puntuacion_lead}}",
+                                        "operation": "larger",
+                                        "value2": 7
+                                    }
+                                ]
+                            }
+                        },
+                        "name": "🚦 Decisión - Lead Caliente?",
                         "type": "n8n-nodes-base.if",
                         "typeVersion": 1,
-                        "position": [650, 300]
+                        "position": [680, 300],
+                        "id": "decision-scoring"
+                    },
+                    {
+                        "parameters": {
+                            "message": "🔥 LEAD CALIENTE DETECTADO!\n\nNombre: {{$json.nombre}}\nEmpresa: {{$json.empresa}}\nPuntuación: {{$json.puntuacion_lead}}/10\nUrgencia: {{$json.nivel_urgencia}}\n\nResumen: {{$json.resumen_slack}}",
+                            "channel": "#leads-calientes"
+                        },
+                        "name": "📢 Slack - Alert Caliente",
+                        "type": "n8n-nodes-base.slack",
+                        "typeVersion": 1,
+                        "position": [900, 220],
+                        "id": "slack-caliente"
+                    },
+                    {
+                        "parameters": {
+                            "message": "📋 Nuevo lead registrado\n\nNombre: {{$json.nombre}}\nEmpresa: {{$json.empresa}}\nPuntuación: {{$json.puntuacion_lead}}/10",
+                            "channel": "#leads-general"
+                        },
+                        "name": "📝 Slack - Alert General",
+                        "type": "n8n-nodes-base.slack",
+                        "typeVersion": 1,
+                        "position": [900, 380],
+                        "id": "slack-general"
                     }
                 ],
-                "connections": {},
+                "connections": {
+                    "🎣 Webhook - Captura Lead": {
+                        "main": [
+                            [
+                                {"node": "🧠 IA - Cualificación", "type": "main", "index": 0},
+                                {"node": "⏱️ IA - Urgencia", "type": "main", "index": 0},
+                                {"node": "🎯 IA - Encaje ICP", "type": "main", "index": 0}
+                            ]
+                        ]
+                    },
+                    "🧠 IA - Cualificación": {
+                        "main": [
+                            [{"node": "🚦 Decisión - Lead Caliente?", "type": "main", "index": 0}]
+                        ]
+                    },
+                    "🚦 Decisión - Lead Caliente?": {
+                        "main": [
+                            [{"node": "📢 Slack - Alert Caliente", "type": "main", "index": 0}],
+                            [{"node": "📝 Slack - Alert General", "type": "main", "index": 0}]
+                        ]
+                    }
+                },
                 "createdAt": new Date().toISOString(),
                 "updatedAt": new Date().toISOString(),
-                "settings": {},
+                "settings": {
+                    "timezone": "America/Mexico_City"
+                },
                 "staticData": {},
                 "meta": {
-                    "templateCredsSetupCompleted": false
+                    "templateCredsSetupCompleted": false,
+                    "instanceId": "flujo-calor-math-ai"
                 }
             };
             
-            // Crear archivo para descarga
+            // Crear descarga con nombre descriptivo
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(n8nTemplate, null, 2));
             const downloadAnchorNode = document.createElement('a');
             downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", "flujo-calor-n8n.json");
+            downloadAnchorNode.setAttribute("download", "flujo-calor-n8n-template.json");
             document.body.appendChild(downloadAnchorNode);
             downloadAnchorNode.click();
             downloadAnchorNode.remove();
             
-            // Track download
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'flujo_calor_template_download', {
-                    event_category: 'flujo_calor',
-                    file_name: 'flujo-calor-n8n.json'
-                });
-            }
+            // Track download con detalles
+            trackEvent('flujo_calor_template_download', {
+                file_name: 'flujo-calor-n8n-template.json',
+                template_nodes: n8nTemplate.nodes.length,
+                download_timestamp: Date.now()
+            });
+            
+            // Mostrar mensaje de éxito
+            showDownloadSuccess();
         }
         
-        // Smooth scroll para navegación
+        // Función para mostrar éxito en descarga
+        function showDownloadSuccess() {
+            const successDiv = document.createElement('div');
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--flujo-success);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                animation: slideInRight 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+            `;
+            successDiv.innerHTML = '✅ Plantilla N8N descargada correctamente';
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                document.body.removeChild(successDiv);
+            }, 3000);
+        }
+        
+        // Smooth scroll mejorado para navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -756,36 +703,175 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Track navigation
+                    trackEvent('flujo_calor_section_navigation', {
+                        section: this.getAttribute('href'),
+                        section_name: target.querySelector('.section-title')?.textContent || 'unknown'
+                    });
                 }
             });
         });
         
-        // Funcionalidad de checklist interactivo
+        // Checklist interactivo mejorado
         document.querySelectorAll('.checklist-checkbox').forEach(checkbox => {
             checkbox.addEventListener('click', function() {
-                if (this.textContent === '☐') {
+                const isChecked = this.textContent === '✅';
+                if (!isChecked) {
                     this.textContent = '✅';
                     this.style.background = 'var(--flujo-success)';
                     this.style.color = 'white';
+                    this.style.borderColor = 'var(--flujo-success)';
+                    
+                    // Efecto de confetti mini
+                    createMiniConfetti(this);
                 } else {
                     this.textContent = '☐';
                     this.style.background = 'transparent';
                     this.style.color = 'var(--flujo-primary)';
+                    this.style.borderColor = 'var(--flujo-primary)';
+                }
+                
+                // Track checklist progress
+                const totalItems = document.querySelectorAll('.checklist-checkbox').length;
+                const checkedItems = document.querySelectorAll('.checklist-checkbox:contains("✅")').length;
+                const progress = Math.round((checkedItems / totalItems) * 100);
+                
+                trackEvent('flujo_calor_checklist_progress', {
+                    progress_percentage: progress,
+                    total_items: totalItems,
+                    checked_items: checkedItems
+                });
+            });
+        });
+        
+        // Mini confetti para checklist
+        function createMiniConfetti(element) {
+            const colors = ['#FF4500', '#FF6B35', '#F7931E'];
+            const rect = element.getBoundingClientRect();
+            
+            for (let i = 0; i < 5; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: fixed;
+                    width: 4px;
+                    height: 4px;
+                    background: ${colors[Math.floor(Math.random() * colors.length)]};
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 1000;
+                    left: ${rect.left + rect.width/2}px;
+                    top: ${rect.top + rect.height/2}px;
+                `;
+                
+                document.body.appendChild(particle);
+                
+                const angle = (Math.PI * 2 * i) / 5;
+                const velocity = 30;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+                
+                let x = 0, y = 0, opacity = 1;
+                
+                const animate = () => {
+                    x += vx * 0.1;
+                    y += vy * 0.1;
+                    opacity -= 0.05;
+                    
+                    particle.style.transform = `translate(${x}px, ${y}px)`;
+                    particle.style.opacity = opacity;
+                    
+                    if (opacity > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        document.body.removeChild(particle);
+                    }
+                };
+                
+                requestAnimationFrame(animate);
+            }
+        }
+        
+        // Analytics tracking mejorado
+        function trackEvent(eventName, parameters = {}) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    event_category: 'flujo_calor_content',
+                    page_title: 'FLUJO CALOR - Contenido Completo',
+                    timestamp: new Date().toISOString(),
+                    ...parameters
+                });
+            }
+            console.log('📊 FLUJO CALOR Content Event:', eventName, parameters);
+        }
+        
+        // Scroll tracking avanzado
+        let scrollMilestones = {25: false, 50: false, 75: false, 90: false};
+        let maxScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            maxScroll = Math.max(maxScroll, scrollPercent);
+            
+            Object.keys(scrollMilestones).forEach(milestone => {
+                if (scrollPercent >= milestone && !scrollMilestones[milestone]) {
+                    scrollMilestones[milestone] = true;
+                    trackEvent('flujo_calor_content_scroll', {
+                        scroll_depth: milestone,
+                        max_scroll: maxScroll
+                    });
                 }
             });
         });
         
-        // Inicializar
+        // Tiempo en página y engagement
+        let engagementStartTime = Date.now();
+        let totalTimeOnPage = 0;
+        let isVisible = true;
+        
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && isVisible) {
+                totalTimeOnPage += Date.now() - engagementStartTime;
+                isVisible = false;
+                
+                trackEvent('flujo_calor_content_visibility_hidden', {
+                    session_time: totalTimeOnPage,
+                    max_scroll_reached: maxScroll
+                });
+            } else if (!document.hidden && !isVisible) {
+                engagementStartTime = Date.now();
+                isVisible = true;
+            }
+        });
+        
+        // Inicialización mejorada
         document.addEventListener('DOMContentLoaded', function() {
             checkUserAccess();
             
-            // Track page view
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'flujo_calor_content_view', {
-                    event_category: 'flujo_calor',
-                    page_title: 'FLUJO CALOR - Contenido Completo'
-                });
-            }
+            // Track page view con contexto
+            trackEvent('flujo_calor_content_page_view', {
+                referrer: document.referrer,
+                user_agent: navigator.userAgent,
+                screen_resolution: `${screen.width}x${screen.height}`,
+                viewport_size: `${window.innerWidth}x${window.innerHeight}`,
+                has_user_data: !!localStorage.getItem('flujoCalorUser')
+            });
+            
+            // Añadir animaciones CSS necesarias
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                
+                @keyframes fadeOut {
+                    to { opacity: 0; transform: translateX(100%); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            console.log('✅ FLUJO CALOR Content Page Ready - Professional Version');
         });
     </script>
 </body>

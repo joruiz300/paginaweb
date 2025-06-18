@@ -767,7 +767,7 @@
 .hero-description {
     font-size: 1.25rem;
     color: var(--flujo-dark);
-    opacity: 0.7;
+    opacity: 0.9;
     margin-bottom: 3rem;
     max-width: 600px;
     margin-left: auto;
@@ -986,7 +986,7 @@
 
 .etapa p {
     color: var(--flujo-dark);
-    opacity: 0.7;
+    opacity: 0.9;
     font-size: 0.9rem;
 }
 
@@ -1032,7 +1032,7 @@
 .preview-header p {
     font-size: 1.1rem;
     color: var(--flujo-dark);
-    opacity: 0.7;
+    opacity: 0.9;
     margin-bottom: 3rem;
 }
 
@@ -1081,7 +1081,7 @@
 .entregable-info span {
     font-size: 0.9rem;
     color: var(--flujo-dark);
-    opacity: 0.6;
+    opacity: 0.85;
 }
 
 /* Formulario atractivo */
@@ -1118,7 +1118,7 @@
 
 .form-header p {
     color: var(--flujo-dark);
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .form-flujo {
@@ -1252,7 +1252,7 @@
     border-radius: 10px;
     font-size: 0.9rem;
     color: var(--flujo-dark);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .garantia-icon {
@@ -2075,5 +2075,114 @@
     
     .nav-info {
         text-align: center;
+    }
+}
+
+/* ================== CTA AGENDAR CITA ADICIONAL ================== */
+
+.cta-agendar-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 69, 0, 0.03) 0%, 
+        rgba(255, 255, 255, 1) 50%, 
+        rgba(255, 69, 0, 0.03) 100%);
+    border-top: 1px solid rgba(255, 69, 0, 0.1);
+}
+
+.cta-agendar-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-agendar-content h3 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--flujo-dark);
+    margin-bottom: 1rem;
+}
+
+.cta-agendar-content p {
+    font-size: 1.1rem;
+    color: var(--flujo-dark);
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+}
+
+.cta-agendar-content .btn-container {
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.cta-agendar-content .btn-consulta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--flujo-gradient);
+    color: white;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--flujo-shadow);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-agendar-content .btn-consulta:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--flujo-shadow-hover);
+}
+
+.cta-agendar-content .btn-consulta span:last-child {
+    transition: transform 0.3s ease;
+}
+
+.cta-agendar-content .btn-consulta:hover span:last-child {
+    transform: translateX(5px);
+}
+
+.cta-garantia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: var(--flujo-dark);
+    opacity: 0.9;
+}
+
+.cta-garantia span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .cta-agendar-section {
+        padding: 3rem 0;
+    }
+    
+    .cta-agendar-content {
+        padding: 0 1rem;
+    }
+    
+    .cta-garantia {
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+    .cta-agendar-content .btn-consulta {
+        width: 100%;
+        justify-content: center;
     }
 } 

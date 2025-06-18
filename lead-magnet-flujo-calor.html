@@ -21,98 +21,236 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" type="image/png">
+    
+    <!-- Scripts necesarios para animaciones -->
+    <script src="gsap.min.js"></script>
+    <script src="ScrollTrigger.min.js"></script>
+    <script src="animations.js"></script>
+    <script src="advanced-animations.js"></script>
 </head>
 <body class="lead-magnet-page">
-    <!-- Header minimalista -->
-    <header class="lead-header">
-        <div class="container">
+    <!-- Header profesional -->
+    <header>
+        <div class="container nav-container">
             <a href="/" class="logo-link">
                 <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="Math AI Logo" class="logo">
                 <span>Math AI</span>
             </a>
+            <nav class="main-nav">
+                <div class="lead-nav-info">
+                    <span class="nav-breadcrumb">← <a href="/">Volver a Math AI</a></span>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <main class="lead-main">
-        <!-- Hero Section -->
-        <section id="hero" class="lead-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="credibility-badge">
-                        <span class="badge-icon">⚡</span>
-                        <span>Sistema desarrollado por Math AI Agency</span>
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        El Sistema Completo para
-                        <span class="highlight">Responder a Leads Automáticamente</span>
-                        en Menos de 2 Minutos
-                    </h1>
-                    
-                    <p class="hero-subtitle">
-                        Descarga gratis el sistema "FLUJO CALOR": Plantilla N8N + Prompts de IA para automatizar completamente tu respuesta a leads.
-                    </p>
+    <main>
+        <!-- Hero Section con SVG decorators -->
+        <section id="hero" class="hero-section section-with-svg-bg">
+            <!-- SVG Decorators animados -->
+            <div class="section-svg-decorator bottom-left animate-on-scroll" style="transform: rotate(45deg); opacity: 0.05;">
+                <svg width="150" height="150" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 50C0 22.3858 22.3858 0 50 0V0C77.6142 0 100 22.3858 100 50V50C100 77.6142 77.6142 100 50 100V100C22.3858 100 0 77.6142 0 50V50Z" fill="var(--primary-orange)"/>
+                </svg>
+            </div>
+            <div class="section-svg-decorator top-right animate-on-scroll" style="opacity: 0.03; transform: translateX(30px) translateY(-30px) rotate(-30deg);">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.5" d="M100 0L122.451 61.8034H180.902L139.226 100L150 120L100 150L50 120L60.7745 100L19.0983 61.8034H77.549L100 0Z" fill="var(--primary-orange)"/>
+                </svg>
+            </div>
 
-                    <!-- Componentes del sistema -->
-                    <div class="system-components">
-                        <div class="component">
-                            <span class="component-icon">📋</span>
-                            <h3>Diagrama Estratégico</h3>
-                            <p>Las 5 etapas del flujo de automatización</p>
+            <div class="container text-center">
+                <!-- Hero badge animado -->
+                <div class="hero-badge animate-on-scroll">
+                    <span class="badge-icon">🚀</span>
+                    <span>Sistema desarrollado por Math AI Agency</span>
+                </div>
+                
+                <!-- Título principal -->
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="title-line">El Sistema Completo para</span>
+                    <span class="title-line">
+                        <span id="dynamic-word">Responder a Leads</span> 
+                        <span class="text-orange">Automáticamente</span>
+                    </span>
+                    <span class="title-line">en Menos de 2 Minutos</span>
+                </h1>
+                
+                <!-- Subtítulo -->
+                <p class="animate-on-scroll hero-subtitle">
+                    Descarga gratis el sistema "FLUJO CALOR": Plantilla N8N + Prompts de IA para automatizar completamente tu respuesta a leads y multiplicar tus conversiones.
+                </p>
+
+                <!-- Trust indicators -->
+                <div class="hero-trust-indicators animate-on-scroll">
+                    <span class="trust-item">✓ Plantilla N8N lista para usar</span>
+                    <span class="trust-item">✓ 3 Prompts de IA optimizados</span>
+                    <span class="trust-item">✓ Descarga inmediata y gratuita</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de componentes del sistema -->
+        <section id="componentes" class="components-section section-with-svg-bg">
+            <div class="section-svg-decorator top-left animate-on-scroll">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 0L61.226 23.4315L85.3553 29.2893L70.1777 48.5685L76.5685 72.6447L50 63L23.4315 72.6447L29.8223 48.5685L14.6447 29.2893L38.774 23.4315L50 0Z" fill="var(--primary-orange)"/>
+                </svg>
+            </div>
+            
+            <div class="container">
+                <h2 class="text-center animate-on-scroll">¿Qué incluye el <span class="text-orange">Sistema FLUJO CALOR</span>?</h2>
+                <p class="section-subtitle text-center animate-on-scroll">Todo lo que necesitas para automatizar tu respuesta a leads de manera profesional.</p>
+                
+                <div class="cards-grid">
+                    <div class="card card-solution animate-on-scroll">
+                        <div class="solution-icon">📋</div>
+                        <h4>Diagrama Estratégico Completo</h4>
+                        <p>Visualización detallada de las 5 etapas del flujo de automatización: desde la captura hasta la conversión de leads.</p>
+                    </div>
+                    <div class="card card-solution animate-on-scroll">
+                        <div class="solution-icon">⚙️</div>
+                        <h4>Plantilla N8N Lista para Usar</h4>
+                        <p>Archivo .json listo para importar en tu instancia de N8N con todos los nodos pre-configurados y conectados.</p>
+                    </div>
+                    <div class="card card-solution animate-on-scroll">
+                        <div class="solution-icon">🧠</div>
+                        <h4>3 Prompts de IA Optimizados</h4>
+                        <p>Prompts profesionales para cualificación automática, detección de urgencia y análisis de encaje con tu ICP.</p>
+                    </div>
+                    <div class="card card-solution animate-on-scroll">
+                        <div class="solution-icon">📝</div>
+                        <h4>Checklist de Implementación</h4>
+                        <p>Guía paso a paso para configurar, personalizar y poner en funcionamiento tu sistema de automatización.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección del formulario principal -->
+        <section id="formulario" class="cta-section">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll">¿Listo para <span class="text-orange">Automatizar</span> tu Respuesta a Leads?</h2>
+                <p class="animate-on-scroll">Descarga inmediatamente el sistema completo FLUJO CALOR en tu email. Sin spam, solo valor.</p>
+                
+                <!-- Formulario mejorado -->
+                <div class="lead-form-container animate-on-scroll">
+                    <div class="form-wrapper">
+                        <div class="form-benefits">
+                            <h3>Recibes inmediatamente:</h3>
+                            <ul class="benefits-list">
+                                <li>✅ <strong>Guía completa</strong> del sistema FLUJO CALOR (PDF)</li>
+                                <li>✅ <strong>Plantilla N8N</strong> lista para importar (.json)</li>
+                                <li>✅ <strong>3 Prompts de IA</strong> copy-paste optimizados</li>
+                                <li>✅ <strong>Checklist</strong> de implementación paso a paso</li>
+                            </ul>
                         </div>
-                        <div class="component">
-                            <span class="component-icon">⚙️</span>
-                            <h3>Plantilla N8N</h3>
-                            <p>Archivo .json listo para importar</p>
-                        </div>
-                        <div class="component">
-                            <span class="component-icon">🧠</span>
-                            <h3>Prompts de IA</h3>
-                            <p>3 prompts optimizados para cualificación</p>
+                        
+                        <div class="form-section">
+                            <form id="leadMagnetForm" class="professional-form">
+                                <div class="form-header">
+                                    <h3>Acceso Inmediato</h3>
+                                    <p>Sin compromiso • Solo tu email</p>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <input type="text" id="name" name="name" required placeholder="Tu nombre completo" class="form-input">
+                                    <span class="input-line"></span>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <input type="email" id="email" name="email" required placeholder="tu@empresa.com" class="form-input">
+                                    <span class="input-line"></span>
+                                </div>
+
+                                <div class="btn-container">
+                                    <div class="btn-bg"></div>
+                                    <button type="submit" class="btn-consulta" id="submitBtn">
+                                        <span class="btn-text">Descargar Sistema Completo</span>
+                                        <span class="btn-loading" style="display: none;">Enviando...</span>
+                                        <svg class="cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <p class="privacy-note">
+                                    🔒 Tu información está segura. Solo la usamos para enviarte el sistema FLUJO CALOR.
+                                </p>
+                            </form>
+
+                            <!-- Success State mejorado -->
+                            <div id="successState" class="success-state" style="display: none;">
+                                <div class="success-animation">
+                                    <div class="success-icon">✅</div>
+                                    <div class="success-particles"></div>
+                                </div>
+                                <h3>¡Sistema FLUJO CALOR Enviado!</h3>
+                                <p>Revisa tu email ahora. El sistema completo está en camino a tu bandeja de entrada.</p>
+                                <div class="success-actions">
+                                    <a href="/" class="secondary-cta">← Volver a Math AI</a>
+                                    <a href="#" class="next-step-cta">🗓️ ¿Necesitas ayuda implementándolo?</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Formulario principal -->
-        <section class="lead-form-section">
+        <!-- Sección de valor adicional -->
+        <section id="valor" class="value-section section-with-svg-bg">
+            <div class="section-svg-decorator bottom-right animate-on-scroll">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" stroke="var(--primary-orange)" stroke-width="3"/>
+                    <circle cx="60" cy="60" r="30" fill="var(--primary-orange)"/>
+                </svg>
+            </div>
+            
             <div class="container">
-                <div class="form-container">
-                    <div class="form-content">
-                        <h2>Accede al Sistema Completo</h2>
-                        <p>Recibe inmediatamente en tu email:</p>
+                <h2 class="text-center animate-on-scroll">Más Allá del <span class="text-orange">Sistema Gratuito</span></h2>
+                <p class="section-subtitle text-center animate-on-scroll">¿Necesitas implementación profesional? Te ayudamos a llevarlo al siguiente nivel.</p>
+                
+                <div class="value-proposition animate-on-scroll">
+                    <div class="value-content">
+                        <h3>¿Prefieres que lo Implementemos por Ti?</h3>
+                        <p>Si quieres el sistema FLUJO CALOR completamente implementado, personalizado e integrado con tus herramientas específicas, podemos hacerlo por ti.</p>
                         
-                        <ul class="benefits-simple">
-                            <li>✓ Guía completa del sistema FLUJO CALOR</li>
-                            <li>✓ Plantilla N8N lista para usar</li>
-                            <li>✓ 3 prompts de IA optimizados</li>
-                            <li>✓ Checklist de implementación</li>
-                        </ul>
-
-                        <form id="leadMagnetForm" class="minimal-form">
-                            <div class="input-group">
-                                <input type="text" id="name" name="name" required placeholder="Tu nombre completo" class="form-input">
+                        <div class="implementation-benefits">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🎯</span>
+                                <div>
+                                    <h4>Personalización Total</h4>
+                                    <p>Adaptamos el flujo a tu negocio específico e ICP</p>
+                                </div>
                             </div>
-                            
-                            <div class="input-group">
-                                <input type="email" id="email" name="email" required placeholder="tu@empresa.com" class="form-input">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🔗</span>
+                                <div>
+                                    <h4>Integración Completa</h4>
+                                    <p>Conectamos con tu CRM, Slack, email y herramientas actuales</p>
+                                </div>
                             </div>
-
-                            <button type="submit" class="submit-btn" id="submitBtn">
-                                <span class="btn-text">Descargar Sistema Completo</span>
-                                <span class="btn-loading" style="display: none;">Enviando...</span>
-                            </button>
-                        </form>
-
-                        <!-- Success State -->
-                        <div id="successState" class="success-state" style="display: none;">
-                            <div class="success-content">
-                                <div class="success-icon">✅</div>
-                                <h3>¡Sistema Enviado!</h3>
-                                <p>Revisa tu email. El sistema FLUJO CALOR está en camino.</p>
-                                <a href="/" class="back-link">← Volver a Math AI</a>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🚀</span>
+                                <div>
+                                    <h4>Listo en 1 Semana</h4>
+                                    <p>Sistema funcionando sin que toques una línea de código</p>
+                                </div>
                             </div>
+                        </div>
+                        
+                        <div class="btn-container implementation-cta">
+                            <div class="btn-bg"></div>
+                            <a class="btn-consulta cal-popup-trigger"
+                               data-cal-link="math-ai/reunion-inicial"
+                               data-cal-namespace="reunion-inicial"
+                               data-cal-config='{"layout":"month_view"}'>
+                                Agendar Diagnóstico de Implementación
+                                <svg class="cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -120,6 +258,27 @@
         </section>
     </main>
 
+    <!-- Footer simplificado -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="Math AI Logo">
+                    <span>Math AI</span>
+                </div>
+                <p>Automatización inteligente para empresas que crecen.</p>
+            </div>
+            <div class="footer-links">
+                <p>© 2025 Math AI Agency. Todos los derechos reservados.</p>
+                <a href="/">Inicio</a>
+                <a href="#privacy">Privacidad</a>
+                <a href="mailto:contacto@math-aiagency.com">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
     <script src="lead-magnet.js"></script>
 </body>
 </html> 

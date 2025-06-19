@@ -6,7 +6,7 @@
     <title>FLUJO CALOR - Tu Sistema Completo de Automatización | Math AI</title>
     <meta name="description" content="Acceso completo al sistema FLUJO CALOR: plantilla N8N, prompts de IA, diagramas y checklist de implementación.">
     
-    <!-- Security Headers: Content Security Policy -->
+    <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
                    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://app.cal.com https://cal.com; 
@@ -18,20 +18,17 @@
                    object-src 'none'; 
                    base-uri 'self';">
     
-    <!-- Additional Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     
-    <!-- Open Graph / Social Media Meta Tags -->
+    <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="FLUJO CALOR - Tu Sistema Completo de Automatización">
     <meta property="og:description" content="Acceso completo al sistema FLUJO CALOR: plantilla N8N, prompts de IA, diagramas y checklist de implementación.">
     <meta property="og:image" content="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png">
     <meta property="og:url" content="https://mathai.agency/flujo-calor-contenido.html">
-    <meta property="og:site_name" content="Math AI Agency">
-    <meta property="og:locale" content="es_ES">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -39,12 +36,12 @@
     <meta name="twitter:description" content="Plantilla N8N, prompts de IA, diagramas y checklist completo">
     <meta name="twitter:image" content="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png">
     
-    <!-- Additional SEO Meta Tags -->
+    <!-- SEO -->
     <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#0a0f1f">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://mathai.agency/flujo-calor-contenido.html">
     
-    <!-- Google Analytics 4 -->
+    <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWV7YB90M5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -53,72 +50,102 @@
       gtag('config', 'G-LWV7YB90M5');
     </script>
     
-    <!-- Critical CSS Inline -->
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{--bg-color:#0a0f1f;--primary-orange:#FF6B00;--text-light:#FFFFFF;--text-medium:#adb5bd;--card-bg:#121a30;--border-color:#2a3652;--font-primary:'Space Grotesk',sans-serif;--font-secondary:'Work Sans',sans-serif}
-        html{scroll-behavior:smooth}
-        body{font-family:var(--font-secondary);background-color:var(--bg-color);color:var(--text-light);line-height:1.7;overflow-x:hidden}
-        .container{width:90%;max-width:1100px;margin:0 auto}
-        h1,h2,h3,h4,h5,h6{font-family:var(--font-primary);font-weight:600;color:var(--text-light);margin-bottom:1rem}
-        h1{font-size:2.8rem;line-height:1.2}h2{font-size:2.2rem;line-height:1.3}h3{font-size:1.8rem}h4{font-size:1.3rem}
-        p{margin-bottom:1rem;color:var(--text-medium);font-weight:400}
-        a{color:var(--primary-orange);text-decoration:none;transition:color 0.3s ease}
-        .text-center{text-align:center}
-        .welcome-header{background:linear-gradient(135deg,var(--card-bg),rgba(18,26,48,0.8));padding:2rem 0;border-bottom:1px solid var(--border-color)}
-        .welcome-title{color:var(--text-light);font-size:2.5rem;margin-bottom:0.5rem}
-        .welcome-subtitle{color:var(--text-medium);font-size:1.2rem;margin-bottom:1rem}
-        @media (max-width:768px){h1{font-size:2rem}h2{font-size:1.8rem}.welcome-title{font-size:2rem}}
-    </style>
-    
-    <!-- Font preconnects -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- DISEÑO PROFESIONAL DESDE CERO - FONDO BLANCO -->
+    <!-- CSS PROFESIONAL OPTIMIZADO -->
     <style>
-        /* ============= NUEVA PALETA PROFESIONAL ============= */
+        /* ============= RESET Y VARIABLES ============= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         :root {
-            /* FONDO BLANCO COMO SOLICITADO */
+            /* PALETA FONDO BLANCO */
             --bg-primary: #ffffff;
             --bg-secondary: #f8fafc;
             --bg-accent: #f1f5f9;
             
-            /* TEXTOS QUE SE VEN SOBRE FONDO BLANCO */
+            /* TEXTOS SOBRE FONDO BLANCO */
             --text-primary: #1e293b;
             --text-secondary: #475569;
             --text-muted: #64748b;
             
-            /* COLORES DE MARCA */
+            /* MARCA */
             --orange-primary: #FF6B00;
-            --orange-hot: #FF4500;
             --orange-gradient: linear-gradient(135deg, #FF6B00 0%, #FF4500 100%);
             
-            /* BORDES Y SOMBRAS PARA FONDO BLANCO */
+            /* BORDES Y SOMBRAS */
             --border-light: #e2e8f0;
             --border-medium: #cbd5e1;
             --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
             
-            /* ESPACIADO COMPACTO */
+            /* ESPACIADO */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
             --space-lg: 2rem;
             --space-xl: 3rem;
+            
+            /* TIPOGRAFÍA */
+            --font-primary: 'Space Grotesk', sans-serif;
+            --font-secondary: 'Work Sans', sans-serif;
+            --font-mono: 'Fira Code', monospace;
         }
 
-        /* ============= PÁGINA MINIMALISTA PROFESIONAL ============= */
-        .contenido-page {
+        /* ============= BASE ============= */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
             background: var(--bg-primary);
-            min-height: 100vh;
             color: var(--text-primary);
-            font-family: 'Work Sans', sans-serif;
             line-height: 1.6;
+            min-height: 100vh;
         }
-
-        /* Header limpio y centrado */
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        /* ============= TIPOGRAFÍA ============= */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+        h4 { font-size: 1.1rem; }
+        
+        p {
+            margin-bottom: var(--space-sm);
+            color: var(--text-secondary);
+        }
+        
+        a {
+            color: var(--orange-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* ============= HEADER ============= */
         .welcome-header {
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border-light);
@@ -127,16 +154,12 @@
         }
 
         .welcome-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 700;
-            color: var(--text-primary);
             margin-bottom: var(--space-sm);
         }
 
         .welcome-subtitle {
             font-size: 1.2rem;
-            color: var(--text-secondary);
             margin-bottom: var(--space-lg);
             font-weight: 400;
         }
@@ -152,20 +175,10 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* ============= NAVEGACIÓN MINIMALISTA ============= */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-        }
-
+        /* ============= NAVEGACIÓN ============= */
         .nav-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            color: var(--text-primary);
             text-align: center;
             margin: var(--space-xl) 0 var(--space-lg) 0;
-            font-weight: 600;
         }
 
         .nav-grid {
@@ -207,32 +220,23 @@
         }
 
         .nav-info h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--text-primary);
             font-size: 1rem;
             margin-bottom: 0.2rem;
-            font-weight: 600;
         }
 
         .nav-info p {
-            color: var(--text-secondary);
             font-size: 0.85rem;
             margin: 0;
             line-height: 1.4;
         }
 
-        /* ============= SECCIONES MINIMALISTAS ============= */
+        /* ============= SECCIONES ============= */
         .content-section {
             margin: var(--space-xl) 0;
-            padding: 0;
         }
 
         .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            color: var(--text-primary);
             margin-bottom: var(--space-lg);
-            font-weight: 600;
             text-align: center;
             display: flex;
             align-items: center;
@@ -246,14 +250,9 @@
         }
 
         .section-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-lg);
-            line-height: 1.6;
             text-align: center;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto var(--space-lg) auto;
         }
 
         .section-description strong {
@@ -261,36 +260,26 @@
             font-weight: 600;
         }
 
-        /* ============= TIMELINE MINIMALISTA Y COMPACTA ============= */
+        /* ============= TIMELINE ============= */
         .etapas-container {
             background: var(--bg-secondary);
             border: 1px solid var(--border-light);
             border-radius: 12px;
             padding: var(--space-lg);
-            margin: var(--space-lg) 0;
+            margin: var(--space-lg) auto;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .etapas-header {
             text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
-            color: var(--text-primary);
             margin-bottom: var(--space-sm);
-            font-weight: 600;
         }
 
         .etapas-subtitle {
             text-align: center;
-            color: var(--text-secondary);
-            font-size: 1rem;
             margin-bottom: var(--space-lg);
-            font-weight: 400;
         }
 
-        /* TIMELINE HORIZONTAL COMPACTA */
         .etapas-timeline-clean {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -304,7 +293,6 @@
             border-radius: 8px;
             padding: var(--space-md);
             text-align: center;
-            position: relative;
             transition: all 0.2s ease;
         }
 
@@ -322,8 +310,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
             font-weight: 600;
             margin: 0 auto var(--space-sm) auto;
         }
@@ -340,18 +326,13 @@
         }
 
         .etapa-titulo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--text-primary);
             margin-bottom: var(--space-xs);
-            line-height: 1.2;
         }
 
         .etapa-info {
             font-size: 0.75rem;
             color: var(--text-muted);
-            line-height: 1.3;
         }
 
         .etapa-info p {
@@ -360,12 +341,9 @@
 
         .etapa-info strong {
             color: var(--text-secondary);
-            font-weight: 500;
         }
 
-        /* ============= ELEMENTOS MINIMALISTAS ============= */
-        
-        /* Prompts compactos */
+        /* ============= COMPONENTES ============= */
         .prompt-container {
             background: var(--bg-secondary);
             border: 1px solid var(--border-light);
@@ -381,28 +359,21 @@
         }
 
         .prompt-title {
-            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.1rem;
-            color: var(--text-primary);
             margin-bottom: var(--space-xs);
             font-weight: 600;
         }
 
         .prompt-description {
-            color: var(--text-secondary);
             font-size: 0.9rem;
             margin: 0;
-            line-height: 1.4;
         }
 
         .code-block {
             position: relative;
-            background: #f8fafc;
-            border: 1px solid var(--border-medium);
-            font-family: 'Fira Code', monospace;
+            background: var(--bg-accent);
+            font-family: var(--font-mono);
             font-size: 0.8rem;
-            line-height: 1.4;
-            color: var(--text-primary);
             padding: var(--space-md);
             overflow-x: auto;
         }
@@ -426,7 +397,6 @@
             transform: translateY(-1px);
         }
 
-        /* Areas de descarga */
         .download-area, .highlight-box {
             background: var(--bg-accent);
             border: 1px solid var(--border-light);
@@ -436,18 +406,14 @@
         }
 
         .download-title {
-            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.1rem;
-            color: var(--text-primary);
             margin-bottom: var(--space-xs);
             font-weight: 600;
         }
 
         .download-description {
-            color: var(--text-secondary);
             margin-bottom: var(--space-md);
             font-size: 0.9rem;
-            line-height: 1.4;
         }
 
         .download-btn {
@@ -469,7 +435,6 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* Checklist minimalista */
         .checklist {
             margin: var(--space-md) 0;
         }
@@ -492,7 +457,6 @@
         }
 
         .checklist-checkbox {
-            font-size: 1rem;
             color: var(--orange-primary);
             font-weight: bold;
             cursor: pointer;
@@ -501,7 +465,6 @@
         }
 
         .checklist-text strong {
-            color: var(--text-primary);
             font-size: 0.9rem;
             display: block;
             margin-bottom: 0.2rem;
@@ -509,12 +472,9 @@
         }
 
         .checklist-text small {
-            color: var(--text-secondary);
             font-size: 0.8rem;
-            line-height: 1.3;
         }
 
-        /* CTA final */
         .next-steps {
             background: var(--bg-secondary);
             border: 1px solid var(--border-light);
@@ -524,27 +484,9 @@
             margin: var(--space-xl) 0;
         }
 
-        .next-steps h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
-            color: var(--text-primary);
-            margin-bottom: var(--space-md);
-            font-weight: 600;
-        }
-
         .next-steps p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-md);
-            line-height: 1.5;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .next-steps strong {
-            color: var(--text-primary);
-            font-weight: 600;
+            margin: 0 auto var(--space-md) auto;
         }
 
         .cta-implementation {
@@ -556,7 +498,6 @@
             padding: var(--space-md) var(--space-lg);
             border-radius: 8px;
             text-decoration: none;
-            font-size: 1rem;
             font-weight: 600;
             transition: all 0.2s ease;
             margin: var(--space-md) 0;
@@ -567,7 +508,6 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* Footer minimalista */
         .simple-footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-light);
@@ -582,42 +522,20 @@
             font-size: 0.9rem;
         }
 
-        .simple-footer a {
-            color: var(--text-secondary);
-            transition: color 0.2s ease;
-        }
-
-        .simple-footer a:hover {
-            color: var(--orange-primary);
-        }
-
-        /* Títulos de sección */
-        .content-section h3 {
-            color: var(--text-primary);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            margin: var(--space-lg) 0 var(--space-md) 0;
-            font-weight: 600;
-        }
-
-        /* Listas simples */
         .instruction-list {
-            color: var(--text-secondary);
             margin-left: var(--space-md);
         }
 
         .instruction-list li {
             margin-bottom: var(--space-sm);
-            line-height: 1.4;
             font-size: 0.9rem;
         }
 
         .instruction-list strong {
-            color: var(--text-primary);
             font-weight: 600;
         }
 
-        /* Responsive */
+        /* ============= RESPONSIVE ============= */
         @media (max-width: 768px) {
             .container {
                 padding: 0 var(--space-md);
@@ -629,348 +547,14 @@
             
             .etapas-timeline-clean {
                 grid-template-columns: 1fr;
-                gap: var(--space-sm);
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
             }
         }
-
-         /* ======= PROMPTS Y RESTO DEL CONTENIDO PROFESIONAL ======= */
-         
-         /* Prompts profesionales */
-         .prompt-container {
-             background: var(--bg-primary);
-             border: 1px solid var(--border-secondary);
-             border-radius: 16px;
-             margin: var(--space-xl) 0;
-             overflow: hidden;
-             box-shadow: var(--shadow-md);
-         }
-
-         .prompt-header {
-             background: var(--bg-accent);
-             padding: var(--space-lg);
-             border-bottom: 1px solid var(--border-secondary);
-         }
-
-         .prompt-title {
-             font-family: 'Space Grotesk', sans-serif;
-             font-size: 1.3rem;
-             color: var(--text-primary);
-             margin-bottom: var(--space-sm);
-             font-weight: 600;
-         }
-
-         .prompt-description {
-             color: var(--text-secondary); /* CONTRASTE MEJORADO */
-             font-size: 1rem;
-             margin: 0;
-             line-height: 1.6;
-         }
-
-         .code-block {
-             position: relative;
-             background: #1e293b;
-             font-family: 'Fira Code', monospace;
-             font-size: 0.9rem;
-             line-height: 1.6;
-             color: #e2e8f0;
-             padding: var(--space-lg);
-             overflow-x: auto;
-             border-top: 1px solid var(--border-secondary);
-         }
-
-         .copy-btn {
-             position: absolute;
-             top: var(--space-sm);
-             right: var(--space-sm);
-             background: var(--orange-gradient);
-             color: white;
-             border: none;
-             padding: 0.5rem 1rem;
-             border-radius: 8px;
-             font-size: 0.85rem;
-             font-weight: 600;
-             cursor: pointer;
-             transition: all 0.3s ease;
-             z-index: 2;
-         }
-
-         .copy-btn:hover {
-             transform: translateY(-2px);
-             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-         }
-
-         /* Download areas */
-         .download-area, .highlight-box {
-             background: var(--bg-accent);
-             border: 1px solid var(--border-secondary);
-             border-radius: 16px;
-             padding: var(--space-lg);
-             margin: var(--space-xl) 0;
-         }
-
-         .download-title {
-             font-family: 'Space Grotesk', sans-serif;
-             font-size: 1.3rem;
-             color: var(--text-primary);
-             margin-bottom: var(--space-sm);
-             font-weight: 600;
-         }
-
-         .download-description {
-             color: var(--text-secondary); /* CONTRASTE MEJORADO */
-             margin-bottom: var(--space-lg);
-             font-size: 1rem;
-             line-height: 1.6;
-         }
-
-         .download-btn {
-             display: inline-flex;
-             align-items: center;
-             gap: var(--space-sm);
-             background: var(--orange-gradient);
-             color: white;
-             padding: var(--space-md) var(--space-lg);
-             border-radius: 12px;
-             text-decoration: none;
-             font-weight: 600;
-             transition: all 0.3s ease;
-             box-shadow: var(--shadow-md);
-         }
-
-         .download-btn:hover {
-             transform: translateY(-3px);
-             box-shadow: var(--shadow-lg);
-         }
-
-         /* Listas */
-         .instruction-list {
-             color: var(--text-secondary);
-             margin-left: var(--space-lg);
-         }
-
-         .instruction-list li {
-             margin-bottom: var(--space-sm);
-             line-height: 1.6;
-         }
-
-         .instruction-list strong {
-             color: var(--text-primary); /* CONTRASTE PERFECTO */
-             font-weight: 600;
-         }
-
-         /* Checklist */
-         .checklist {
-             margin: var(--space-lg) 0;
-         }
-
-         .checklist-item {
-             display: flex;
-             align-items: flex-start;
-             gap: var(--space-md);
-             background: var(--bg-primary);
-             border: 1px solid var(--border-primary);
-             border-radius: 12px;
-             padding: var(--space-md);
-             margin-bottom: var(--space-md);
-             transition: all 0.3s ease;
-         }
-
-         .checklist-item:hover {
-             border-color: var(--orange-primary);
-             transform: translateX(4px);
-         }
-
-         .checklist-checkbox {
-             font-size: 1.2rem;
-             color: var(--orange-primary);
-             font-weight: bold;
-             cursor: pointer;
-             user-select: none;
-             transition: all 0.2s ease;
-         }
-
-         .checklist-checkbox:hover {
-             transform: scale(1.2);
-         }
-
-         .checklist-text strong {
-             color: var(--text-primary); /* CONTRASTE PERFECTO */
-             font-size: 1rem;
-             display: block;
-             margin-bottom: 0.3rem;
-             font-weight: 600;
-         }
-
-         .checklist-text small {
-             color: var(--text-secondary); /* CONTRASTE MEJORADO */
-             font-size: 0.9rem;
-             line-height: 1.5;
-         }
-
-         /* CTA final */
-         .next-steps {
-             background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
-             border: 2px solid var(--border-secondary);
-             border-radius: 20px;
-             padding: var(--space-2xl);
-             text-align: center;
-             margin: var(--space-2xl) 0;
-             position: relative;
-             overflow: hidden;
-         }
-
-         .next-steps::before {
-             content: '';
-             position: absolute;
-             top: 0; left: 0; right: 0; bottom: 0;
-             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6B00' fill-opacity='0.02'%3E%3Cpath d='M12 6h36v36H12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-             pointer-events: none;
-         }
-
-         .next-steps h2 {
-             font-family: 'Space Grotesk', sans-serif;
-             font-size: clamp(1.8rem, 4vw, 2.2rem);
-             color: var(--text-primary);
-             margin-bottom: var(--space-lg);
-             font-weight: 700;
-             position: relative;
-             z-index: 2;
-         }
-
-         .next-steps p {
-             font-size: 1.1rem;
-             color: var(--text-secondary); /* CONTRASTE MEJORADO */
-             margin-bottom: var(--space-lg);
-             line-height: 1.7;
-             max-width: 800px;
-             margin-left: auto;
-             margin-right: auto;
-             position: relative;
-             z-index: 2;
-         }
-
-         .next-steps strong {
-             color: var(--text-primary); /* CONTRASTE PERFECTO */
-             font-weight: 600;
-         }
-
-         .cta-implementation {
-             display: inline-flex;
-             align-items: center;
-             gap: var(--space-sm);
-             background: var(--orange-gradient);
-             color: white;
-             padding: var(--space-md) var(--space-xl);
-             border-radius: 12px;
-             text-decoration: none;
-             font-size: 1.1rem;
-             font-weight: 600;
-             transition: all 0.3s ease;
-             box-shadow: var(--shadow-lg);
-             margin: var(--space-lg) 0;
-             position: relative;
-             z-index: 2;
-         }
-
-         .cta-implementation:hover {
-             transform: translateY(-3px);
-             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-         }
-
-         /* Footer */
-         .simple-footer {
-             background: var(--bg-primary);
-             border-top: 1px solid var(--border-primary);
-             padding: var(--space-xl) 0;
-             text-align: center;
-             margin-top: var(--space-2xl);
-         }
-
-         .simple-footer p {
-             color: var(--text-muted);
-             margin: 0;
-         }
-
-         .simple-footer a {
-             color: var(--text-secondary);
-             transition: color 0.3s ease;
-         }
-
-         .simple-footer a:hover {
-             color: var(--orange-primary);
-         }
-
-         /* Títulos de sección con iconos */
-         .content-section h3 {
-             color: var(--text-primary); /* CONTRASTE PERFECTO */
-             font-family: 'Space Grotesk', sans-serif;
-             font-size: 1.4rem;
-             margin: var(--space-xl) 0 var(--space-lg) 0;
-             font-weight: 600;
-             display: flex;
-             align-items: center;
-             gap: var(--space-sm);
-         }
-
-         /* Texto general mejorado */
-         .content-section p {
-             color: var(--text-secondary); /* CONTRASTE MEJORADO */
-             font-size: 1rem;
-             line-height: 1.7;
-             margin-bottom: var(--space-md);
-         }
-
-         .content-section p strong {
-             color: var(--text-primary); /* CONTRASTE PERFECTO */
-             font-weight: 600;
-         }
-
-         /* Highlighting de información importante */
-         .highlight-box h4 {
-             color: var(--text-primary);
-             font-family: 'Space Grotesk', sans-serif;
-             font-size: 1.2rem;
-             margin-bottom: var(--space-sm);
-             font-weight: 600;
-         }
-
-         .highlight-box p, .highlight-box ul {
-             color: var(--text-secondary);
-             font-size: 1rem;
-             line-height: 1.6;
-         }
-
-         .highlight-box ul {
-             margin-left: var(--space-lg);
-         }
-
-         .highlight-box li {
-             margin-bottom: 0.8rem;
-         }
-
-         .highlight-box strong {
-             color: var(--text-primary);
-             font-weight: 600;
-         }
-     </style>
-     
-     <!-- Async load stylesheets -->
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="lead-magnet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="lead-magnet.css">
-    </noscript>
+    </style>
     
-    <!-- Async load fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;500&family=Fira+Code:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;500&family=Fira+Code:wght@400;500&display=swap"></noscript>
     <link rel="icon" href="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" type="image/png">
 </head>
+
+<body>
 <body class="contenido-page">
     <!-- Header minimalista -->
     <header class="welcome-header">
@@ -986,39 +570,39 @@
             
             <!-- Navegación compacta -->
             <h2 class="nav-title">📋 Contenido del Flujo</h2>
-            <div class="nav-grid">
+                <div class="nav-grid">
                 <a href="#timeline" class="nav-item">
                     <div class="nav-icon">⚡</div>
-                    <div class="nav-info">
+                        <div class="nav-info">
                         <h3>Timeline</h3>
                         <p>5 etapas compactas</p>
-                    </div>
-                </a>
-                
-                <a href="#prompts" class="nav-item">
-                    <div class="nav-icon">🤖</div>
-                    <div class="nav-info">
+                        </div>
+                    </a>
+                    
+                    <a href="#prompts" class="nav-item">
+                        <div class="nav-icon">🤖</div>
+                        <div class="nav-info">
                         <h3>Prompts IA</h3>
                         <p>3 prompts listos</p>
-                    </div>
-                </a>
-                
-                <a href="#plantilla" class="nav-item">
-                    <div class="nav-icon">⚙️</div>
-                    <div class="nav-info">
+                        </div>
+                    </a>
+                    
+                    <a href="#plantilla" class="nav-item">
+                        <div class="nav-icon">⚙️</div>
+                        <div class="nav-info">
                         <h3>Plantilla N8N</h3>
                         <p>Archivo completo</p>
-                    </div>
-                </a>
-                
+                        </div>
+                    </a>
+                    
                 <a href="#checklist" class="nav-item">
-                    <div class="nav-icon">✅</div>
-                    <div class="nav-info">
+                        <div class="nav-icon">✅</div>
+                        <div class="nav-info">
                         <h3>Checklist</h3>
                         <p>Pasos a seguir</p>
-                    </div>
-                </a>
-            </div>
+                        </div>
+                    </a>
+                </div>
 
             <!-- Timeline compacta -->
             <section id="timeline" class="content-section">
@@ -1040,21 +624,21 @@
                         <!-- Etapa 1 -->
                         <div class="etapa-item">
                             <div class="etapa-number">1</div>
-                            <div class="etapa-time">&lt;30s</div>
+                                <div class="etapa-time">&lt;30s</div>
                             <h4 class="etapa-titulo">Captura</h4>
-                            <div class="etapa-info">
-                                <p><strong>Trigger:</strong> Webhook/Cal.com/Formulario web</p>
-                                <p><strong>Velocidad:</strong> &lt; 30 segundos desde captura</p>
-                                <p><strong>Objetivo:</strong> Activación instantánea del flujo</p>
+                                <div class="etapa-info">
+                                    <p><strong>Trigger:</strong> Webhook/Cal.com/Formulario web</p>
+                                    <p><strong>Velocidad:</strong> &lt; 30 segundos desde captura</p>
+                                    <p><strong>Objetivo:</strong> Activación instantánea del flujo</p>
                             </div>
                         </div>
                         
                         <!-- Etapa 2 -->
                         <div class="etapa-item">
                             <div class="etapa-number">2</div>
-                            <div class="etapa-time">~2min</div>
+                                <div class="etapa-time">~2min</div>
                             <h4 class="etapa-titulo">Análisis IA</h4>
-                            <div class="etapa-info">
+                                <div class="etapa-info">
                                 <p><strong>Proceso:</strong> Análisis inteligente del lead</p>
                                 <p><strong>Output:</strong> Puntuación y categorización</p>
                             </div>
@@ -1063,9 +647,9 @@
                         <!-- Etapa 3 -->
                         <div class="etapa-item">
                             <div class="etapa-number">3</div>
-                            <div class="etapa-time">~30s</div>
+                                <div class="etapa-time">~30s</div>
                             <h4 class="etapa-titulo">Decisión</h4>
-                            <div class="etapa-info">
+                                <div class="etapa-info">
                                 <p><strong>Logic:</strong> Segmentación automática</p>
                                 <p><strong>Caminos:</strong> Caliente | Tibio | Frío</p>
                             </div>
@@ -1074,9 +658,9 @@
                         <!-- Etapa 4 -->
                         <div class="etapa-item">
                             <div class="etapa-number">4</div>
-                            <div class="etapa-time">~1min</div>
+                                <div class="etapa-time">~1min</div>
                             <h4 class="etapa-titulo">Acción</h4>
-                            <div class="etapa-info">
+                                <div class="etapa-info">
                                 <p><strong>CRM:</strong> Actualización automática</p>
                                 <p><strong>Notificación:</strong> Alerta al equipo</p>
                             </div>
@@ -1085,9 +669,9 @@
                         <!-- Etapa 5 -->
                         <div class="etapa-item">
                             <div class="etapa-number">5</div>
-                            <div class="etapa-time">24-48h</div>
+                                <div class="etapa-time">24-48h</div>
                             <h4 class="etapa-titulo">Seguimiento</h4>
-                            <div class="etapa-info">
+                                <div class="etapa-info">
                                 <p><strong>Recordatorios:</strong> Citas agendadas</p>
                                 <p><strong>Nurturing:</strong> Leads no listos</p>
                             </div>
@@ -1126,10 +710,10 @@ Analiza la información del lead y responde con JSON:
 4. Resumen de 20 palabras
 
 ## INFORMACIÓN DEL LEAD:
-- Nombre: {{$json.body.payload.attendee.name}}
-- Email: {{$json.body.payload.attendee.email}}
-- Empresa: {{$json.body.payload.responses.company.value}}
-- Cargo: {{$json.body.payload.responses.role.value}}
+    - Nombre: {{$json.body.payload.attendee.name}}
+    - Email: {{$json.body.payload.attendee.email}}
+    - Empresa: {{$json.body.payload.responses.company.value}}
+    - Cargo: {{$json.body.payload.responses.role.value}}
 - Necesidad: {{$json.body.payload.responses.need.value}}
 
 ## OUTPUT:
@@ -1183,14 +767,14 @@ Genera un email de respuesta automática personalizado basado en la información
 
 ## INFORMACIÓN:
 - Nombre: {{$json.body.payload.attendee.name}}
-- Empresa: {{$json.body.payload.responses.company.value}}
+    - Empresa: {{$json.body.payload.responses.company.value}}
 - Necesidad: {{$json.body.payload.responses.need.value}}
 
 ## FORMATO:
 Asunto: [Asunto personalizado]
 ---
 [Email personalizado de 100-150 palabras]</div>
-                    </div>
+                </div>
             </section>
 
             <!-- Plantilla N8N -->

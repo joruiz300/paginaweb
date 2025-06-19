@@ -688,43 +688,19 @@
     transform: translateY(-1px);
 }
 
-/* Hero FLUJO CALOR */
+/* Hero FLUJO CALOR - Limpio y centrado */
 .hero-flujo {
     padding: 4rem 0 6rem 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 69, 0, 0.02) 0%, 
-        rgba(255, 107, 53, 0.05) 50%, 
-        rgba(255, 255, 255, 1) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-flujo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 200%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF4500' fill-opacity='0.03'%3E%3Cpath d='M36 30c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-    animation: pattern-move 20s linear infinite;
-    z-index: 0;
-}
-
-@keyframes pattern-move {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(60px); }
+    background: rgba(255, 69, 0, 0.02);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-/* Timer Badge */
+/* Timer Badge - Simplificado */
 .timer-badge {
     display: inline-flex;
     align-items: center;
@@ -736,22 +712,10 @@
     font-weight: 600;
     margin-bottom: 2rem;
     box-shadow: var(--flujo-shadow);
-    animation: timer-pulse 2s ease-in-out infinite;
-}
-
-@keyframes timer-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
 }
 
 .timer-icon {
     font-size: 1.2rem;
-    animation: timer-tick 1s ease-in-out infinite;
-}
-
-@keyframes timer-tick {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(10deg); }
 }
 
 /* Título FLUJO CALOR */
@@ -778,12 +742,6 @@
     background-clip: text;
     letter-spacing: -0.02em;
     line-height: 0.9;
-    animation: calor-glow 3s ease-in-out infinite;
-}
-
-@keyframes calor-glow {
-    0%, 100% { filter: brightness(1); }
-    50% { filter: brightness(1.2); }
 }
 
 .title-subtitle {
@@ -805,7 +763,7 @@
     font-weight: 500;
 }
 
-/* Visualización del flujo principal */
+/* Visualización del flujo principal - Simplificada */
 .flujo-visual {
     margin-top: 3rem;
 }
@@ -832,24 +790,11 @@
 .temp-cold {
     background: linear-gradient(135deg, var(--flujo-ice) 0%, var(--flujo-cold) 100%);
     color: white;
-    animation: cold-shiver 3s ease-in-out infinite;
 }
 
 .temp-hot {
     background: var(--flujo-gradient);
     color: white;
-    animation: hot-glow 2s ease-in-out infinite;
-}
-
-@keyframes cold-shiver {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    75% { transform: translateX(2px); }
-}
-
-@keyframes hot-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(255, 69, 0, 0.3); }
-    50% { box-shadow: 0 0 30px rgba(255, 69, 0, 0.6); }
 }
 
 .temp-icon {
@@ -868,24 +813,6 @@
     height: 3px;
     background: var(--flujo-gradient);
     border-radius: 2px;
-    position: relative;
-    overflow: hidden;
-}
-
-.arrow-line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-    animation: arrow-flow 2s ease-in-out infinite;
-}
-
-@keyframes arrow-flow {
-    0% { left: -100%; }
-    100% { left: 100%; }
 }
 
 .arrow-text {
@@ -901,12 +828,6 @@
     font-size: 1.5rem;
     color: var(--flujo-primary);
     margin-left: 10px;
-    animation: arrow-bounce 1s ease-in-out infinite;
-}
-
-@keyframes arrow-bounce {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
 }
 
 .time-indicator {
@@ -922,10 +843,10 @@
     color: var(--flujo-primary);
 }
 
-/* Las 5 Etapas del Flujo */
+/* Las 5 Etapas del Flujo - Simplificadas */
 .etapas-flujo {
     padding: 6rem 0;
-    background: linear-gradient(180deg, #fff 0%, rgba(255, 69, 0, 0.02) 100%);
+    background: rgba(255, 69, 0, 0.02);
 }
 
 .etapas-title {
@@ -961,28 +882,11 @@
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    animation: etapa-appear 0.6s ease-out forwards;
-    animation-delay: calc(var(--etapa-index, 0) * 0.2s);
-    opacity: 0;
-    transform: translateY(30px);
 }
-
-@keyframes etapa-appear {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.etapa[data-etapa="1"] { --etapa-index: 0; }
-.etapa[data-etapa="2"] { --etapa-index: 1; }
-.etapa[data-etapa="3"] { --etapa-index: 2; }
-.etapa[data-etapa="4"] { --etapa-index: 3; }
-.etapa[data-etapa="5"] { --etapa-index: 4; }
 
 .etapa:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--flujo-shadow-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 69, 0, 0.15);
 }
 
 .etapa-numero {
@@ -1235,12 +1139,6 @@
 
 .btn-icon {
     font-size: 1.2rem;
-    animation: btn-heat 2s ease-in-out infinite;
-}
-
-@keyframes btn-heat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
 }
 
 .btn-arrow {
@@ -1341,22 +1239,11 @@
 }
 
 .problema-icon {
-    animation: problema-shake 3s ease-in-out infinite;
+    /* Sin animación para un diseño más limpio */
 }
 
 .solucion-icon {
-    animation: solucion-rocket 2s ease-in-out infinite;
-}
-
-@keyframes problema-shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
-@keyframes solucion-rocket {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    /* Sin animación para un diseño más limpio */
 }
 
 .lado-content {
@@ -1394,12 +1281,6 @@
     align-items: center;
     justify-content: center;
     box-shadow: var(--flujo-shadow);
-    animation: vs-pulse 2s ease-in-out infinite;
-}
-
-@keyframes vs-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
 }
 
 /* Footer simple */
@@ -1613,6 +1494,7 @@
     justify-content: center;
     flex-shrink: 0;
     box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+    animation: icon-pulse 3s ease-in-out infinite;
 }
 
 .nav-info h3 {
@@ -1632,7 +1514,10 @@
 
 /* Secciones de contenido */
 .content-section {
-    background: white;
+    background: linear-gradient(135deg, 
+        rgba(255, 69, 0, 0.01) 0%, 
+        rgba(255, 255, 255, 1) 50%, 
+        rgba(255, 69, 0, 0.01) 100%);
     border-radius: 24px;
     padding: 3rem;
     margin-bottom: 3rem;
@@ -1645,6 +1530,19 @@
     margin-right: auto;
     margin-bottom: 3rem;
     text-align: center;
+}
+
+.content-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF4500' fill-opacity='0.005'%3E%3Cpath d='M20 20h40v40H20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+    animation: subtle-pattern-drift 40s linear infinite reverse;
+    z-index: 0;
 }
 
 .content-section::before {
@@ -1669,6 +1567,8 @@
     gap: 1rem;
     line-height: 1.2;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .section-icon {
@@ -1683,6 +1583,7 @@
     font-size: 1.8rem;
     flex-shrink: 0;
     box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+    animation: icon-pulse 3s ease-in-out infinite;
 }
 
 .section-description {
@@ -1694,6 +1595,8 @@
     margin-left: auto;
     margin-right: auto;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
 }
 
 /* ================ LÍNEA DE TIEMPO VERTICAL PROFESIONAL ================ */
@@ -1738,294 +1641,262 @@
     z-index: 2;
 }
 
-/* Línea de tiempo vertical */
-.etapas-timeline {
+/* === ETAPAS FLUJO CALOR - DISEÑO LIMPIO Y CENTRADO === */
+
+.etapas-container {
+    background: linear-gradient(135deg, 
+        rgba(255, 69, 0, 0.02) 0%, 
+        rgba(255, 255, 255, 1) 50%, 
+        rgba(255, 69, 0, 0.02) 100%);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    margin: 3rem 0;
+    border: 1px solid rgba(255, 69, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    overflow: hidden;
 }
 
-/* Línea vertical principal */
-.timeline-line {
-    position: absolute;
-    left: 3rem;
-    top: 2rem;
-    bottom: 2rem;
-    width: 3px;
-    background: linear-gradient(180deg, 
-        transparent 0%, 
-        var(--flujo-primary) 10%, 
-        var(--flujo-primary) 90%, 
-        transparent 100%);
-    border-radius: 2px;
-    z-index: 1;
-}
-
-.timeline-line::after {
+.etapas-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 30%;
-    background: linear-gradient(180deg, var(--flujo-primary), transparent);
-    border-radius: 2px;
-    animation: timeline-progress 2s ease-out forwards;
-    animation-delay: 0.5s;
-    transform: scaleY(0);
-    transform-origin: top;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF4500' fill-opacity='0.01'%3E%3Cpath d='M12 6h36v36H12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+    animation: subtle-pattern-drift 30s linear infinite;
+    z-index: 0;
 }
 
-@keyframes timeline-progress {
-    0% { transform: scaleY(0); }
-    100% { transform: scaleY(1); }
+@keyframes subtle-pattern-drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-60px, -60px); }
 }
 
-/* Items de la línea de tiempo */
-.timeline-item {
+.etapas-header {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--flujo-text-primary);
+    margin-bottom: 1rem;
     position: relative;
+    z-index: 1;
+}
+
+.etapas-subtitle {
+    text-align: center;
+    color: var(--flujo-text-muted);
+    font-size: 1.1rem;
     margin-bottom: 3rem;
-    padding-left: 5rem;
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: timeline-item-appear 0.6s ease-out forwards;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
 }
 
-.timeline-item:nth-child(2) { animation-delay: 0.2s; }
-.timeline-item:nth-child(3) { animation-delay: 0.4s; }
-.timeline-item:nth-child(4) { animation-delay: 0.6s; }
-.timeline-item:nth-child(5) { animation-delay: 0.8s; }
-.timeline-item:nth-child(6) { animation-delay: 1.0s; }
-
-@keyframes timeline-item-appear {
-    0% { 
-        opacity: 0; 
-        transform: translateX(-30px);
-    }
-    100% { 
-        opacity: 1; 
-        transform: translateX(0);
-    }
+.etapas-timeline-clean {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
-/* Círculo indicador de etapa */
-.timeline-marker {
+/* Línea vertical simple en el centro */
+.vertical-line {
     position: absolute;
-    left: -1.25rem;
-    top: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--flujo-primary);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Item de etapa base */
+.etapa-item {
+    position: relative;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Etapas de la izquierda */
+.etapa-left {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.etapa-left .etapa-card {
+    margin-right: 2rem;
+}
+
+/* Etapas de la derecha */
+.etapa-right {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.etapa-right .etapa-card {
+    margin-left: 2rem;
+}
+
+/* Número de etapa centrado */
+.etapa-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
     background: white;
     border: 3px solid var(--flujo-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--flujo-primary);
-    z-index: 3;
-    transition: all 0.3s ease;
+    z-index: 2;
     box-shadow: 0 4px 12px rgba(255, 69, 0, 0.15);
+    animation: subtle-pulse 4s ease-in-out infinite;
 }
 
-.timeline-marker::before {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--flujo-primary), var(--flujo-hot)) border-box;
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.timeline-item:hover .timeline-marker {
-    background: var(--flujo-primary);
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.25);
-}
-
-.timeline-item:hover .timeline-marker::before {
-    opacity: 1;
-}
-
-/* Contenido de la tarjeta */
-.timeline-content {
+/* Tarjeta de contenido */
+.etapa-card {
     background: white;
     padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(255, 69, 0, 0.08);
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 69, 0, 0.1);
+    max-width: 400px;
     position: relative;
-    overflow: hidden;
 }
 
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--flujo-primary), var(--flujo-hot));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.timeline-item:hover .timeline-content {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(255, 69, 0, 0.12);
-    border-color: rgba(255, 69, 0, 0.15);
-}
-
-.timeline-item:hover .timeline-content::before {
-    transform: scaleX(1);
-}
-
-/* Título de etapa mejorado */
-.etapa-title {
-    font-weight: 700;
-    color: var(--flujo-text-primary);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.etapa-title .etapa-emoji {
-    font-size: 1.4rem;
-    filter: drop-shadow(0 2px 4px rgba(255, 69, 0, 0.2));
-}
-
-/* Detalles de etapa con mejor estructura */
-.etapa-details {
-    display: grid;
-    gap: 0.8rem;
-}
-
-.etapa-detail-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(255, 69, 0, 0.06);
-}
-
-.etapa-detail-item:last-child {
-    border-bottom: none;
-}
-
-.detail-label {
-    font-weight: 700;
-    color: var(--flujo-primary);
-    min-width: 80px;
-    font-size: 0.9rem;
-}
-
-.detail-content {
-    color: var(--flujo-text-muted);
-    font-weight: 500;
-    line-height: 1.5;
-    flex: 1;
-}
-
-/* Efectos de micro-interacción */
-.timeline-item {
-    cursor: pointer;
-}
-
-.timeline-content:hover .detail-label {
-    color: var(--flujo-hot);
-}
-
-/* Indicador de progreso temporal */
-.etapa-timing {
-    position: absolute;
-    top: -0.5rem;
-    right: 1rem;
+/* Indicador de tiempo */
+.etapa-time {
     background: var(--flujo-primary);
     color: white;
     padding: 0.3rem 0.8rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: 600;
-    animation: timing-pulse 2s ease-in-out infinite;
+    display: inline-block;
+    margin-bottom: 1rem;
+    animation: subtle-glow 3s ease-in-out infinite;
 }
 
-@keyframes timing-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.9; }
-    50% { transform: scale(1.05); opacity: 1; }
+/* Título de etapa */
+.etapa-titulo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--flujo-text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
 }
 
-/* Responsive para timeline vertical */
+/* Información de la etapa */
+.etapa-info {
+    color: var(--flujo-text-muted);
+}
+
+.etapa-info p {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.etapa-info p:last-child {
+    margin-bottom: 0;
+}
+
+.etapa-info strong {
+    color: var(--flujo-text-primary);
+    font-weight: 600;
+}
+
+/* Hover sutil para mejorar UX */
+.etapa-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 69, 0, 0.12);
+    border-color: rgba(255, 69, 0, 0.2);
+}
+
+/* Responsive para móviles */
 @media (max-width: 768px) {
-    .etapas-timeline {
-        padding: 0 1rem;
+    .etapas-timeline-clean {
+        padding: 1rem;
     }
     
-    .timeline-line {
-        left: 1.5rem;
+    .vertical-line {
+        left: 2rem;
     }
     
-    .timeline-item {
-        padding-left: 3.5rem;
-        margin-bottom: 2.5rem;
+    .etapa-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        text-align: left;
     }
     
-    .timeline-marker {
-        left: -1rem;
-        width: 2rem;
-        height: 2rem;
-        font-size: 0.9rem;
+    .etapa-left,
+    .etapa-right {
+        justify-content: flex-start;
     }
     
-    .timeline-content {
+    .etapa-left .etapa-card,
+    .etapa-right .etapa-card {
+        margin: 0;
+        margin-left: 1rem;
+        max-width: none;
+    }
+    
+    .etapa-number {
+        left: 2rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .etapa-card {
         padding: 1.5rem;
     }
     
-    .etapa-title {
+    .etapa-titulo {
         font-size: 1.1rem;
     }
     
-    .etapa-detail-item {
-        flex-direction: column;
-        gap: 0.4rem;
-    }
-    
-    .detail-label {
-        min-width: unset;
+    .etapa-info p {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .etapas-container {
         padding: 2rem 1rem;
-        margin: 2rem 0;
     }
     
-    .timeline-line {
-        left: 1rem;
+    .vertical-line {
+        left: 1.5rem;
     }
     
-    .timeline-item {
-        padding-left: 2.5rem;
+    .etapa-number {
+        left: 1.5rem;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
     }
     
-    .timeline-marker {
-        left: -0.75rem;
-        width: 1.5rem;
-        height: 1.5rem;
-        font-size: 0.8rem;
+    .etapa-left .etapa-card,
+    .etapa-right .etapa-card {
+        margin-left: 0.5rem;
+    }
+    
+    .etapa-card {
+        padding: 1.2rem;
     }
 }
 

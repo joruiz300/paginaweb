@@ -279,68 +279,117 @@
         /* ============= TIMELINE PROFESIONAL (SIN TEXTO CORTADO) ============= */
         .etapas-container {
             background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: var(--space-xl);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: var(--space-xl) var(--space-lg);
             margin: var(--space-xl) auto;
-            max-width: 1100px;
+            max-width: 1400px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: visible;
+        }
+
+        .etapas-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--orange-primary), transparent, var(--orange-primary));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.1;
         }
 
         .etapas-header {
             text-align: center;
             font-family: var(--font-primary);
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-size: clamp(2rem, 4vw, 2.5rem);
             color: var(--text-light);
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--space-md);
             font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .etapas-subtitle {
             text-align: center;
             color: var(--text-medium);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: var(--space-xl);
             font-weight: 400;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* NUEVA TIMELINE - ESTILO PÁGINA DE CAPTURA */
-        .flujo-pipeline {
+        /* MEJORAS GENERALES DE VISIBILIDAD */
+        .content-section {
+            margin: calc(var(--space-xl) * 1.5) 0;
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            margin-bottom: var(--space-lg);
+            text-align: center;
             display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: var(--space-md);
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-xl) auto;
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* TIMELINE FLUJO CALOR - DISEÑO MEJORADO Y MÁS VISIBLE */
+        .flujo-pipeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-lg);
             margin: var(--space-xl) 0;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            padding-bottom: var(--space-sm);
+            padding: var(--space-md);
         }
 
         .etapa {
-            flex: 1;
-            min-width: 200px;
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: var(--space-lg);
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--space-xl) var(--space-lg);
             text-align: center;
             position: relative;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-md);
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .etapa:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.2);
             border-color: var(--orange-primary);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
         }
 
         .etapa-numero {
             position: absolute;
-            top: -15px;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background: var(--orange-gradient);
             color: white;
             border-radius: 50%;
@@ -348,72 +397,136 @@
             align-items: center;
             justify-content: center;
             font-family: var(--font-primary);
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            box-shadow: var(--shadow-md);
-            border: 3px solid var(--bg-color);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+            border: 4px solid var(--bg-color);
+            z-index: 10;
         }
 
         .etapa-icon {
-            font-size: 2rem;
-            margin: var(--space-sm) 0;
-            opacity: 0.8;
+            font-size: 3rem;
+            margin: var(--space-md) 0 var(--space-sm) 0;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
 
         .etapa h3 {
             font-family: var(--font-primary);
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--text-light);
             margin: var(--space-sm) 0;
-            font-weight: 600;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         .etapa p {
             color: var(--text-medium);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 1rem;
+            line-height: 1.6;
             margin: 0;
+            font-weight: 500;
         }
 
-        .etapa-line {
+        .etapa-detalle {
+            margin-top: var(--space-sm);
+            padding-top: var(--space-sm);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .etapa:hover .etapa-detalle {
+            opacity: 1;
+        }
+
+        /* LÍNEAS CONECTORAS MEJORADAS */
+        .etapa::after {
+            content: '';
             position: absolute;
             top: 50%;
-            right: -15px;
-            width: 30px;
-            height: 2px;
-            background: var(--orange-primary);
+            right: -20px;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange-primary), transparent);
             transform: translateY(-50%);
             z-index: 1;
+            border-radius: 2px;
         }
 
-        .etapa:last-child .etapa-line {
+        .etapa:nth-child(5)::after,
+        .etapa:last-child::after {
             display: none;
         }
 
-        /* RESPONSIVE PARA TIMELINE */
+        /* EFECTOS ESPECIALES PARA DESTACAR */
+        .etapa[data-etapa="1"] {
+            border-color: rgba(255, 107, 0, 0.3);
+        }
+
+        .etapa[data-etapa="1"]:hover {
+            border-color: var(--orange-primary);
+            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.3);
+        }
+
+        /* RESPONSIVE MEJORADO */
+        @media (max-width: 1200px) {
+            .flujo-pipeline {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: var(--space-md);
+            }
+            
+            .etapa::after {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .flujo-pipeline {
-                flex-direction: column;
-                align-items: stretch;
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+                padding: var(--space-sm);
             }
             
             .etapa {
-                min-width: auto;
-                margin-bottom: var(--space-lg);
+                min-height: 200px;
+                padding: var(--space-lg);
             }
             
-            .etapa-line {
-                top: auto;
-                bottom: -15px;
-                left: 50%;
-                right: auto;
-                width: 2px;
-                height: 30px;
-                transform: translateX(-50%);
+            .etapa-numero {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+                top: -18px;
             }
             
-            .etapa:last-child {
-                margin-bottom: 0;
+            .etapa-icon {
+                font-size: 2.5rem;
+            }
+            
+            .etapa h3 {
+                font-size: 1.2rem;
+            }
+            
+            .etapa p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .etapa {
+                padding: var(--space-md);
+                min-height: 180px;
+            }
+            
+            .etapa-icon {
+                font-size: 2.2rem;
+            }
+            
+            .etapa h3 {
+                font-size: 1.1rem;
             }
         }
 
@@ -725,38 +838,54 @@
                             <div class="etapa-icon">🎣</div>
                             <h3>Captura Inmediata</h3>
                             <p>Lead llega → Trigger en &lt;30 segundos</p>
-                            <div class="etapa-line"></div>
+                            <div class="etapa-detalle">
+                                <strong>Tecnología:</strong> Webhooks, Cal.com<br>
+                                <strong>Velocidad:</strong> Instantáneo
+                            </div>
                         </div>
                         
                         <div class="etapa" data-etapa="2">
                             <div class="etapa-numero">2</div>
                             <div class="etapa-icon">🧠</div>
                             <h3>Análisis de IA</h3>
-                            <p>Cualificación automática + scoring</p>
-                            <div class="etapa-line"></div>
+                            <p>Cualificación automática + scoring inteligente</p>
+                            <div class="etapa-detalle">
+                                <strong>IA:</strong> OpenAI GPT-4<br>
+                                <strong>Output:</strong> Score 1-10 + categorización
+                            </div>
                         </div>
                         
                         <div class="etapa" data-etapa="3">
                             <div class="etapa-numero">3</div>
                             <div class="etapa-icon">🚦</div>
                             <h3>Decisión Smart</h3>
-                            <p>Segmentación: Caliente | Tibio | Frío</p>
-                            <div class="etapa-line"></div>
+                            <p>Segmentación automática por temperatura</p>
+                            <div class="etapa-detalle">
+                                <strong>Rutas:</strong> Caliente | Tibio | Frío<br>
+                                <strong>Criterio:</strong> ICP + urgencia detectada
+                            </div>
                         </div>
                         
                         <div class="etapa" data-etapa="4">
                             <div class="etapa-numero">4</div>
                             <div class="etapa-icon">⚡</div>
                             <h3>Acción Automática</h3>
-                            <p>Email personalizado + CRM + Notificación</p>
-                            <div class="etapa-line"></div>
+                            <p>Respuesta personalizada + actualización CRM</p>
+                            <div class="etapa-detalle">
+                                <strong>Acciones:</strong> Email + Slack + CRM<br>
+                                <strong>Personalización:</strong> 100% automática
+                            </div>
                         </div>
                         
                         <div class="etapa" data-etapa="5">
                             <div class="etapa-numero">5</div>
                             <div class="etapa-icon">🎯</div>
                             <h3>Seguimiento Pro</h3>
-                            <p>Recordatorios + nurturing + analytics</p>
+                            <p>Nurturing continuo + recordatorios inteligentes</p>
+                            <div class="etapa-detalle">
+                                <strong>Funciones:</strong> Recordatorios + Analytics<br>
+                                <strong>Duración:</strong> Hasta conversión
+                            </div>
                         </div>
                     </div>
                 </div>

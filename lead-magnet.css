@@ -1836,7 +1836,7 @@
     inset: -8px;
     border: 2px solid transparent;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--flujo-primary), var(--flujo-primary)) border-box;
+    background: linear-gradient(135deg, var(--flujo-primary), var(--flujo-hot)) border-box;
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
@@ -1875,7 +1875,7 @@
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, var(--flujo-primary), var(--flujo-primary));
+    background: linear-gradient(90deg, var(--flujo-primary), var(--flujo-hot));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -1945,7 +1945,7 @@
 }
 
 .timeline-content:hover .detail-label {
-    color: var(--flujo-primary);
+    color: var(--flujo-hot);
 }
 
 /* Indicador de progreso temporal */
@@ -2158,7 +2158,7 @@
 
 /* Mejoras para los badges de garantía */
 .cta-garantia span:nth-child(2) {
-    background: linear-gradient(135deg, var(--flujo-primary), var(--flujo-secondary));
+    background: linear-gradient(135deg, var(--flujo-primary), var(--flujo-text-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;

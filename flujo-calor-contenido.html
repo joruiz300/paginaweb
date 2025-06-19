@@ -65,25 +65,32 @@
         }
         
         :root {
-            /* PALETA FONDO BLANCO */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-accent: #f1f5f9;
+            /* PALETA PROFESIONAL OSCURA - CONSISTENTE CON PÁGINA DE CAPTURA */
+            --bg-color: #0a0f1f;
+            --bg-primary: #0a0f1f;
+            --bg-secondary: #121a30;
+            --bg-accent: #1a2332;
             
-            /* TEXTOS SOBRE FONDO BLANCO */
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
+            /* TEXTOS SOBRE FONDO OSCURO */
+            --text-light: #FFFFFF;
+            --text-primary: #FFFFFF;
+            --text-medium: #adb5bd;
+            --text-secondary: #adb5bd;
+            --text-muted: #94a3b8;
             
             /* MARCA */
+            --primary-orange: #FF6B00;
             --orange-primary: #FF6B00;
+            --flujo-primary: #FF4500;
             --orange-gradient: linear-gradient(135deg, #FF6B00 0%, #FF4500 100%);
             
-            /* BORDES Y SOMBRAS */
-            --border-light: #e2e8f0;
-            --border-medium: #cbd5e1;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            /* BORDES Y SOMBRAS PARA FONDO OSCURO */
+            --border-color: #2a3652;
+            --border-light: #2a3652;
+            --border-medium: #334155;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.5);
             
             /* ESPACIADO */
             --space-xs: 0.5rem;
@@ -105,10 +112,11 @@
         
         body {
             font-family: var(--font-secondary);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
+            background: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.7;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         .container {
@@ -147,18 +155,20 @@
         
         /* ============= HEADER ============= */
         .welcome-header {
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-light);
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+            border-bottom: 1px solid var(--border-color);
             padding: var(--space-xl) 0;
             text-align: center;
         }
 
         .welcome-title {
+            color: var(--text-light);
             font-weight: 700;
             margin-bottom: var(--space-sm);
         }
 
         .welcome-subtitle {
+            color: var(--text-medium);
             font-size: 1.2rem;
             margin-bottom: var(--space-lg);
             font-weight: 400;
@@ -178,6 +188,7 @@
         /* ============= NAVEGACIÓN ============= */
         .nav-title {
             text-align: center;
+            color: var(--text-light);
             margin: var(--space-xl) 0 var(--space-lg) 0;
         }
 
@@ -190,20 +201,21 @@
 
         .nav-item {
             background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: var(--space-md);
             display: flex;
             align-items: center;
             gap: var(--space-md);
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             border-left: 3px solid var(--orange-primary);
         }
 
         .nav-item:hover {
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             transform: translateY(-2px);
+            border-color: var(--orange-primary);
         }
 
         .nav-icon {
@@ -222,12 +234,14 @@
         .nav-info h3 {
             font-size: 1rem;
             margin-bottom: 0.2rem;
+            color: var(--text-light);
         }
 
         .nav-info p {
             font-size: 0.85rem;
             margin: 0;
             line-height: 1.4;
+            color: var(--text-medium);
         }
 
         /* ============= SECCIONES ============= */
@@ -242,6 +256,7 @@
             align-items: center;
             justify-content: center;
             gap: var(--space-sm);
+            color: var(--text-light);
         }
 
         .section-icon {
@@ -253,129 +268,193 @@
             text-align: center;
             max-width: 600px;
             margin: 0 auto var(--space-lg) auto;
+            color: var(--text-medium);
         }
 
         .section-description strong {
-            color: var(--text-primary);
+            color: var(--text-light);
             font-weight: 600;
         }
 
-        /* ============= TIMELINE ============= */
+        /* ============= TIMELINE PROFESIONAL (SIN TEXTO CORTADO) ============= */
         .etapas-container {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
-            padding: var(--space-lg);
-            margin: var(--space-lg) auto;
-            max-width: 800px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--space-xl);
+            margin: var(--space-xl) auto;
+            max-width: 1100px;
         }
 
         .etapas-header {
             text-align: center;
+            font-family: var(--font-primary);
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            color: var(--text-light);
             margin-bottom: var(--space-sm);
+            font-weight: 700;
         }
 
         .etapas-subtitle {
             text-align: center;
-            margin-bottom: var(--space-lg);
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-xl);
+            font-weight: 400;
         }
 
-        .etapas-timeline-clean {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: var(--space-sm);
-            margin: var(--space-lg) 0;
+        /* NUEVA TIMELINE - ESTILO PÁGINA DE CAPTURA */
+        .flujo-pipeline {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--space-md);
+            margin: var(--space-xl) 0;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: var(--space-sm);
         }
 
-        .etapa-item {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: var(--space-md);
+        .etapa {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-lg);
             text-align: center;
-            transition: all 0.2s ease;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
-        .etapa-item:hover {
-            box-shadow: var(--shadow-md);
+        .etapa:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
             border-color: var(--orange-primary);
         }
 
-        .etapa-number {
-            width: 30px;
-            height: 30px;
+        .etapa-numero {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
             background: var(--orange-gradient);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            border: 3px solid var(--bg-color);
+        }
+
+        .etapa-icon {
+            font-size: 2rem;
+            margin: var(--space-sm) 0;
+            opacity: 0.8;
+        }
+
+        .etapa h3 {
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: var(--space-sm) 0;
             font-weight: 600;
-            margin: 0 auto var(--space-sm) auto;
         }
 
-        .etapa-time {
-            background: var(--bg-accent);
-            color: var(--orange-primary);
-            padding: 0.2rem 0.5rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: var(--space-xs);
+        .etapa p {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
         }
 
-        .etapa-titulo {
-            font-weight: 600;
-            margin-bottom: var(--space-xs);
+        .etapa-line {
+            position: absolute;
+            top: 50%;
+            right: -15px;
+            width: 30px;
+            height: 2px;
+            background: var(--orange-primary);
+            transform: translateY(-50%);
+            z-index: 1;
         }
 
-        .etapa-info {
-            font-size: 0.75rem;
-            color: var(--text-muted);
+        .etapa:last-child .etapa-line {
+            display: none;
         }
 
-        .etapa-info p {
-            margin: 0.2rem 0;
-        }
-
-        .etapa-info strong {
-            color: var(--text-secondary);
+        /* RESPONSIVE PARA TIMELINE */
+        @media (max-width: 768px) {
+            .flujo-pipeline {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .etapa {
+                min-width: auto;
+                margin-bottom: var(--space-lg);
+            }
+            
+            .etapa-line {
+                top: auto;
+                bottom: -15px;
+                left: 50%;
+                right: auto;
+                width: 2px;
+                height: 30px;
+                transform: translateX(-50%);
+            }
+            
+            .etapa:last-child {
+                margin-bottom: 0;
+            }
         }
 
         /* ============= COMPONENTES ============= */
         .prompt-container {
             background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             margin: var(--space-md) 0;
             overflow: hidden;
+            box-shadow: var(--shadow-sm);
         }
 
         .prompt-header {
-            background: var(--bg-accent);
+            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-secondary) 100%);
             padding: var(--space-md);
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .prompt-title {
             font-size: 1.1rem;
             margin-bottom: var(--space-xs);
             font-weight: 600;
+            color: var(--text-light);
         }
 
         .prompt-description {
             font-size: 0.9rem;
             margin: 0;
+            color: var(--text-medium);
         }
 
         .code-block {
             position: relative;
-            background: var(--bg-accent);
+            background: #1a1a1a;
+            color: #f8f8f2;
             font-family: var(--font-mono);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             padding: var(--space-md);
             overflow-x: auto;
+            line-height: 1.5;
         }
 
         .copy-btn {
@@ -398,22 +477,25 @@
         }
 
         .download-area, .highlight-box {
-            background: var(--bg-accent);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-lg);
             margin: var(--space-md) 0;
+            box-shadow: var(--shadow-sm);
         }
 
         .download-title {
             font-size: 1.1rem;
             margin-bottom: var(--space-xs);
             font-weight: 600;
+            color: var(--text-light);
         }
 
         .download-description {
             margin-bottom: var(--space-md);
             font-size: 0.9rem;
+            color: var(--text-medium);
         }
 
         .download-btn {
@@ -443,17 +525,18 @@
             display: flex;
             align-items: flex-start;
             gap: var(--space-sm);
-            background: var(--bg-primary);
-            border: 1px solid var(--border-light);
-            border-radius: 6px;
-            padding: var(--space-sm);
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--space-md);
             margin-bottom: var(--space-sm);
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .checklist-item:hover {
             background: var(--bg-secondary);
             border-color: var(--orange-primary);
+            transform: translateX(5px);
         }
 
         .checklist-checkbox {
@@ -469,24 +552,32 @@
             display: block;
             margin-bottom: 0.2rem;
             font-weight: 600;
+            color: var(--text-light);
         }
 
         .checklist-text small {
             font-size: 0.8rem;
+            color: var(--text-medium);
         }
 
         .next-steps {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
             padding: var(--space-xl);
             text-align: center;
             margin: var(--space-xl) 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .next-steps h2 {
+            color: var(--text-light);
         }
 
         .next-steps p {
             max-width: 600px;
             margin: 0 auto var(--space-md) auto;
+            color: var(--text-medium);
         }
 
         .cta-implementation {
@@ -510,16 +601,25 @@
 
         .simple-footer {
             background: var(--bg-secondary);
-            border-top: 1px solid var(--border-light);
+            border-top: 1px solid var(--border-color);
             padding: var(--space-lg) 0;
             text-align: center;
             margin-top: var(--space-xl);
         }
 
         .simple-footer p {
-            color: var(--text-muted);
+            color: var(--text-medium);
             margin: 0;
             font-size: 0.9rem;
+        }
+
+        .simple-footer a {
+            color: var(--orange-primary);
+            text-decoration: none;
+        }
+
+        .simple-footer a:hover {
+            color: var(--text-light);
         }
 
         .instruction-list {
@@ -545,8 +645,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .etapas-timeline-clean {
-                grid-template-columns: 1fr;
+            .flujo-pipeline {
+                padding-bottom: var(--space-md);
             }
         }
     </style>
@@ -616,65 +716,47 @@
                 </p>
                 
                 <div class="etapas-container">
-                    <h3 class="etapas-header">Flujo Completo</h3>
-                    <p class="etapas-subtitle">Automatización de extremo a extremo</p>
+                    <h2 class="etapas-header">Las 5 Etapas del <span style="color: var(--orange-primary);">FLUJO CALOR</span></h2>
+                    <p class="etapas-subtitle">El sistema que convierte leads fríos en citas calientes automáticamente</p>
                     
-                    <div class="etapas-timeline-clean">
-                        
-                        <!-- Etapa 1 -->
-                        <div class="etapa-item">
-                            <div class="etapa-number">1</div>
-                                <div class="etapa-time">&lt;30s</div>
-                            <h4 class="etapa-titulo">Captura</h4>
-                                <div class="etapa-info">
-                                    <p><strong>Trigger:</strong> Webhook/Cal.com/Formulario web</p>
-                                    <p><strong>Velocidad:</strong> &lt; 30 segundos desde captura</p>
-                                    <p><strong>Objetivo:</strong> Activación instantánea del flujo</p>
-                            </div>
+                    <div class="flujo-pipeline">
+                        <div class="etapa" data-etapa="1">
+                            <div class="etapa-numero">1</div>
+                            <div class="etapa-icon">🎣</div>
+                            <h3>Captura Inmediata</h3>
+                            <p>Lead llega → Trigger en &lt;30 segundos</p>
+                            <div class="etapa-line"></div>
                         </div>
                         
-                        <!-- Etapa 2 -->
-                        <div class="etapa-item">
-                            <div class="etapa-number">2</div>
-                                <div class="etapa-time">~2min</div>
-                            <h4 class="etapa-titulo">Análisis IA</h4>
-                                <div class="etapa-info">
-                                <p><strong>Proceso:</strong> Análisis inteligente del lead</p>
-                                <p><strong>Output:</strong> Puntuación y categorización</p>
-                            </div>
+                        <div class="etapa" data-etapa="2">
+                            <div class="etapa-numero">2</div>
+                            <div class="etapa-icon">🧠</div>
+                            <h3>Análisis de IA</h3>
+                            <p>Cualificación automática + scoring</p>
+                            <div class="etapa-line"></div>
                         </div>
                         
-                        <!-- Etapa 3 -->
-                        <div class="etapa-item">
-                            <div class="etapa-number">3</div>
-                                <div class="etapa-time">~30s</div>
-                            <h4 class="etapa-titulo">Decisión</h4>
-                                <div class="etapa-info">
-                                <p><strong>Logic:</strong> Segmentación automática</p>
-                                <p><strong>Caminos:</strong> Caliente | Tibio | Frío</p>
-                            </div>
+                        <div class="etapa" data-etapa="3">
+                            <div class="etapa-numero">3</div>
+                            <div class="etapa-icon">🚦</div>
+                            <h3>Decisión Smart</h3>
+                            <p>Segmentación: Caliente | Tibio | Frío</p>
+                            <div class="etapa-line"></div>
                         </div>
                         
-                        <!-- Etapa 4 -->
-                        <div class="etapa-item">
-                            <div class="etapa-number">4</div>
-                                <div class="etapa-time">~1min</div>
-                            <h4 class="etapa-titulo">Acción</h4>
-                                <div class="etapa-info">
-                                <p><strong>CRM:</strong> Actualización automática</p>
-                                <p><strong>Notificación:</strong> Alerta al equipo</p>
-                            </div>
+                        <div class="etapa" data-etapa="4">
+                            <div class="etapa-numero">4</div>
+                            <div class="etapa-icon">⚡</div>
+                            <h3>Acción Automática</h3>
+                            <p>Email personalizado + CRM + Notificación</p>
+                            <div class="etapa-line"></div>
                         </div>
                         
-                        <!-- Etapa 5 -->
-                        <div class="etapa-item">
-                            <div class="etapa-number">5</div>
-                                <div class="etapa-time">24-48h</div>
-                            <h4 class="etapa-titulo">Seguimiento</h4>
-                                <div class="etapa-info">
-                                <p><strong>Recordatorios:</strong> Citas agendadas</p>
-                                <p><strong>Nurturing:</strong> Leads no listos</p>
-                            </div>
+                        <div class="etapa" data-etapa="5">
+                            <div class="etapa-numero">5</div>
+                            <div class="etapa-icon">🎯</div>
+                            <h3>Seguimiento Pro</h3>
+                            <p>Recordatorios + nurturing + analytics</p>
                         </div>
                     </div>
                 </div>

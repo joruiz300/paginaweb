@@ -1000,10 +1000,19 @@ Asunto: [Asunto personalizado]
                 </p>
                 
                 <div class="download-area">
-                    <h3 class="download-title">Descarga la Plantilla</h3>
-                    <p class="download-description">Archivo .json optimizado para N8N</p>
+                    <h3 class="download-title">🚀 Descarga los 4 Workflows Completos</h3>
+                    <p class="download-description">Sistema FLUJO CALOR completo - 4 archivos .json listos para N8N</p>
+                    <div style="background: var(--bg-accent); padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid var(--orange-primary);">
+                        <h4 style="margin: 0 0 0.5rem 0; color: var(--text-light); font-size: 0.9rem;">📦 Incluye:</h4>
+                        <ul style="margin: 0; padding-left: 1rem; color: var(--text-medium); font-size: 0.85rem;">
+                            <li><strong>MOTOR-COMUNICACIONES-SCHEDULER:</strong> Sistema de recordatorios automatizados</li>
+                            <li><strong>WORKFLOW-DEFINITIVO-OPTIMIZADO:</strong> Flujo principal optimizado</li>
+                            <li><strong>WORKFLOW-NOTARIO-CAMBIOS-ESTADO:</strong> Control de cambios de estado</li>
+                            <li><strong>WORKFLOW-SEGUIMIENTO-CICLO-CERRADO:</strong> Seguimiento completo</li>
+                        </ul>
+                    </div>
                     <a href="#" class="download-btn" onclick="downloadN8NTemplate()">
-                        📁 Descargar flujo-calor-n8n.json
+                        📥 Descargar 4 Workflows FLUJO CALOR
                     </a>
                 </div>
                 
@@ -1317,181 +1326,211 @@ Asunto: [Asunto personalizado]
             });
         }
         
-        // Función mejorada para descargar plantilla N8N
-        function downloadN8NTemplate() {
-            // Crear contenido JSON más completo y realista
-            const n8nTemplate = {
-                "name": "FLUJO CALOR - Math AI Agency",
-                "version": 1,
-                "nodes": [
-                    {
-                        "parameters": {
-                            "httpMethod": "POST",
-                            "path": "flujo-calor-webhook",
-                            "responseMode": "responseNode",
-                            "responseData": "allEntries"
-                        },
-                        "name": "🎣 Webhook - Captura Lead",
-                        "type": "n8n-nodes-base.webhook",
-                        "typeVersion": 1,
-                        "position": [240, 300],
-                        "id": "webhook-node"
-                    },
-                    {
-                        "parameters": {
-                            "model": "gpt-4",
-                            "messages": {
-                                "chatInput": "// PROMPT 1: Cualificación - Pega aquí el Prompt 1 que copiaste arriba"
-                            }
-                        },
-                        "name": "🧠 IA - Cualificación",
-                        "type": "n8n-nodes-base.openAi",
-                        "typeVersion": 1,
-                        "position": [460, 220],
-                        "id": "openai-cualificacion"
-                    },
-                    {
-                        "parameters": {
-                            "model": "gpt-4",
-                            "messages": {
-                                "chatInput": "// PROMPT 2: Urgencia - Pega aquí el Prompt 2 que copiaste arriba"
-                            }
-                        },
-                        "name": "⏱️ IA - Urgencia",
-                        "type": "n8n-nodes-base.openAi",
-                        "typeVersion": 1,
-                        "position": [460, 340],
-                        "id": "openai-urgencia"
-                    },
-                    {
-                        "parameters": {
-                            "model": "gpt-4",
-                            "messages": {
-                                "chatInput": "// PROMPT 3: ICP - Pega aquí el Prompt 3 que copiaste arriba"
-                            }
-                        },
-                        "name": "🎯 IA - Encaje ICP",
-                        "type": "n8n-nodes-base.openAi",
-                        "typeVersion": 1,
-                        "position": [460, 460],
-                        "id": "openai-icp"
-                    },
-                    {
-                        "parameters": {
-                            "conditions": {
-                                "number": [
-                                    {
-                                        "value1": "={{$json.puntuacion_lead}}",
-                                        "operation": "larger",
-                                        "value2": 7
-                                    }
-                                ]
-                            }
-                        },
-                        "name": "🚦 Decisión - Lead Caliente?",
-                        "type": "n8n-nodes-base.if",
-                        "typeVersion": 1,
-                        "position": [680, 300],
-                        "id": "decision-scoring"
-                    },
-                    {
-                        "parameters": {
-                            "message": "🔥 LEAD CALIENTE DETECTADO!\n\nNombre: {{$json.nombre}}\nEmpresa: {{$json.empresa}}\nPuntuación: {{$json.puntuacion_lead}}/10\nUrgencia: {{$json.nivel_urgencia}}\n\nResumen: {{$json.resumen_slack}}",
-                            "channel": "#leads-calientes"
-                        },
-                        "name": "📢 Slack - Alert Caliente",
-                        "type": "n8n-nodes-base.slack",
-                        "typeVersion": 1,
-                        "position": [900, 220],
-                        "id": "slack-caliente"
-                    },
-                    {
-                        "parameters": {
-                            "message": "📋 Nuevo lead registrado\n\nNombre: {{$json.nombre}}\nEmpresa: {{$json.empresa}}\nPuntuación: {{$json.puntuacion_lead}}/10",
-                            "channel": "#leads-general"
-                        },
-                        "name": "📝 Slack - Alert General",
-                        "type": "n8n-nodes-base.slack",
-                        "typeVersion": 1,
-                        "position": [900, 380],
-                        "id": "slack-general"
-                    }
-                ],
-                "connections": {
-                    "🎣 Webhook - Captura Lead": {
-                        "main": [
-                            [
-                                {"node": "🧠 IA - Cualificación", "type": "main", "index": 0},
-                                {"node": "⏱️ IA - Urgencia", "type": "main", "index": 0},
-                                {"node": "🎯 IA - Encaje ICP", "type": "main", "index": 0}
-                            ]
-                        ]
-                    },
-                    "🧠 IA - Cualificación": {
-                        "main": [
-                            [{"node": "🚦 Decisión - Lead Caliente?", "type": "main", "index": 0}]
-                        ]
-                    },
-                    "🚦 Decisión - Lead Caliente?": {
-                        "main": [
-                            [{"node": "📢 Slack - Alert Caliente", "type": "main", "index": 0}],
-                            [{"node": "📝 Slack - Alert General", "type": "main", "index": 0}]
-                        ]
-                    }
+        // Función para descargar los 4 workflows completos del FLUJO CALOR
+        async function downloadN8NTemplate() {
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = '🔄 Descargando...';
+            btn.disabled = true;
+
+            // URLs de los 4 workflows del FLUJO CALOR
+            const workflows = [
+                {
+                    url: 'https://minio.mathai.agency/12webmedia/Workflows%20flujo%20calor/MOTOR-COMUNICACIONES-SCHEDULER.json',
+                    name: 'MOTOR-COMUNICACIONES-SCHEDULER.json',
+                    description: 'Motor de comunicaciones con recordatorios automatizados'
                 },
-                "createdAt": new Date().toISOString(),
-                "updatedAt": new Date().toISOString(),
-                "settings": {
-                    "timezone": "America/Mexico_City"
+                {
+                    url: 'https://minio.mathai.agency/12webmedia/Workflows%20flujo%20calor/WORKFLOW-DEFINITIVO-OPTIMIZADO.json',
+                    name: 'WORKFLOW-DEFINITIVO-OPTIMIZADO.json',
+                    description: 'Workflow principal del FLUJO CALOR optimizado'
                 },
-                "staticData": {},
-                "meta": {
-                    "templateCredsSetupCompleted": false,
-                    "instanceId": "flujo-calor-math-ai"
+                {
+                    url: 'https://minio.mathai.agency/12webmedia/Workflows%20flujo%20calor/WORKFLOW-NOTARIO-CAMBIOS-ESTADO.json',
+                    name: 'WORKFLOW-NOTARIO-CAMBIOS-ESTADO.json',
+                    description: 'Sistema notario para cambios de estado'
+                },
+                {
+                    url: 'https://minio.mathai.agency/12webmedia/Workflows%20flujo%20calor/WORKFLOW-SEGUIMIENTO-CICLO-CERRADO.json',
+                    name: 'WORKFLOW-SEGUIMIENTO-CICLO-CERRADO.json',
+                    description: 'Seguimiento de ciclo cerrado completo'
                 }
-            };
-            
-            // Crear descarga con nombre descriptivo
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(n8nTemplate, null, 2));
-            const downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", "flujo-calor-n8n-template.json");
-            document.body.appendChild(downloadAnchorNode);
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
-            
-            // Track download con detalles
-            trackEvent('flujo_calor_template_download', {
-                file_name: 'flujo-calor-n8n-template.json',
-                template_nodes: n8nTemplate.nodes.length,
-                download_timestamp: Date.now()
+            ];
+
+            try {
+                let downloadedCount = 0;
+                const totalFiles = workflows.length;
+
+                for (const workflow of workflows) {
+                    try {
+                        // Crear enlace directo de descarga
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = workflow.url;
+                        downloadLink.download = workflow.name;
+                        downloadLink.target = '_blank';
+                        
+                        // Simular click para descarga
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+                        document.body.removeChild(downloadLink);
+                        
+                        downloadedCount++;
+                        
+                        // Actualizar progreso
+                        btn.textContent = `📥 Descargando ${downloadedCount}/${totalFiles}...`;
+                        
+                        // Pequeña pausa entre descargas
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        
+                    } catch (error) {
+                        console.error(`Error descargando ${workflow.name}:`, error);
+                    }
+                }
+
+                // Track download exitoso
+                trackEvent('flujo_calor_workflows_download', {
+                    total_workflows: totalFiles,
+                    downloaded_workflows: downloadedCount,
+                    download_timestamp: Date.now(),
+                    download_method: 'direct_links'
+                });
+
+                // Mostrar éxito
+                showDownloadSuccess(downloadedCount);
+                
+            } catch (error) {
+                console.error('Error en descarga de workflows:', error);
+                
+                // Fallback: mostrar enlaces directos
+                showDownloadFallback(workflows);
+                
+                trackEvent('flujo_calor_download_error', {
+                    error_message: error.message,
+                    fallback_used: true
+                });
+            } finally {
+                // Restaurar botón
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            }
+        }
+
+        // Función fallback para mostrar enlaces directos
+        function showDownloadFallback(workflows) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+            `;
+
+            const content = document.createElement('div');
+            content.style.cssText = `
+                background: var(--bg-secondary);
+                border: 2px solid var(--border-color);
+                border-radius: 16px;
+                padding: 2rem;
+                max-width: 600px;
+                width: 90%;
+                color: var(--text-light);
+            `;
+
+            content.innerHTML = `
+                <h3 style="color: var(--orange-primary); margin-bottom: 1rem;">📥 Descargar Workflows FLUJO CALOR</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-medium);">Haz clic en cada enlace para descargar los workflows:</p>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    ${workflows.map(workflow => `
+                        <a href="${workflow.url}" 
+                           download="${workflow.name}"
+                           target="_blank"
+                           style="
+                               background: var(--orange-gradient);
+                               color: white;
+                               padding: 1rem;
+                               border-radius: 8px;
+                               text-decoration: none;
+                               display: flex;
+                               align-items: center;
+                               gap: 0.5rem;
+                               transition: transform 0.2s ease;
+                           "
+                           onmouseover="this.style.transform='translateY(-2px)'"
+                           onmouseout="this.style.transform='translateY(0)'">
+                            <span>📄</span>
+                            <div>
+                                <div style="font-weight: 600;">${workflow.name}</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">${workflow.description}</div>
+                            </div>
+                        </a>
+                    `).join('')}
+                </div>
+                <button onclick="this.parentElement.parentElement.remove()" 
+                        style="
+                            background: var(--border-color);
+                            color: var(--text-light);
+                            border: none;
+                            padding: 0.75rem 1.5rem;
+                            border-radius: 6px;
+                            margin-top: 1.5rem;
+                            cursor: pointer;
+                            width: 100%;
+                        ">
+                    Cerrar
+                </button>
+            `;
+
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+
+            // Cerrar con click fuera
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
             });
-            
-            // Mostrar mensaje de éxito
-            showDownloadSuccess();
         }
         
         // Función para mostrar éxito en descarga
-        function showDownloadSuccess() {
+        function showDownloadSuccess(count = 4) {
             const successDiv = document.createElement('div');
             successDiv.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                background: var(--flujo-success);
+                background: linear-gradient(135deg, #10B981, #059669);
                 color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                padding: 1.5rem 2rem;
+                border-radius: 12px;
+                box-shadow: 0 15px 35px rgba(16, 185, 129, 0.3);
                 z-index: 1000;
-                animation: slideInRight 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+                animation: slideInRight 0.5s ease, fadeOut 0.5s ease 3.5s forwards;
+                border: 1px solid rgba(255, 255, 255, 0.2);
             `;
-            successDiv.innerHTML = '✅ Plantilla N8N descargada correctamente';
+            successDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span style="font-size: 1.5rem;">🎉</span>
+                    <div>
+                        <div style="font-weight: 700; font-size: 1rem;">¡Descarga Exitosa!</div>
+                        <div style="font-size: 0.85rem; opacity: 0.9;">${count} workflows FLUJO CALOR descargados</div>
+                    </div>
+                </div>
+            `;
             document.body.appendChild(successDiv);
             
             setTimeout(() => {
-                document.body.removeChild(successDiv);
-            }, 3000);
+                if (document.body.contains(successDiv)) {
+                    document.body.removeChild(successDiv);
+                }
+            }, 4000);
         }
         
         // Smooth scroll mejorado para navegación

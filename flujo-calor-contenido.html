@@ -1363,27 +1363,53 @@ Asunto: [Asunto personalizado]
 
                 for (const workflow of workflows) {
                     try {
-                        // Crear enlace directo de descarga
-                        const downloadLink = document.createElement('a');
-                        downloadLink.href = workflow.url;
-                        downloadLink.download = workflow.name;
-                        downloadLink.target = '_blank';
+                        // Actualizar progreso
+                        btn.textContent = `📥 Descargando ${downloadedCount + 1}/${totalFiles}...`;
                         
-                        // Simular click para descarga
+                        // Descargar archivo usando fetch
+                        const response = await fetch(workflow.url);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        
+                        const blob = await response.blob();
+                        
+                        // Crear URL del blob y descargar
+                        const blobUrl = window.URL.createObjectURL(blob);
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = blobUrl;
+                        downloadLink.download = workflow.name;
+                        downloadLink.style.display = 'none';
+                        
+                        // Agregar al DOM, hacer click y remover
                         document.body.appendChild(downloadLink);
                         downloadLink.click();
                         document.body.removeChild(downloadLink);
                         
+                        // Limpiar URL del blob
+                        window.URL.revokeObjectURL(blobUrl);
+                        
                         downloadedCount++;
                         
-                        // Actualizar progreso
-                        btn.textContent = `📥 Descargando ${downloadedCount}/${totalFiles}...`;
-                        
                         // Pequeña pausa entre descargas
-                        await new Promise(resolve => setTimeout(resolve, 500));
+                        await new Promise(resolve => setTimeout(resolve, 800));
                         
                     } catch (error) {
                         console.error(`Error descargando ${workflow.name}:`, error);
+                        // Intentar fallback con enlace directo
+                        try {
+                            const fallbackLink = document.createElement('a');
+                            fallbackLink.href = workflow.url;
+                            fallbackLink.download = workflow.name;
+                            fallbackLink.target = '_blank';
+                            fallbackLink.style.display = 'none';
+                            document.body.appendChild(fallbackLink);
+                            fallbackLink.click();
+                            document.body.removeChild(fallbackLink);
+                            downloadedCount++;
+                        } catch (fallbackError) {
+                            console.error(`Fallback también falló para ${workflow.name}:`, fallbackError);
+                        }
                     }
                 }
 
@@ -1392,14 +1418,14 @@ Asunto: [Asunto personalizado]
                     total_workflows: totalFiles,
                     downloaded_workflows: downloadedCount,
                     download_timestamp: Date.now(),
-                    download_method: 'direct_links'
+                    download_method: 'fetch_blob'
                 });
 
                 // Mostrar éxito
                 showDownloadSuccess(downloadedCount);
                 
             } catch (error) {
-                console.error('Error en descarga de workflows:', error);
+                console.error('Error general en descarga de workflows:', error);
                 
                 // Fallback: mostrar enlaces directos
                 showDownloadFallback(workflows);

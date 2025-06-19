@@ -1,0 +1,60 @@
+{
+    "name": "Math AI Agency - Automatización Inteligente",
+    "short_name": "Math AI",
+    "description": "Automatización inteligente con N8N e IA para empresas de servicios B2B",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0f1f",
+    "theme_color": "#FF6B00",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "es",
+    "categories": ["business", "productivity", "utilities"],
+    "icons": [
+        {
+            "src": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Diagnóstico Gratuito",
+            "short_name": "Diagnóstico",
+            "description": "Acceso directo al diagnóstico gratuito de automatización",
+            "url": "/#diagnostico",
+            "icons": [
+                {
+                    "src": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "FLUJO CALOR",
+            "short_name": "Lead Magnet",
+            "description": "Acceso al sistema FLUJO CALOR",
+            "url": "/lead-magnet-flujo-calor.html",
+            "icons": [
+                {
+                    "src": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "dir": "ltr",
+    "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+    "edge_side_panel": {
+        "preferred_width": 480
+    }
+} 

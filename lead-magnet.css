@@ -2126,4 +2126,110 @@
 @keyframes icon-pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
+}
+
+/* ============== FORM VALIDATION & ANIMATION ENHANCEMENTS ============== */
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Form validation styles integration */
+.input-flujo.form-field-container {
+    position: relative;
+}
+
+.input-flujo .validation-container {
+    margin-top: 0.5rem;
+    min-height: 24px;
+}
+
+.input-flujo .error-message {
+    font-size: 0.875rem;
+    color: #ff4757;
+    margin-top: 0.25rem;
+    display: none;
+    animation: slideInError 0.3s ease;
+}
+
+.input-flujo .success-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #10b981;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+    display: none;
+}
+
+@keyframes slideInError {
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Enhanced field states */
+.input-flujo.field-error input {
+    border-bottom-color: #ff4757 !important;
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.2);
+}
+
+.input-flujo.field-success input {
+    border-bottom-color: #10b981 !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.input-flujo.field-error .input-underline {
+    background: #ff4757 !important;
+}
+
+.input-flujo.field-success .input-underline {
+    background: linear-gradient(90deg, #10b981, #34d399) !important;
+}
+
+/* Progress bar integration */
+.form-progress-container {
+    margin-bottom: 1.5rem;
+}
+
+.form-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 69, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.form-progress-fill {
+    height: 100%;
+    background: var(--flujo-gradient);
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 2px;
+    width: 0%;
+}
+
+/* Button validation states */
+.btn-flujo-calor:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn-flujo-calor.form-valid {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.btn-flujo-calor.form-valid:hover {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    transform: translateY(-3px);
 } 

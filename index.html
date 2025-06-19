@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math AI - Automatización Inteligente</title>
     
+    <!-- Security Headers: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://app.cal.com https://cal.com; 
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+                   font-src 'self' https://fonts.gstatic.com; 
+                   img-src 'self' https://res.cloudinary.com data:; 
+                   connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://app.cal.com; 
+                   frame-src https://cal.com https://app.cal.com; 
+                   object-src 'none'; 
+                   base-uri 'self';">
+    
+    <!-- Additional Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Math AI - Automatización Inteligente con N8N e IA">
+    <meta property="og:description" content="Implementamos sistemas avanzados de automatización e IA a medida para eliminar tareas manuales, optimizar procesos clave y multiplicar resultados.">
+    <meta property="og:image" content="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png">
+    <meta property="og:url" content="https://mathai.agency">
+    <meta property="og:site_name" content="Math AI Agency">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Math AI - Automatización Inteligente">
+    <meta name="twitter:description" content="Sistemas avanzados de automatización e IA para empresas de servicios B2B">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta name="theme-color" content="#0a0f1f">
+    <meta name="msapplication-TileColor" content="#FF6B00">
+    <link rel="canonical" href="https://mathai.agency/">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Math AI">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png">
+    
     <!-- Google Analytics 4 - Math AI Agency -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWV7YB90M5"></script>
@@ -35,10 +81,72 @@
       });
     </script>
     
-    <link rel="stylesheet" href="style.css">
+    <!-- Critical CSS Inline for faster initial render -->
+    <style>
+        /* Critical Reset & Variables */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg-color:#0a0f1f;--primary-orange:#FF6B00;--text-light:#FFFFFF;--text-medium:#adb5bd;--card-bg:#121a30;--border-color:#2a3652;--font-primary:'Space Grotesk',sans-serif;--font-secondary:'Work Sans',sans-serif;--btn-bg-offset:2px}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font-secondary);background-color:var(--bg-color);color:var(--text-light);line-height:1.7;overflow-x:hidden}
+        .container{width:90%;max-width:1100px;margin:0 auto}
+        h1,h2,h3,h4,h5,h6{font-family:var(--font-primary);font-weight:600;color:var(--text-light);margin-bottom:1rem;position:relative;z-index:1}
+        h1{font-size:2.8rem;line-height:1.2}h2{font-size:2.2rem;line-height:1.3}h3{font-size:1.8rem}h4{font-size:1.3rem}
+        p{margin-bottom:1rem;color:var(--text-medium);font-weight:400;position:relative;z-index:1}
+        a{color:var(--primary-orange);text-decoration:none;transition:color 0.3s ease}
+        a:not(.btn-consulta):hover{color:#ff8533}
+        .text-orange{color:var(--primary-orange)}
+        .text-center{text-align:center}
+        
+        /* Critical Header */
+        header{background-color:rgba(10,15,31,0.85);backdrop-filter:blur(10px);padding:10px 0;position:fixed;width:100%;top:0;left:0;z-index:1000;border-bottom:1px solid var(--border-color)}
+        .nav-container{display:flex;justify-content:space-between;align-items:center}
+        .logo-link{display:flex;align-items:center;font-family:var(--font-primary);font-size:1.5rem;font-weight:600;color:var(--text-light);margin-right:auto}
+        .logo-link:hover{color:var(--text-light)}
+        .logo{height:40px;margin-right:10px}
+        .main-nav{margin-left:20px}
+        .nav-links{list-style:none;display:flex;align-items:center}
+        .nav-links li{margin-left:25px}
+        .nav-links li:first-child{margin-left:0}
+        .nav-links a:not(.btn-consulta){color:var(--text-medium);font-family:var(--font-primary);font-weight:500;font-size:0.95rem;padding:5px 0}
+        .nav-links a:not(.btn-consulta):hover,.nav-links a.active:not(.btn-consulta){color:var(--primary-orange)}
+        .header-actions{display:flex;align-items:center;margin-left:25px}
+        .nav-cta-mobile-dropdown{display:none}
+        .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;margin-left:15px}
+        
+        /* Critical Button Styles */
+        .btn-container{position:relative;display:inline-block;cursor:pointer;filter:drop-shadow(0 2px 5px rgba(0,0,0,0.15));transition:filter 0.3s ease;vertical-align:middle;box-sizing:border-box}
+        .btn-consulta{position:relative;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:17px;letter-spacing:0.2px;color:white!important;background:linear-gradient(170deg,#2B0D61,#3A1180);padding:12px 26px;border-radius:6px;text-decoration:none!important;border:none;display:inline-block;z-index:1;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);text-shadow:0 1px 1px rgba(0,0,0,0.1);overflow:hidden;white-space:nowrap;box-sizing:border-box}
+        .btn-bg{position:absolute;top:0;left:0;right:0;bottom:0;transform:translate(var(--btn-bg-offset),var(--btn-bg-offset));background-color:#FF6B00;border-radius:6px;z-index:0;transform-origin:bottom left;transition:transform 0.5s cubic-bezier(0.23,1,0.32,1),opacity 0.3s ease;box-shadow:0 1px 2px rgba(0,0,0,0.07);box-sizing:border-box}
+        .nav-cta-always-visible .btn-consulta{font-size:15px;padding:10px 20px}
+        
+        /* Critical Hero Section */
+        .hero-section{min-height:80vh;display:flex;align-items:center;justify-content:center;padding-top:100px}
+        .hero-section .btn-container{margin-top:20px}
+        .hero-section h1{margin-bottom:1.5rem}
+        .hero-section p{font-size:1.2rem;max-width:700px;margin:0 auto 1.5rem auto}
+        section{padding:60px 0;position:relative;overflow:hidden}
+        
+        /* Critical Mobile Responsive */
+        @media (max-width:992px){.main-nav{display:none}.nav-toggle{display:block}.nav-cta-always-visible{display:none}.nav-cta-mobile-dropdown{display:block}h1{font-size:2.4rem}h2{font-size:2rem}}
+        @media (max-width:768px){.hero-section{min-height:70vh;padding-top:80px}.hero-section p{font-size:1.1rem}.btn-consulta{font-size:15px;padding:10px 18px}}
+        @media (max-width:480px){h1{font-size:1.8rem}h2{font-size:1.6rem}.hero-section p{font-size:1rem}.btn-consulta{font-size:14px;padding:9px 16px}}
+    </style>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQQfzhzCSBU8k27ZCXtBMlJ8J1-oKNQY5nQCKSLKs.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/worksans/v19/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nWBiAJrqfJ.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Font preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Async load non-critical CSS -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- Async load web fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Work+Sans:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Work+Sans:wght@400&display=swap"></noscript>
     <link rel="icon" href="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" type="image/png">
 </head>
 <body>
@@ -472,7 +580,134 @@
     </script>
     <!-- Cal.com element-click embed code ends -->
 
-    <script src="script.js"></script>
+    <!-- CSS Loading Fallback -->
+    <script>
+        // Fallback for browsers that don't support onload on link elements
+        (function(){
+            var links = document.querySelectorAll('link[rel="preload"][as="style"]');
+            for (var i = 0; i < links.length; i++) {
+                if (!links[i].onload) {
+                    links[i].rel = 'stylesheet';
+                }
+            }
+        })();
+    </script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Math AI Agency",
+        "alternateName": "Math AI",
+        "url": "https://mathai.agency",
+        "logo": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png",
+        "description": "Agencia especializada en automatización inteligente con N8N e IA para PYMES de servicios B2B",
+        "foundingDate": "2025",
+        "industry": "Automatización y Tecnología",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contacto@math-ai.com",
+            "contactType": "customer service",
+            "availableLanguage": "Spanish"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "América Latina"
+        },
+        "serviceType": [
+            "Automatización de procesos",
+            "Integración N8N",
+            "Implementación de IA",
+            "Consultoría tecnológica"
+        ],
+        "offers": {
+            "@type": "Service",
+            "name": "Diagnóstico Gratuito de Automatización",
+            "description": "Análisis profundo de procesos empresariales para identificar oportunidades de automatización",
+            "provider": {
+                "@type": "Organization",
+                "name": "Math AI Agency"
+            },
+            "areaServed": "América Latina",
+            "availableChannel": {
+                "@type": "ServiceChannel",
+                "serviceUrl": "https://mathai.agency",
+                "serviceType": "Online consultation"
+            }
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Math AI Agency",
+        "url": "https://mathai.agency",
+        "description": "Automatización inteligente con N8N e IA para empresas de servicios B2B",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Math AI Agency",
+            "logo": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://mathai.agency/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Math AI Agency - Automatización Inteligente",
+        "image": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png",
+        "description": "Implementamos sistemas avanzados de automatización e IA a medida para eliminar tareas manuales, optimizar procesos clave y multiplicar resultados empresariales.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Math AI Agency"
+        },
+        "areaServed": "América Latina",
+        "serviceType": "Business Automation",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Automatización",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Optimización de Flujos N8N",
+                        "description": "Diseño de flujos de trabajo personalizados para automatizar procesos críticos"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "IA Estratégica",
+                        "description": "Incorporación de IA para resolver desafíos concretos y multiplicar resultados"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Integración Total",
+                        "description": "Conexión de herramientas clave (CRM, ERP, comunicación) usando N8N"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Defer non-critical JS -->
+    <script src="script.js" defer></script>
     
     <!-- Google Analytics - Event Tracking -->
     <script>
@@ -521,8 +756,44 @@
                     'event_label': questionText
                 });
             });
+                    });
         });
-    });
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW: Registered successfully', registration.scope);
+                        
+                        // Manejar actualizaciones del SW
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            if (newWorker) {
+                                newWorker.addEventListener('statechange', () => {
+                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                        // Hay una nueva versión disponible
+                                        if (confirm('🚀 Nueva versión disponible. ¿Actualizar ahora?')) {
+                                            newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                            window.location.reload();
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.log('SW: Registration failed', error);
+                    });
+                    
+                // Manejar control del SW
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    window.location.reload();
+                });
+            });
+        }
     </script>
 </body>
 </html>

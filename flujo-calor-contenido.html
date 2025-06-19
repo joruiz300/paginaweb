@@ -75,206 +75,185 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- CSS PROFESIONAL NUEVO -->
+    <!-- DISEÑO PROFESIONAL DESDE CERO - FONDO BLANCO -->
     <style>
-        /* ============= DISEÑO PROFESIONAL CONTENIDO ============= */
-        /* Colores principales - CONTRASTE PERFECTO */
+        /* ============= NUEVA PALETA PROFESIONAL ============= */
         :root {
-            --bg-primary: #0a0f1f;
-            --bg-secondary: #1a2332;
-            --bg-accent: #243447;
-            --text-primary: #ffffff;
-            --text-secondary: #e2e8f0;
-            --text-muted: #94a3b8;
+            /* FONDO BLANCO COMO SOLICITADO */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #f1f5f9;
+            
+            /* TEXTOS QUE SE VEN SOBRE FONDO BLANCO */
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            
+            /* COLORES DE MARCA */
             --orange-primary: #FF6B00;
             --orange-hot: #FF4500;
             --orange-gradient: linear-gradient(135deg, #FF6B00 0%, #FF4500 100%);
-            --border-primary: #334155;
-            --border-secondary: #475569;
-            --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.5);
+            
+            /* BORDES Y SOMBRAS PARA FONDO BLANCO */
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
+            
+            /* ESPACIADO COMPACTO */
+            --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
             --space-lg: 2rem;
             --space-xl: 3rem;
-            --space-2xl: 4rem;
         }
 
-        /* Base mejorada */
+        /* ============= PÁGINA MINIMALISTA PROFESIONAL ============= */
         .contenido-page {
-            background: linear-gradient(135deg, var(--bg-primary) 0%, #0f1419 100%);
+            background: var(--bg-primary);
             min-height: 100vh;
             color: var(--text-primary);
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.6;
         }
 
-        /* Header profesional */
+        /* Header limpio y centrado */
         .welcome-header {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
-            border-bottom: 2px solid var(--border-primary);
-            padding: var(--space-2xl) 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .welcome-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6B00' fill-opacity='0.03'%3E%3Cpath d='M12 6h36v36H12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-            pointer-events: none;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            padding: var(--space-xl) 0;
+            text-align: center;
         }
 
         .welcome-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: var(--space-sm);
-            position: relative;
-            z-index: 2;
         }
 
         .welcome-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-size: 1.2rem;
             color: var(--text-secondary);
             margin-bottom: var(--space-lg);
-            font-weight: 500;
-            position: relative;
-            z-index: 2;
+            font-weight: 400;
         }
 
         .user-welcome {
             background: var(--orange-gradient);
             color: white;
             padding: var(--space-sm) var(--space-lg);
-            border-radius: 12px;
+            border-radius: 50px;
             display: inline-block;
             font-weight: 600;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 2;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow-sm);
         }
 
-        /* Navegación mejorada */
-        .section-navegacion {
-            padding: var(--space-2xl) 0;
-            background: rgba(255, 107, 0, 0.02);
-            border-radius: 20px;
-            margin: var(--space-xl) 0;
-            border: 1px solid var(--border-primary);
+        /* ============= NAVEGACIÓN MINIMALISTA ============= */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
         }
 
         .nav-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-size: 2rem;
             color: var(--text-primary);
             text-align: center;
-            margin-bottom: var(--space-xl);
-            font-weight: 700;
+            margin: var(--space-xl) 0 var(--space-lg) 0;
+            font-weight: 600;
         }
 
         .nav-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-lg);
-            margin-top: var(--space-xl);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
         }
 
         .nav-item {
             background: var(--bg-secondary);
-            border: 1px solid var(--border-primary);
-            border-radius: 16px;
-            padding: var(--space-lg);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: var(--space-md);
             display: flex;
             align-items: center;
             gap: var(--space-md);
             text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s ease;
+            border-left: 3px solid var(--orange-primary);
         }
 
         .nav-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--orange-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
 
         .nav-icon {
-            font-size: 2.5rem;
-            width: 60px; height: 60px;
+            font-size: 1.8rem;
+            width: 40px;
+            height: 40px;
             background: var(--orange-gradient);
-            border-radius: 12px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            color: white;
         }
 
         .nav-info h3 {
             font-family: 'Space Grotesk', sans-serif;
             color: var(--text-primary);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
             font-weight: 600;
         }
 
         .nav-info p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
-        /* Secciones de contenido */
+        /* ============= SECCIONES MINIMALISTAS ============= */
         .content-section {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-primary);
-            border-radius: 20px;
-            padding: var(--space-2xl);
-            margin: var(--space-2xl) 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: var(--orange-gradient);
-            border-radius: 20px 20px 0 0;
+            margin: var(--space-xl) 0;
+            padding: 0;
         }
 
         .section-title {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-size: 1.8rem;
             color: var(--text-primary);
             margin-bottom: var(--space-lg);
-            font-weight: 700;
-        }
-
-        .section-icon {
-            font-size: 2.5rem;
-            width: 60px; height: 60px;
-            background: var(--orange-gradient);
-            border-radius: 12px;
+            font-weight: 600;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            gap: var(--space-sm);
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+            color: var(--orange-primary);
         }
 
         .section-description {
-            font-size: 1.15rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            margin-bottom: var(--space-xl);
-            line-height: 1.7;
-            font-weight: 500;
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-description strong {
@@ -282,202 +261,381 @@
             font-weight: 600;
         }
 
-        /* =========== TIMELINE PROFESIONAL - SOLUCIONADO =========== */
+        /* ============= TIMELINE MINIMALISTA Y COMPACTA ============= */
         .etapas-container {
-            background: linear-gradient(135deg, rgba(255, 107, 0, 0.03) 0%, rgba(255, 69, 0, 0.05) 100%);
-            border: 1px solid var(--border-secondary);
-            border-radius: 20px;
-            padding: var(--space-2xl);
-            margin: var(--space-xl) 0;
-            position: relative;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .etapas-header {
             text-align: center;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.6rem, 3.5vw, 2rem);
+            font-size: 1.6rem;
             color: var(--text-primary);
             margin-bottom: var(--space-sm);
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .etapas-subtitle {
             text-align: center;
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: var(--space-2xl);
-            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: var(--space-lg);
+            font-weight: 400;
         }
 
-        /* TIMELINE COMPACTO */
+        /* TIMELINE HORIZONTAL COMPACTA */
         .etapas-timeline-clean {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .vertical-line {
-            position: absolute;
-            left: 50%;
-            top: 0; bottom: 0;
-            width: 3px;
-            background: var(--orange-gradient);
-            transform: translateX(-50%);
-            border-radius: 3px;
-            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--space-sm);
+            margin: var(--space-lg) 0;
         }
 
         .etapa-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: var(--space-md);
+            text-align: center;
             position: relative;
-            margin-bottom: 2.5rem; /* REDUCIDO - PROBLEMA SOLUCIONADO */
-            display: flex;
-            align-items: center;
+            transition: all 0.2s ease;
         }
 
-        /* NÚMEROS BIEN POSICIONADOS - PROBLEMA SOLUCIONADO */
+        .etapa-item:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--orange-primary);
+        }
+
         .etapa-number {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 50px; height: 50px;
-            background: white;
-            border: 3px solid var(--orange-primary);
+            width: 30px;
+            height: 30px;
+            background: var(--orange-gradient);
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--orange-primary);
-            z-index: 3;
-            box-shadow: var(--shadow-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0 auto var(--space-sm) auto;
         }
 
-        /* CARDS BIEN ESPACIADAS */
-        .etapa-left {
-            justify-content: flex-end;
-            text-align: right;
-        }
-
-        .etapa-right {
-            justify-content: flex-start;
-            text-align: left;
-        }
-
-        .etapa-card {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-secondary);
-            border-radius: 16px;
-            padding: var(--space-lg);
-            max-width: 380px;
-            position: relative;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-        }
-
-        .etapa-left .etapa-card {
-            margin-right: calc(25px + var(--space-lg));
-        }
-
-        .etapa-right .etapa-card {
-            margin-left: calc(25px + var(--space-lg));
-        }
-
-        .etapa-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--orange-primary);
-        }
-
-        /* CONTENIDO DE ETAPAS - CONTRASTE MEJORADO */
         .etapa-time {
-            background: var(--orange-gradient);
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            background: var(--bg-accent);
+            color: var(--orange-primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--space-xs);
         }
 
         .etapa-titulo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-primary); /* CONTRASTE MEJORADO */
-            margin-bottom: var(--space-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+            line-height: 1.2;
+        }
+
+        .etapa-info {
+            font-size: 0.75rem;
+            color: var(--text-muted);
             line-height: 1.3;
         }
 
         .etapa-info p {
-            color: var(--text-secondary); /* CONTRASTE MEJORADO */
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
-            line-height: 1.5;
+            margin: 0.2rem 0;
         }
 
         .etapa-info strong {
-            color: var(--text-primary); /* CONTRASTE PERFECTO */
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ============= ELEMENTOS MINIMALISTAS ============= */
+        
+        /* Prompts compactos */
+        .prompt-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            margin: var(--space-md) 0;
+            overflow: hidden;
+        }
+
+        .prompt-header {
+            background: var(--bg-accent);
+            padding: var(--space-md);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .prompt-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
             font-weight: 600;
         }
 
-        /* Responsive mejorado */
+        .prompt-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .code-block {
+            position: relative;
+            background: #f8fafc;
+            border: 1px solid var(--border-medium);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: var(--text-primary);
+            padding: var(--space-md);
+            overflow-x: auto;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--orange-gradient);
+            color: white;
+            border: none;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Areas de descarga */
+        .download-area, .highlight-box {
+            background: var(--bg-accent);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+
+        .download-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+        }
+
+        .download-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--orange-gradient);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Checklist minimalista */
+        .checklist {
+            margin: var(--space-md) 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            transition: all 0.2s ease;
+        }
+
+        .checklist-item:hover {
+            background: var(--bg-secondary);
+            border-color: var(--orange-primary);
+        }
+
+        .checklist-checkbox {
+            font-size: 1rem;
+            color: var(--orange-primary);
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            min-width: 16px;
+        }
+
+        .checklist-text strong {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+
+        .checklist-text small {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+
+        /* CTA final */
+        .next-steps {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: var(--space-xl);
+            text-align: center;
+            margin: var(--space-xl) 0;
+        }
+
+        .next-steps h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .next-steps p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            line-height: 1.5;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .next-steps strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .cta-implementation {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--orange-gradient);
+            color: white;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            margin: var(--space-md) 0;
+        }
+
+        .cta-implementation:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer minimalista */
+        .simple-footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            padding: var(--space-lg) 0;
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+
+        .simple-footer p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .simple-footer a {
+            color: var(--text-secondary);
+            transition: color 0.2s ease;
+        }
+
+        .simple-footer a:hover {
+            color: var(--orange-primary);
+        }
+
+        /* Títulos de sección */
+        .content-section h3 {
+            color: var(--text-primary);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            margin: var(--space-lg) 0 var(--space-md) 0;
+            font-weight: 600;
+        }
+
+        /* Listas simples */
+        .instruction-list {
+            color: var(--text-secondary);
+            margin-left: var(--space-md);
+        }
+
+        .instruction-list li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+
+        .instruction-list strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
             .nav-grid {
                 grid-template-columns: 1fr;
             }
             
-            .content-section {
-                padding: var(--space-lg);
+            .etapas-timeline-clean {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
             }
             
-            /* Timeline móvil */
-            .vertical-line {
-                left: 2rem;
-            }
-            
-            .etapa-item {
-                flex-direction: column;
-                align-items: flex-start;
-                margin-bottom: var(--space-lg);
-            }
-            
-            .etapa-left, .etapa-right {
-                justify-content: flex-start;
-                text-align: left;
-            }
-            
-            .etapa-number {
-                left: 2rem;
-                width: 40px; height: 40px;
-                font-size: 1rem;
-            }
-            
-            .etapa-left .etapa-card,
-            .etapa-right .etapa-card {
-                margin: 0 0 0 calc(20px + var(--space-lg));
-                max-width: none;
+            .section-title {
+                font-size: 1.5rem;
             }
         }
-
-        @media (max-width: 480px) {
-            .etapas-container {
-                padding: var(--space-lg);
-            }
-            
-            .vertical-line {
-                left: 1.5rem;
-            }
-            
-            .etapa-number {
-                left: 1.5rem;
-                width: 35px; height: 35px;
-                font-size: 0.9rem;
-            }
-                 }
 
          /* ======= PROMPTS Y RESTO DEL CONTENIDO PROFESIONAL ======= */
          
@@ -813,333 +971,277 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;500&family=Fira+Code:wght@400;500&display=swap"></noscript>
     <link rel="icon" href="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" type="image/png">
 </head>
-<body class="flujo-calor-page contenido-page">
-    
-    <!-- Header de bienvenida -->
+<body class="contenido-page">
+    <!-- Header minimalista -->
     <header class="welcome-header">
         <div class="container">
-            <h1 class="welcome-title">🎉 ¡Acceso Activado al FLUJO CALOR!</h1>
-            <p class="welcome-subtitle">Tu sistema completo de automatización de leads está listo para implementar</p>
-            <div class="user-welcome" id="userWelcome">
-                <span>¡Hola! Aquí está todo lo que necesitas 👇</span>
-            </div>
+            <h1 class="welcome-title">🔥 Flujo de Calor Activado</h1>
+            <p class="welcome-subtitle">Tu automatización está funcionando perfectamente</p>
+            <div class="user-welcome">✅ Sistema operativo</div>
         </div>
     </header>
 
     <main class="contenido-principal">
         <div class="container">
             
-            <!-- Navegación rápida -->
-            <section class="section-navegacion">
-                <h2 class="nav-title">🚀 Acceso Directo al Contenido</h2>
-                <div class="nav-grid">
-                    <a href="#estrategia" class="nav-item">
-                        <div class="nav-icon">🎯</div>
-                        <div class="nav-info">
-                            <h3>1. Estrategia del Flujo</h3>
-                            <p>Las 5 etapas del FLUJO CALOR explicadas paso a paso</p>
-                        </div>
-                    </a>
-                    
-                    <a href="#prompts" class="nav-item">
-                        <div class="nav-icon">🤖</div>
-                        <div class="nav-info">
-                            <h3>2. Prompts de IA</h3>
-                            <p>3 prompts optimizados listos para copiar y usar</p>
-                        </div>
-                    </a>
-                    
-                    <a href="#plantilla" class="nav-item">
-                        <div class="nav-icon">⚙️</div>
-                        <div class="nav-info">
-                            <h3>3. Plantilla N8N</h3>
-                            <p>Archivo .json completo para importar directamente</p>
-                        </div>
-                    </a>
-                    
-                    <a href="#implementacion" class="nav-item">
-                        <div class="nav-icon">✅</div>
-                        <div class="nav-info">
-                            <h3>4. Guía de Implementación</h3>
-                            <p>Checklist interactivo paso a paso</p>
-                        </div>
-                    </a>
-                </div>
-            </section>
+            <!-- Navegación compacta -->
+            <h2 class="nav-title">📋 Contenido del Flujo</h2>
+            <div class="nav-grid">
+                <a href="#timeline" class="nav-item">
+                    <div class="nav-icon">⚡</div>
+                    <div class="nav-info">
+                        <h3>Timeline</h3>
+                        <p>5 etapas compactas</p>
+                    </div>
+                </a>
+                
+                <a href="#prompts" class="nav-item">
+                    <div class="nav-icon">🤖</div>
+                    <div class="nav-info">
+                        <h3>Prompts IA</h3>
+                        <p>3 prompts listos</p>
+                    </div>
+                </a>
+                
+                <a href="#plantilla" class="nav-item">
+                    <div class="nav-icon">⚙️</div>
+                    <div class="nav-info">
+                        <h3>Plantilla N8N</h3>
+                        <p>Archivo completo</p>
+                    </div>
+                </a>
+                
+                <a href="#checklist" class="nav-item">
+                    <div class="nav-icon">✅</div>
+                    <div class="nav-info">
+                        <h3>Checklist</h3>
+                        <p>Pasos a seguir</p>
+                    </div>
+                </a>
+            </div>
 
-            <!-- Sección 1: Estrategia -->
-            <section id="estrategia" class="content-section">
+            <!-- Timeline compacta -->
+            <section id="timeline" class="content-section">
                 <h2 class="section-title">
-                    <div class="section-icon">🎯</div>
-                    La Estrategia del FLUJO CALOR
+                    <span class="section-icon">⚡</span>
+                    Timeline del Flujo de Calor
                 </h2>
                 
                 <p class="section-description">
-                    Antes de implementar el flujo técnico, necesitas entender la <strong>lógica estratégica</strong>. 
-                    Un buen sistema de automatización no son solo nodos conectados; es una estrategia de negocio operativa.
+                    5 etapas automatizadas que transforman leads en oportunidades calificadas
                 </p>
                 
                 <div class="etapas-container">
-                    <h3 class="etapas-header">🔥 Las 5 Etapas del FLUJO CALOR</h3>
-                    <p class="etapas-subtitle">Una estrategia clara, paso a paso, sin complicaciones</p>
+                    <h3 class="etapas-header">Flujo Completo</h3>
+                    <p class="etapas-subtitle">Automatización de extremo a extremo</p>
                     
                     <div class="etapas-timeline-clean">
-                        <div class="vertical-line"></div>
                         
-                        <!-- Etapa 1 - Izquierda -->
-                        <div class="etapa-item etapa-left">
+                        <!-- Etapa 1 -->
+                        <div class="etapa-item">
                             <div class="etapa-number">1</div>
-                            <div class="etapa-card">
-                                <div class="etapa-time">&lt;30s</div>
-                                <h4 class="etapa-titulo">🎣 Captura y Disparo Inmediato</h4>
-                                <div class="etapa-info">
-                                    <p><strong>Trigger:</strong> Webhook/Cal.com/Formulario web</p>
-                                    <p><strong>Velocidad:</strong> &lt; 30 segundos desde captura</p>
-                                    <p><strong>Objetivo:</strong> Activación instantánea del flujo</p>
-                                </div>
+                            <div class="etapa-time">&lt;30s</div>
+                            <h4 class="etapa-titulo">Captura</h4>
+                            <div class="etapa-info">
+                                <p><strong>Trigger:</strong> Webhook/Cal.com/Formulario web</p>
+                                <p><strong>Velocidad:</strong> &lt; 30 segundos desde captura</p>
+                                <p><strong>Objetivo:</strong> Activación instantánea del flujo</p>
                             </div>
                         </div>
                         
-                        <!-- Etapa 2 - Derecha -->
-                        <div class="etapa-item etapa-right">
+                        <!-- Etapa 2 -->
+                        <div class="etapa-item">
                             <div class="etapa-number">2</div>
-                            <div class="etapa-card">
-                                <div class="etapa-time">~2min</div>
-                                <h4 class="etapa-titulo">🧠 Enriquecimiento Inteligente</h4>
-                                <div class="etapa-info">
-                                    <p><strong>Proceso:</strong> Análisis de IA de la información capturada</p>
-                                    <p><strong>Output:</strong> Puntuación, categorización y contexto del lead</p>
-                                    <p><strong>Herramienta:</strong> OpenAI + prompts específicos</p>
-                                </div>
+                            <div class="etapa-time">~2min</div>
+                            <h4 class="etapa-titulo">Análisis IA</h4>
+                            <div class="etapa-info">
+                                <p><strong>Proceso:</strong> Análisis inteligente del lead</p>
+                                <p><strong>Output:</strong> Puntuación y categorización</p>
                             </div>
                         </div>
                         
-                        <!-- Etapa 3 - Izquierda -->
-                        <div class="etapa-item etapa-left">
+                        <!-- Etapa 3 -->
+                        <div class="etapa-item">
                             <div class="etapa-number">3</div>
-                            <div class="etapa-card">
-                                <div class="etapa-time">~30s</div>
-                                <h4 class="etapa-titulo">🚦 Decisión Automatizada</h4>
-                                <div class="etapa-info">
-                                    <p><strong>Logic:</strong> Segmentación basada en puntuación de IA</p>
-                                    <p><strong>Caminos:</strong> Lead Caliente | Lead Tibio | Lead Frío</p>
-                                    <p><strong>Criterio:</strong> ICP matching + urgencia detectada</p>
-                                </div>
+                            <div class="etapa-time">~30s</div>
+                            <h4 class="etapa-titulo">Decisión</h4>
+                            <div class="etapa-info">
+                                <p><strong>Logic:</strong> Segmentación automática</p>
+                                <p><strong>Caminos:</strong> Caliente | Tibio | Frío</p>
                             </div>
                         </div>
                         
-                        <!-- Etapa 4 - Derecha -->
-                        <div class="etapa-item etapa-right">
+                        <!-- Etapa 4 -->
+                        <div class="etapa-item">
                             <div class="etapa-number">4</div>
-                            <div class="etapa-card">
-                                <div class="etapa-time">~1min</div>
-                                <h4 class="etapa-titulo">⚡ Acción Personalizada</h4>
-                                <div class="etapa-info">
-                                    <p><strong>CRM Update:</strong> Datos estructurados + scoring</p>
-                                    <p><strong>Team Alert:</strong> Notificación con contexto inteligente</p>
-                                    <p><strong>Lead Response:</strong> Email personalizado automático</p>
-                                </div>
+                            <div class="etapa-time">~1min</div>
+                            <h4 class="etapa-titulo">Acción</h4>
+                            <div class="etapa-info">
+                                <p><strong>CRM:</strong> Actualización automática</p>
+                                <p><strong>Notificación:</strong> Alerta al equipo</p>
                             </div>
                         </div>
                         
-                        <!-- Etapa 5 - Izquierda -->
-                        <div class="etapa-item etapa-left">
+                        <!-- Etapa 5 -->
+                        <div class="etapa-item">
                             <div class="etapa-number">5</div>
-                            <div class="etapa-card">
-                                <div class="etapa-time">24-48h</div>
-                                <h4 class="etapa-titulo">🗓️ Seguimiento Proactivo</h4>
-                                <div class="etapa-info">
-                                    <p><strong>Recordatorios:</strong> Para citas agendadas</p>
-                                    <p><strong>Nurturing:</strong> Para leads no listos aún</p>
-                                    <p><strong>Analytics:</strong> Tracking completo del funnel</p>
-                                </div>
+                            <div class="etapa-time">24-48h</div>
+                            <h4 class="etapa-titulo">Seguimiento</h4>
+                            <div class="etapa-info">
+                                <p><strong>Recordatorios:</strong> Citas agendadas</p>
+                                <p><strong>Nurturing:</strong> Leads no listos</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Sección 2: Prompts de IA -->
+            <!-- Prompts de IA -->
             <section id="prompts" class="content-section">
                 <h2 class="section-title">
-                    <div class="section-icon">🤖</div>
-                    Los 3 Prompts de IA Optimizados
+                    <span class="section-icon">🤖</span>
+                    Prompts de IA
                 </h2>
                 
                 <p class="section-description">
-                    Estos prompts son el <strong>componente más valioso</strong>. Son el "software" que se ejecuta 
-                    dentro del nodo de OpenAI en tu flujo N8N. Cópialos directamente y personalízalos.
+                    3 prompts optimizados para análisis automático de leads
                 </p>
                 
-                <!-- Prompt 1: Cualificación General -->
+                <!-- Prompt 1 -->
                 <div class="prompt-container">
                     <div class="prompt-header">
-                        <h3 class="prompt-title">🔍 Prompt 1: Cualificación General y Puntuación</h3>
-                        <p class="prompt-description">
-                            Analiza y puntúa leads automáticamente según tu ICP y criterios de negocio
-                        </p>
+                        <h3 class="prompt-title">Prompt 1: Cualificación y Puntuación</h3>
+                        <p class="prompt-description">Analiza y puntúa leads automáticamente</p>
                     </div>
                     <div class="code-block">
                         <button class="copy-btn" onclick="copyToClipboard('prompt1')">📋 Copiar</button>
 <div id="prompt1">## ROL
-Eres un Asistente de Ventas B2B experto en cualificar leads para una agencia de automatización llamada Math AI Agency.
+Eres un Asistente de Ventas B2B experto en cualificar leads.
 
 ## TAREA
-Analiza la siguiente información de un nuevo lead. Tu objetivo es:
-1. Asignar una puntuación de "Calidad del Lead" de 1 a 10 (1=Baja, 10=Perfecta)
-2. Identificar la necesidad principal del prospecto
-3. Extraer el nombre de la empresa
-4. Generar un resumen de 20 palabras para notificar al equipo de ventas
-5. Responder únicamente con un objeto JSON
+Analiza la información del lead y responde con JSON:
+1. Puntuación de 1 a 10
+2. Necesidad principal
+3. Nombre de empresa
+4. Resumen de 20 palabras
 
-## CONTEXTO
-- **Mi empresa:** Math AI Agency, especializada en automatización para PYMES de servicios B2B
-- **Cliente Ideal (ICP):** Empresas de servicios con equipos de ventas que sufren por procesos manuales y lentos
-- **Información del Lead:**
-    - Nombre: {{$json.body.payload.attendee.name}}
-    - Email: {{$json.body.payload.attendee.email}}
-    - Empresa: {{$json.body.payload.responses.company.value}}
-    - Cargo: {{$json.body.payload.responses.role.value}}
-    - Necesidad descrita: {{$json.body.payload.responses.need.value}}
+## INFORMACIÓN DEL LEAD:
+- Nombre: {{$json.body.payload.attendee.name}}
+- Email: {{$json.body.payload.attendee.email}}
+- Empresa: {{$json.body.payload.responses.company.value}}
+- Cargo: {{$json.body.payload.responses.role.value}}
+- Necesidad: {{$json.body.payload.responses.need.value}}
 
-## OUTPUT (Solo responde con este formato JSON)
+## OUTPUT:
 {
   "puntuacion_lead": <número_del_1_al_10>,
-  "necesidad_principal": "<resumen_de_la_necesidad>",
-  "nombre_empresa": "<nombre_de_la_empresa>",
-  "resumen_slack": "<resumen_de_20_palabras_para_el_equipo>"
+  "necesidad_principal": "<resumen_necesidad>",
+  "nombre_empresa": "<empresa>",
+  "resumen_slack": "<resumen_20_palabras>"
 }</div>
                     </div>
                 </div>
                 
-                <!-- Prompt 2: Detección de Urgencia -->
+                <!-- Prompt 2 -->
                 <div class="prompt-container">
                     <div class="prompt-header">
-                        <h3 class="prompt-title">⏱️ Prompt 2: Detección de Urgencia</h3>
-                        <p class="prompt-description">
-                            Detecta automáticamente el nivel de urgencia e intención de compra del lead
-                        </p>
+                        <h3 class="prompt-title">Prompt 2: Detección de Urgencia</h3>
+                        <p class="prompt-description">Detecta nivel de urgencia del lead</p>
                     </div>
                     <div class="code-block">
                         <button class="copy-btn" onclick="copyToClipboard('prompt2')">📋 Copiar</button>
 <div id="prompt2">## ROL
-Eres un analista de ventas especializado en detectar la intención de compra y la urgencia en las comunicaciones de un prospecto.
+Analista de ventas especializado en detectar urgencia de compra.
 
 ## TAREA
-Analiza la descripción de la necesidad del lead y clasifica su nivel de urgencia. Busca palabras clave como "ahora", "urgente", "inmediato", "estamos evaluando proveedores", vs. "a futuro", "explorando", "solo curiosidad". Responde únicamente con un objeto JSON.
+Analiza la descripción y clasifica urgencia. Busca palabras como "ahora", "urgente", "inmediato" vs "futuro", "explorando".
 
-## CONTEXTO
-- **Información del Lead:**
-    - Necesidad descrita: {{$json.body.payload.responses.need.value}}
+## INFORMACIÓN:
+- Necesidad: {{$json.body.payload.responses.need.value}}
 
-## OUTPUT (Solo responde con este formato JSON)
+## OUTPUT:
 {
   "nivel_urgencia": "<Alta|Media|Baja>",
-  "señal_detectada": "<frase_o_palabra_clave_que_justifica_el_nivel>"
+  "señal_detectada": "<palabra_clave_justificativa>"
 }</div>
                     </div>
                 </div>
                 
-                <!-- Prompt 3: Análisis de ICP -->
+                <!-- Prompt 3 -->
                 <div class="prompt-container">
                     <div class="prompt-header">
-                        <h3 class="prompt-title">🎯 Prompt 3: Análisis de Encaje con el ICP</h3>
-                        <p class="prompt-description">
-                            Evalúa automáticamente si el lead encaja con tu perfil de cliente ideal
-                        </p>
+                        <h3 class="prompt-title">Prompt 3: Respuesta Personalizada</h3>
+                        <p class="prompt-description">Genera respuesta automática personalizada</p>
                     </div>
                     <div class="code-block">
                         <button class="copy-btn" onclick="copyToClipboard('prompt3')">📋 Copiar</button>
 <div id="prompt3">## ROL
-Eres un Director de Estrategia que debe decidir si un nuevo lead encaja con el perfil de cliente ideal de la agencia.
+Especialista en comunicación B2B que escribe emails personalizados.
 
 ## TAREA
-Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". Nuestro ICP son PYMES (5-50 empleados) de servicios B2B (consultoría, agencias, software). Responde únicamente con un objeto JSON.
+Genera un email de respuesta automática personalizado basado en la información del lead.
 
-## CONTEXTO
-- **Datos del Lead:**
-    - Empresa: {{$json.body.payload.responses.company.value}}
-    - Cargo: {{$json.body.payload.responses.role.value}}
-    - Industria/Necesidad: {{$json.body.payload.responses.need.value}}
+## INFORMACIÓN:
+- Nombre: {{$json.body.payload.attendee.name}}
+- Empresa: {{$json.body.payload.responses.company.value}}
+- Necesidad: {{$json.body.payload.responses.need.value}}
 
-## OUTPUT (Solo responde con este formato JSON)
-{
-  "encaje_icp": "<Ideal|Bueno|Bajo>",
-  "justificacion": "<breve_explicación_de_por_qué_encaja_o_no>"
-}</div>
+## FORMATO:
+Asunto: [Asunto personalizado]
+---
+[Email personalizado de 100-150 palabras]</div>
                     </div>
-                </div>
-                
-                <div class="download-area">
-                    <h4 class="download-title">📋 Personalización de los Prompts</h4>
-                    <p class="download-description">
-                        Recuerda adaptar las variables {{}} según tu configuración específica de N8N. 
-                        Cambia "Math AI Agency" por tu empresa e ICP por tu cliente ideal.
-                    </p>
-                </div>
             </section>
 
-            <!-- Sección 3: Plantilla N8N -->
+            <!-- Plantilla N8N -->
             <section id="plantilla" class="content-section">
                 <h2 class="section-title">
-                    <div class="section-icon">⚙️</div>
-                    Plantilla N8N Lista para Importar
+                    <span class="section-icon">⚙️</span>
+                    Plantilla N8N
                 </h2>
                 
                 <p class="section-description">
-                    El flujo completo de N8N estructurado y listo para que lo importes y personalices según tus herramientas específicas.
+                    Flujo completo listo para importar y personalizar
                 </p>
                 
                 <div class="download-area">
-                    <h3 class="download-title">📥 Descarga la Plantilla</h3>
-                    <p class="download-description">Archivo .json optimizado listo para importar en tu instancia de N8N</p>
+                    <h3 class="download-title">Descarga la Plantilla</h3>
+                    <p class="download-description">Archivo .json optimizado para N8N</p>
                     <a href="#" class="download-btn" onclick="downloadN8NTemplate()">
-                        <span>📁</span>
-                        <span>Descargar flujo-calor-n8n.json</span>
-                        <span>→</span>
+                        📁 Descargar flujo-calor-n8n.json
                     </a>
                 </div>
                 
                 <div class="highlight-box">
-                    <h4><span style="color: var(--flujo-primary);">⚠️</span> Importante antes de importar:</h4>
-                    <p>Esta plantilla es una <strong>base conceptual poderosa</strong>, no una solución "plug-and-play". Para que funcione necesitarás:</p>
+                    <h4>⚠️ Importante:</h4>
+                    <p>Esta plantilla requiere configuración personalizada:</p>
                     <ul class="instruction-list">
-                        <li><strong>Configurar tus propias credenciales API</strong> (OpenAI, CRM, Slack, etc.)</li>
-                        <li><strong>Adaptar los prompts</strong> a tu negocio específico e ICP</li>
-                        <li><strong>Conectar tus herramientas</strong> (CRM, Slack, email service, etc.)</li>
-                        <li><strong>Personalizar las variables</strong> del flujo según tu configuración</li>
+                        <li><strong>Configura credenciales API</strong> (OpenAI, CRM, Slack)</li>
+                        <li><strong>Adapta prompts</strong> a tu negocio</li>
+                        <li><strong>Conecta herramientas</strong> específicas</li>
+                        <li><strong>Personaliza variables</strong> del flujo</li>
                     </ul>
                 </div>
-                
-                <h3><span style="color: var(--flujo-primary);">📋</span> Instrucciones de Importación:</h3>
-                <ol class="instruction-list">
-                    <li><strong>Descarga el archivo JSON</strong> usando el botón de arriba</li>
-                    <li><strong>Abre tu N8N:</strong> Ve a Workflows → Import → From File</li>
-                    <li><strong>Selecciona el archivo</strong> flujo-calor-n8n.json descargado</li>
-                    <li><strong>Configura credenciales:</strong> OpenAI, Slack, CRM, email service</li>
-                    <li><strong>Personaliza los prompts</strong> con tu información específica</li>
-                    <li><strong>Prueba con un lead de ejemplo</strong> antes de activar en producción</li>
-                </ol>
             </section>
 
-            <!-- Sección 4: Implementación -->
-            <section id="implementacion" class="content-section">
+            <!-- Checklist -->
+            <section id="checklist" class="content-section">
                 <h2 class="section-title">
-                    <div class="section-icon">✅</div>
+                    <span class="section-icon">✅</span>
                     Checklist de Implementación
                 </h2>
                 
                 <p class="section-description">
-                    Sigue este checklist interactivo paso a paso para implementar tu FLUJO CALOR correctamente y sin errores.
+                    Pasos esenciales para implementar el flujo correctamente
                 </p>
                 
-                <h3><span style="color: var(--flujo-primary);">📋</span> Pre-Implementación</h3>
+                <h3>Pre-Implementación</h3>
                 <div class="checklist">
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>N8N instalado y funcionando</strong>
-                            <small>Asegúrate de tener acceso a una instancia de N8N operativa con permisos de administrador</small>
+                            <strong>N8N instalado</strong>
+                            <small>Instancia operativa con permisos de administrador</small>
                         </div>
                     </div>
                     
@@ -1147,34 +1249,26 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
                             <strong>API Keys obtenidas</strong>
-                            <small>OpenAI, CRM (HubSpot/Pipedrive), Slack, servicio de email con límites apropiados</small>
+                            <small>OpenAI, CRM, Slack y email service</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Formulario web o Cal.com configurado</strong>
-                            <small>El punto de entrada para capturar leads con los campos necesarios</small>
-                        </div>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <div class="checklist-checkbox">☐</div>
-                        <div class="checklist-text">
-                            <strong>Webhook endpoint definido</strong>
-                            <small>URL específica donde tu formulario enviará los datos de leads</small>
+                            <strong>Formulario configurado</strong>
+                            <small>Cal.com o formulario web con campos necesarios</small>
                         </div>
                     </div>
                 </div>
                 
-                <h3><span style="color: var(--flujo-primary);">⚙️</span> Durante la Implementación</h3>
+                <h3>Implementación</h3>
                 <div class="checklist">
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Flujo importado correctamente</strong>
-                            <small>Sin errores de importación en N8N, todos los nodos visibles</small>
+                            <strong>Flujo importado</strong>
+                            <small>Sin errores, todos los nodos visibles</small>
                         </div>
                     </div>
                     
@@ -1182,7 +1276,7 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
                             <strong>Credenciales configuradas</strong>
-                            <small>Todas las integraciones funcionando y autenticadas correctamente</small>
+                            <small>Integraciones autenticadas correctamente</small>
                         </div>
                     </div>
                     
@@ -1190,34 +1284,26 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
                             <strong>Prompts personalizados</strong>
-                            <small>Adaptados a tu ICP específico y modelo de negocio</small>
+                            <small>Adaptados a tu ICP específico</small>
                         </div>
                     </div>
                     
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
-                            <strong>Variables editadas</strong>
-                            <small>Nombres de empresa, URLs, configuraciones específicas personalizadas</small>
-                        </div>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <div class="checklist-checkbox">☐</div>
-                        <div class="checklist-text">
-                            <strong>Prueba completada</strong>
-                            <small>Test end-to-end con datos de ejemplo reales y verificación de outputs</small>
+                            <strong>Pruebas completadas</strong>
+                            <small>Test end-to-end con datos de ejemplo</small>
                         </div>
                     </div>
                 </div>
                 
-                <h3><span style="color: var(--flujo-primary);">🚀</span> Post-Implementación</h3>
+                <h3>Post-Implementación</h3>
                 <div class="checklist">
                     <div class="checklist-item">
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
                             <strong>Equipo entrenado</strong>
-                            <small>Todo el equipo de ventas sabe cómo interpretar y usar las notificaciones</small>
+                            <small>Todo el equipo sabe usar las notificaciones</small>
                         </div>
                     </div>
                     
@@ -1225,57 +1311,28 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
                         <div class="checklist-checkbox">☐</div>
                         <div class="checklist-text">
                             <strong>Métricas configuradas</strong>
-                            <small>Tracking de conversión, tiempo de respuesta, scoring y ROI del sistema</small>
-                        </div>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <div class="checklist-checkbox">☐</div>
-                        <div class="checklist-text">
-                            <strong>Documentación creada</strong>
-                            <small>Proceso documentado para futuras referencias y nuevos miembros del equipo</small>
-                        </div>
-                    </div>
-                    
-                    <div class="checklist-item">
-                        <div class="checklist-checkbox">☐</div>
-                        <div class="checklist-text">
-                            <strong>Plan de optimización establecido</strong>
-                            <small>Estrategia para revisar y mejorar el sistema continuamente</small>
+                            <small>Tracking de conversión y ROI</small>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Call to Action Final -->
+            <!-- CTA Final -->
             <section class="next-steps">
-                <h2>🚀 ¿Listo para el Siguiente Nivel?</h2>
+                <h2>🚀 ¿Necesitas Implementación Profesional?</h2>
                 <p>
-                    Ya tienes la arquitectura y las herramientas para construir un <strong>sistema de captación de leads de élite</strong>. 
-                    Pero sabemos que la implementación técnica puede ser desafiante.
-                </p>
-                
-                <p>
-                    Si al ver esto piensas: <strong>"Entiendo el poder de esto, pero no tengo el tiempo o la experiencia 
-                    para implementarlo y mantenerlo a la perfección..."</strong>
-                </p>
-                
-                <p>
-                    En Math AI Agency, <strong>ese es exactamente nuestro trabajo</strong>. Tomamos esta arquitectura y la convertimos en un 
-                    sistema robusto, a medida y totalmente gestionado para tu negocio, permitiéndote centrarte en 
-                    lo que mejor sabes hacer: construir relaciones y cerrar ventas.
+                    Si quieres que implementemos y optimicemos todo el sistema por ti, 
+                    <strong>agenda una consulta sin compromiso</strong>.
                 </p>
                 
                 <a href="#" class="cta-implementation cal-popup-trigger"
                    data-cal-link="math-ai/reunion-inicial"
                    data-cal-namespace="reunion-inicial"
                    data-cal-config='{"layout":"month_view"}'>
-                    <span>🗓️</span>
-                    <span>Agendar Análisis de Procesos de 45 min</span>
-                    <span>→</span>
+                    🗓️ Agendar Consulta Gratuita
                 </a>
                 
-                <p>Sin compromiso. <strong>45 minutos de análisis profundo donde diseñaremos una solución completamente a medida para tu negocio.</strong></p>
+                <p>45 minutos donde analizaremos tu proceso actual y diseñaremos una solución a medida.</p>
             </section>
         </div>
     </main>
@@ -1283,9 +1340,7 @@ Evalúa los datos del lead contra nuestro ICP y determina el nivel de "encaje". 
     <!-- Footer simple -->
     <footer class="simple-footer">
         <div class="container">
-            <p>© 2025 Math AI Agency • Automatización que funciona • 
-               <a href="/" style="color: white; opacity: 0.8; text-decoration: none;">Volver al inicio</a>
-            </p>
+            <p>© 2025 Math AI Agency • <a href="/">Volver al inicio</a></p>
         </div>
     </footer>
 

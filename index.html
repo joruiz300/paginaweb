@@ -8,7 +8,7 @@
     <!-- Security Headers: Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
-                   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://app.cal.com https://cal.com; 
+                   script-src 'self' 'nonce-abc123' https://www.googletagmanager.com https://app.cal.com https://cal.com; 
                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
                    font-src 'self' https://fonts.gstatic.com; 
                    img-src 'self' https://res.cloudinary.com data:; 
@@ -54,7 +54,7 @@
     <!-- Google Analytics 4 - Math AI Agency -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWV7YB90M5"></script>
-    <script>
+    <script nonce="abc123">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -563,15 +563,15 @@
             </div>
             <div class="footer-links">
                 <p>© 2025 Math-AI. Todos los derechos reservados.</p>
-                <a href="#">Política de Privacidad</a> 
-                <a href="#">Términos y Condiciones</a>
+                <a href="/privacy-policy">Política de Privacidad</a> 
+                <a href="/terms-of-service">Términos y Condiciones</a>
                 <a href="mailto:contacto@math-ai.com">contacto@math-ai.com</a>
             </div>
         </div>
     </footer>
 
     <!-- CÓDIGO ACTUALIZADO: Cal.com element-click embed code begins -->
-    <script type="text/javascript">
+    <script type="text/javascript" nonce="abc123">
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
       
       Cal("init", "reunion-inicial", {origin:"https://cal.com"});
@@ -581,7 +581,7 @@
     <!-- Cal.com element-click embed code ends -->
 
     <!-- CSS Loading Fallback -->
-    <script>
+    <script nonce="abc123">
         // Fallback for browsers that don't support onload on link elements
         (function(){
             var links = document.querySelectorAll('link[rel="preload"][as="style"]');
@@ -594,7 +594,7 @@
     </script>
     
     <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="abc123">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -640,7 +640,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="abc123">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -660,7 +660,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="abc123">
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
@@ -710,7 +710,7 @@
     <script src="script.js" defer></script>
     
     <!-- Google Analytics - Event Tracking -->
-    <script>
+    <script nonce="abc123">
     document.addEventListener('DOMContentLoaded', function() {
         // Track clicks en botones de Cal.com
         document.querySelectorAll('.cal-popup-trigger').forEach(function(button) {
@@ -756,12 +756,12 @@
                     'event_label': questionText
                 });
             });
-                    });
         });
+    });
     </script>
 
     <!-- Service Worker Registration -->
-    <script>
+    <script nonce="abc123">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')

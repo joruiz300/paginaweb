@@ -1,21 +1,18 @@
-const CACHE_NAME = 'math-ai-v1.2.0';
-const STATIC_CACHE = 'math-ai-static-v1.2.0';
-const DYNAMIC_CACHE = 'math-ai-dynamic-v1.2.0';
+const CACHE_NAME = 'math-ai-v1.2.1';
+const STATIC_CACHE = 'math-ai-static-v1.2.1';
+const DYNAMIC_CACHE = 'math-ai-dynamic-v1.2.1';
 
 // Recursos críticos para cachear inmediatamente
 const STATIC_ASSETS = [
     '/',
     '/index.html',
-    '/lead-magnet-flujo-calor.html',
     '/style.css',
-    '/lead-magnet.css',
     '/script.js',
-    '/lead-magnet.js',
-    '/form-validator.js',
-    '/advanced-animations.js',
     '/robots.txt',
     '/sitemap.xml',
     '/manifest.json',
+    '/privacy-policy',
+    '/terms-of-service',
     // Iconos y logos
     'https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png',
     // Fuentes críticas
@@ -35,9 +32,7 @@ const DYNAMIC_ASSETS_PATTERNS = [
 // Recursos que nunca se deben cachear
 const NEVER_CACHE_PATTERNS = [
     /^https:\/\/www\.google-analytics\.com\//,
-    /^https:\/\/analytics\.google\.com\//,
-    /\/lead-magnet\.js$/,  // Contiene lógica de formularios que puede cambiar
-    /\/flujo-calor-contenido\.html$/  // Página privada, no cachear
+    /^https:\/\/analytics\.google\.com\//
 ];
 
 // === INSTALL EVENT ===
@@ -278,4 +273,4 @@ self.addEventListener('push', (event) => {
     }
 });
 
-console.log('SW: Service Worker Math AI v1.2.0 loaded successfully'); 
+console.log('SW: Service Worker Math AI v1.2.1 loaded successfully');

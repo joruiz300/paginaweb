@@ -36,18 +36,6 @@
                     "sizes": "96x96"
                 }
             ]
-        },
-        {
-            "name": "FLUJO CALOR",
-            "short_name": "Lead Magnet",
-            "description": "Acceso al sistema FLUJO CALOR",
-            "url": "/lead-magnet-flujo-calor.html",
-            "icons": [
-                {
-                    "src": "https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png",
-                    "sizes": "96x96"
-                }
-            ]
         }
     ],
     "prefer_related_applications": false,

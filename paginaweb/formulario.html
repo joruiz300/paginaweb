@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario - Definición del Proyecto de Automatización</title>
+  <meta name="description" content="Formulario multipaso para definir objetivos, CRM, Chatwoot, embudo, automatización y excepciones." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Work+Sans:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg: #0b0f1a; --card: #121726; --muted: #9aa4b2; --text: #e6e9ef; --brand: #6ee7b7; --brand-2: #60a5fa; --danger:#ef4444; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: radial-gradient(1200px 600px at 20% -10%, rgba(96,165,250,0.15), transparent), radial-gradient(1000px 500px at 100% 0%, rgba(110,231,183,0.12), transparent), var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    a { color: inherit; }
+    .container { max-width: 980px; margin: 32px auto; padding: 16px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border: 1px solid rgba(255,255,255,0.07); box-shadow: 0 10px 30px rgba(0,0,0,0.35); border-radius: 16px; padding: 20px; backdrop-filter: blur(8px); }
+    h1 { font-size: 24px; margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+    .steps { display:flex; gap:8px; flex-wrap: wrap; margin: 12px 0 20px; }
+    .step-pill { padding: 8px 12px; border-radius: 999px; border:1px solid rgba(255,255,255,0.08); background:#0e1422; color:var(--muted); font-size: 12px; letter-spacing: .3px; }
+    .step-pill.active { color:#0e1422; background: linear-gradient(90deg, var(--brand), var(--brand-2)); border-color: transparent; font-weight: 700; }
+    .progress { height: 6px; background: rgba(255,255,255,0.05); border-radius: 999px; overflow: hidden; margin: 8px 0 16px; }
+    .progress > span { display:block; height:100%; width:0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); transition: width 260ms ease; }
+    .grid { display:grid; gap:12px; grid-template-columns: 1fr; }
+    @media (min-width: 760px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    label { font-size: 13px; color: var(--muted); margin-bottom: 6px; display:block; }
+    input[type="text"], input[type="email"], input[type="number"], textarea, select { width: 100%; background: #0d1320; color: var(--text); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+    textarea { min-height: 96px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { border-color: rgba(110,231,183,0.45); box-shadow: 0 0 0 3px rgba(110,231,183,0.15); }
+    .row { display:flex; gap: 10px; align-items: center; }
+    .btn { background: linear-gradient(90deg, var(--brand), var(--brand-2)); color: #0b0f1a; border: none; border-radius: 10px; padding: 10px 14px; font-weight: 700; cursor: pointer; transition: transform .08s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn.secondary { background: #0d1320; color: var(--text); border: 1px solid rgba(255,255,255,0.08); font-weight: 600; }
+    .btn.ghost { background: transparent; border: 1px dashed rgba(255,255,255,0.18); color: var(--text); font-weight: 600; }
+    .actions { display:flex; justify-content: space-between; gap: 8px; margin-top: 12px; }
+    .section { display:none; animation: fade .25s ease; }
+    .section.active { display:block; }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .chips { display:flex; gap:8px; flex-wrap: wrap; }
+    .chip { background:#0d1320; border:1px solid rgba(255,255,255,0.12); color:var(--text); border-radius:999px; padding:6px 10px; display:inline-flex; align-items:center; gap:8px; }
+    .chip .remove { background: transparent; border:none; color: var(--muted); cursor: pointer; font-weight: 700; }
+    .table { width:100%; border-collapse: collapse; border:1px solid rgba(255,255,255,0.08); border-radius: 10px; overflow:hidden; }
+    .table th, .table td { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 8px; text-align: left; background:#0d1320; }
+    .table th { background: #0f1627; color: var(--muted); font-weight: 600; }
+    .error { color: var(--danger); font-size: 12px; margin-top: 4px; }
+    .required::after { content: " *"; color: var(--danger); }
+    /* Modal */
+    .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.65); z-index: 50; }
+    .modal.active { display: flex; }
+    .modal-card { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; max-width: 520px; text-align: center; }
+    .spinner { width: 18px; height: 18px; border: 3px solid rgba(255,255,255,0.25); border-top-color: var(--brand); border-radius: 999px; animation: spin 0.8s linear infinite; display:inline-block; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    /* Overrides para alinear estilo con la página principal */
+    :root { --bg-color:#0a0f1f; --primary-orange:#FF6B00; --text-light:#FFFFFF; --text-medium:#adb5bd; --card-bg:#121a30; --border-color:#2a3652; }
+    body { background: var(--bg-color); color: var(--text-light); font-family: 'Work Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    h1 { font-family: 'Space Grotesk', sans-serif; }
+    .card { background: var(--card-bg); border: 1px solid var(--border-color); box-shadow: none; }
+    .muted { color: var(--text-medium); }
+    a { color: var(--primary-orange); }
+    .step-pill.active { background: var(--primary-orange); color: #0a0f1f; border-color: transparent; }
+    .progress > span { background: var(--primary-orange); }
+    .btn { background: linear-gradient(170deg,#2B0D61,#3A1180); color: #fff; }
+    .btn.secondary { background: transparent; color: var(--text-light); border: 1px solid var(--border-color); }
+    .btn.ghost { background: transparent; border: 1px dashed rgba(255,255,255,0.18); color: var(--text-light); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Checklist Definitivo: Definición del Proyecto de Automatización</h1>
+      <p class="muted">Completa cada sección. Al final, enviaremos tus respuestas y verás un mensaje de confirmación.</p>
+      <div class="steps" id="stepPills">
+        <span class="step-pill">1. Visión</span>
+        <span class="step-pill">2. CRM / Baserow</span>
+        <span class="step-pill">3. Chatwoot</span>
+        <span class="step-pill">4. Embudo</span>
+        <span class="step-pill">5. Automatización</span>
+        <span class="step-pill">6. Excepciones</span>
+        <span class="step-pill">7. Confirmación</span>
+      </div>
+      <div class="progress"><span id="progressBar"></span></div>
+
+      <!-- Sección 1: Visión Estratégica -->
+      <section class="section active" data-step="0">
+        <div class="grid">
+          <div>
+            <label class="required" for="metricaPrincipal">Métrica Principal de Éxito</label>
+            <textarea id="metricaPrincipal" placeholder="Ej: Aumentar 20% las cotizaciones enviadas" required></textarea>
+            <div class="error" data-error-for="metricaPrincipal"></div>
+          </div>
+          <div>
+            <label class="required" for="definicionLead">Definición de "Lead Calificado"</label>
+            <textarea id="definicionLead" placeholder="¿Cuándo debe transferirse a un humano?" required></textarea>
+            <div class="error" data-error-for="definicionLead"></div>
+          </div>
+          <div>
+            <label class="required">Priorización de Leads</label>
+            <div class="grid grid-3">
+              <div>
+                <label for="prioMayoreo">Mayoreo</label>
+                <select id="prioMayoreo">
+                  <option>Alta</option>
+                  <option selected>Media</option>
+                  <option>Baja</option>
+                </select>
+              </div>
+              <div>
+                <label for="prioMenudeo">Menudeo</label>
+                <select id="prioMenudeo">
+                  <option>Alta</option>
+                  <option selected>Media</option>
+                  <option>Baja</option>
+                </select>
+              </div>
+              <div>
+                <label for="prioReparacion">Reparaciones</label>
+                <select id="prioReparacion">
+                  <option>Alta</option>
+                  <option selected>Media</option>
+                  <option>Baja</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-prev disabled>Atrás</button>
+          <button class="btn" data-next>Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Sección 2: CRM / Baserow -->
+      <section class="section" data-step="1">
+        <div class="grid">
+          <div>
+            <label>Datos Clave del Lead (Base propuesta)</label>
+            <div class="chips" id="camposBase">
+              <span class="chip">Nombre del Contacto</span>
+              <span class="chip">Número de WhatsApp</span>
+              <span class="chip">Correo Electrónico</span>
+              <span class="chip">Estado del Embudo</span>
+              <span class="chip">Tipo de Lead</span>
+              <span class="chip">Fuente del Lead</span>
+              <span class="chip">Agente Asignado</span>
+              <span class="chip">Sucursal de Interés</span>
+              <span class="chip">Link a la Conversación</span>
+            </div>
+          </div>
+          <div>
+            <label for="campoExtraInput">¿Algún otro dato vital? (Agrega campos)</label>
+            <div class="row">
+              <input type="text" id="campoExtraInput" placeholder="Ej: RFC, Método de pago preferido" />
+              <button class="btn ghost" id="agregarCampoExtra">Agregar</button>
+            </div>
+            <div class="chips" id="camposExtra"></div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-prev>Atrás</button>
+          <button class="btn" data-next>Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Sección 3: Chatwoot -->
+      <section class="section" data-step="2">
+        <div class="grid">
+          <div>
+            <label class="required">Usuarios y Agentes</label>
+            <div id="usuariosWrap" class="grid">
+              <div class="grid grid-3 user-row">
+                <input type="text" placeholder="Nombre" data-user="nombre" required />
+                <input type="email" placeholder="Email" data-user="email" required />
+                <select data-user="rol">
+                  <option>Ventas Mayoreo</option>
+                  <option>Ventas Menudeo</option>
+                  <option>Soporte y Reparaciones</option>
+                  <option>General</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="margin-top:8px;">
+              <button class="btn ghost" id="agregarUsuario">Agregar usuario</button>
+              <span class="error" data-error-for="usuarios"></span>
+            </div>
+          </div>
+          <div>
+            <label>Organización de Equipos</label>
+            <div id="equiposWrap" class="grid">
+              <div class="row"><input type="checkbox" checked data-equipo="Ventas Mayoreo" id="eqMayoreo" /><label for="eqMayoreo">Equipo Ventas Mayoreo</label></div>
+              <div class="row"><input type="checkbox" checked data-equipo="Ventas Menudeo" id="eqMenudeo" /><label for="eqMenudeo">Equipo Ventas Menudeo</label></div>
+              <div class="row"><input type="checkbox" checked data-equipo="Soporte y Reparaciones" id="eqSoporte" /><label for="eqSoporte">Equipo Soporte y Reparaciones</label></div>
+              <div class="row"><input type="checkbox" checked data-equipo="General" id="eqGeneral" /><label for="eqGeneral">Equipo General</label></div>
+            </div>
+            <div class="row" style="margin-top:8px;">
+              <input type="text" id="nuevoEquipo" placeholder="Nombre de nuevo equipo" />
+              <button class="btn ghost" id="agregarEquipo">Agregar equipo</button>
+            </div>
+          </div>
+          <div>
+            <label>Etiquetas (Labels) para contexto rápido</label>
+            <div class="chips" id="etiquetasChips">
+              <span class="chip" data-tag="PideCotización">PideCotización <button class="remove" title="Quitar">×</button></span>
+              <span class="chip" data-tag="CatálogoEnviado">CatálogoEnviado <button class="remove">×</button></span>
+              <span class="chip" data-tag="ConsultaCrédito">ConsultaCrédito <button class="remove">×</button></span>
+              <span class="chip" data-tag="ConsultaReparación">ConsultaReparación <button class="remove">×</button></span>
+              <span class="chip" data-tag="InfoGeneral">InfoGeneral <button class="remove">×</button></span>
+              <span class="chip" data-tag="Garantía">Garantía <button class="remove">×</button></span>
+            </div>
+            <div class="row" style="margin-top:8px;">
+              <input type="text" id="nuevaEtiqueta" placeholder="Nueva etiqueta" />
+              <button class="btn ghost" id="agregarEtiqueta">Agregar etiqueta</button>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-prev>Atrás</button>
+          <button class="btn" data-next>Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Sección 4: Embudo -->
+      <section class="section" data-step="3">
+        <div>
+          <label class="required">Definición de las Etapas del Embudo</label>
+          <div style="overflow:auto;">
+            <table class="table" id="tablaEmbudo">
+              <thead>
+                <tr>
+                  <th>Etapa del Embudo</th>
+                  <th>Criterio / Definición</th>
+                  <th>¿Quién actualiza?</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" value="Nuevo Lead" data-etapa="nombre" /></td>
+                  <td><input type="text" value="Un número de teléfono contacta por primera vez." data-etapa="definicion" /></td>
+                  <td>
+                    <select data-etapa="quien">
+                      <option>Automático (Bot)</option>
+                      <option>Manual (Agente)</option>
+                    </select>
+                  </td>
+                  <td><button class="btn secondary" data-remove-row>Eliminar</button></td>
+                </tr>
+                <tr>
+                  <td><input type="text" value="Contacto Inicial" data-etapa="nombre" /></td>
+                  <td><input type="text" value="El bot ha enviado su primer mensaje de bienvenida." data-etapa="definicion" /></td>
+                  <td>
+                    <select data-etapa="quien">
+                      <option selected>Automático (Bot)</option>
+                      <option>Manual (Agente)</option>
+                    </select>
+                  </td>
+                  <td><button class="btn secondary" data-remove-row>Eliminar</button></td>
+                </tr>
+                <tr>
+                  <td><input type="text" value="Info Entregada" data-etapa="nombre" /></td>
+                  <td><input type="text" value="El bot envió el catálogo o respondió una FAQ importante." data-etapa="definicion" /></td>
+                  <td>
+                    <select data-etapa="quien">
+                      <option selected>Automático (Bot)</option>
+                      <option>Manual (Agente)</option>
+                    </select>
+                  </td>
+                  <td><button class="btn secondary" data-remove-row>Eliminar</button></td>
+                </tr>
+                <tr>
+                  <td><input type="text" value="Calificado para Venta" data-etapa="nombre" /></td>
+                  <td><input type="text" value="El cliente pide cotización, precios, o hablar con un vendedor." data-etapa="definicion" /></td>
+                  <td>
+                    <select data-etapa="quien">
+                      <option selected>Automático (Bot)</option>
+                      <option>Manual (Agente)</option>
+                    </select>
+                  </td>
+                  <td><button class="btn secondary" data-remove-row>Eliminar</button></td>
+                </tr>
+                <tr>
+                  <td><input type="text" value="En Negociación" data-etapa="nombre" /></td>
+                  <td><input type="text" value="Un agente humano ya está conversando con el lead." data-etapa="definicion" /></td>
+                  <td>
+                    <select data-etapa="quien">
+                      <option>Automático (Bot)</option>
+                      <option selected>Manual (Agente)</option>
+                    </select>
+                  </td>
+                  <td><button class="btn secondary" data-remove-row>Eliminar</button></td>
+                </tr>
+                <tr>
+                  <td><input type="text" value="Venta Ganada" data-etapa="nombre" /></td>
+                  <td><input type="text" value="El agente ha cerrado la venta exitosamente." data-etapa="definicion" /></td>
+                  <td>
+                    <select data-etapa="quien">
+                      <option>Automático (Bot)</option>
+                      <option selected>Manual (Agente)</option>
+                    </select>
+                  </td>
+                  <td><button class="btn secondary" data-remove-row>Eliminar</button></td>
+                </tr>
+                <tr>
+                  <td><input type="text" value="Venta Perdida" data-etapa="nombre" /></td>
+                  <td><input type="text" value="El cliente desistió o no se pudo cerrar la venta." data-etapa="definicion" /></td>
+                  <td>
+                    <select data-etapa="quien">
+                      <option>Automático (Bot)</option>
+                      <option selected>Manual (Agente)</option>
+                    </select>
+                  </td>
+                  <td><button class="btn secondary" data-remove-row>Eliminar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row" style="margin-top:8px;">
+            <button class="btn ghost" id="agregarFilaEmbudo">Agregar etapa</button>
+            <span class="error" data-error-for="embudo"></span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-prev>Atrás</button>
+          <button class="btn" data-next>Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Sección 5: Automatización y Triggers -->
+      <section class="section" data-step="4">
+        <div class="grid">
+          <div>
+            <label>Disparadores de Intención de Compra</label>
+            <div class="chips" id="triggersChips">
+              <span class="chip" data-trigger="cotización">cotización <button class="remove">×</button></span>
+              <span class="chip" data-trigger="cotizar">cotizar <button class="remove">×</button></span>
+              <span class="chip" data-trigger="precio">precio <button class="remove">×</button></span>
+              <span class="chip" data-trigger="cuánto cuesta">cuánto cuesta <button class="remove">×</button></span>
+              <span class="chip" data-trigger="pedido">pedido <button class="remove">×</button></span>
+              <span class="chip" data-trigger="comprar">comprar <button class="remove">×</button></span>
+              <span class="chip" data-trigger="ordenar">ordenar <button class="remove">×</button></span>
+              <span class="chip" data-trigger="disponibilidad">disponibilidad <button class="remove">×</button></span>
+              <span class="chip" data-trigger="stock">stock <button class="remove">×</button></span>
+              <span class="chip" data-trigger="en existencia">en existencia <button class="remove">×</button></span>
+              <span class="chip" data-trigger="mayoreo">mayoreo <button class="remove">×</button></span>
+              <span class="chip" data-trigger="distribuidor">distribuidor <button class="remove">×</button></span>
+            </div>
+            <div class="row" style="margin-top:8px;">
+              <input type="text" id="nuevoTrigger" placeholder="Otra frase clave (enter para agregar)" />
+              <button class="btn ghost" id="agregarTrigger">Agregar</button>
+            </div>
+          </div>
+          <div>
+            <label>Captura de Datos del Cliente</label>
+            <div class="grid">
+              <div class="row">
+                <input type="checkbox" id="capturaHabilitada" checked />
+                <label for="capturaHabilitada">Solicitar nombre y correo al calificarse</label>
+              </div>
+              <div>
+                <label for="mensajeCaptura">Mensaje</label>
+                <input type="text" id="mensajeCaptura" value="¡Excelente! Para prepararte la cotización, ¿podrías indicarme tu nombre completo y correo electrónico, por favor?" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <label>Proceso de Transferencia (Handoff)</label>
+            <div class="grid">
+              <div class="row"><input type="checkbox" id="handoffConfirmado" checked /><label for="handoffConfirmado">Confirmar proceso propuesto</label></div>
+              <div>
+                <label for="mensajeHandoff">Mensaje del bot</label>
+                <input type="text" id="mensajeHandoff" value="¡Perfecto! Un asesor de nuestro equipo de mayoreo te atenderá en un momento." />
+              </div>
+              <div>
+                <label for="etiquetaHandoff">Etiqueta a añadir</label>
+                <input type="text" id="etiquetaHandoff" value="PideCotización" />
+              </div>
+              <div>
+                <label for="equipoDestino">Equipo destino</label>
+                <select id="equipoDestino">
+                  <option>Ventas Mayoreo</option>
+                  <option>Ventas Menudeo</option>
+                  <option>Soporte y Reparaciones</option>
+                  <option>General</option>
+                </select>
+              </div>
+              <div class="row"><input type="checkbox" id="actualizarBaserow" checked /><label for="actualizarBaserow">Actualizar lead en Baserow a "Calificado para Venta"</label></div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-prev>Atrás</button>
+          <button class="btn" data-next>Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Sección 6: Excepciones -->
+      <section class="section" data-step="5">
+        <div class="grid">
+          <div>
+            <label>Bucle de "No Entiendo"</label>
+            <div class="grid grid-2">
+              <div class="row"><input type="checkbox" id="noEntiendoHabilitado" checked /><label for="noEntiendoHabilitado">Ofrecer transferir a humano tras intentos fallidos</label></div>
+              <div>
+                <label for="noEntiendoIntentos">Número de intentos</label>
+                <input type="number" min="1" id="noEntiendoIntentos" value="2" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <label>"Palabra de Escape"</label>
+            <div class="row"><input type="checkbox" id="escapeHabilitado" checked /><label for="escapeHabilitado">Transferir inmediatamente si el cliente lo pide</label></div>
+            <div class="row" style="margin-top:8px;">
+              <input type="text" id="palabrasEscape" value="humano, agente, ayuda, hablar con alguien" />
+            </div>
+          </div>
+          <div>
+            <label>Manejo de Tiempos de Espera</label>
+            <div class="grid grid-2">
+              <div class="row"><input type="checkbox" id="recordatorioHabilitado" checked /><label for="recordatorioHabilitado">Enviar recordatorio si no responde</label></div>
+              <div>
+                <label for="horasRecordatorio">Horas de espera</label>
+                <input type="number" id="horasRecordatorio" min="1" value="24" />
+              </div>
+              <div class="grid" style="grid-column: 1/-1;">
+                <label for="mensajeRecordatorio">Mensaje de recordatorio</label>
+                <input type="text" id="mensajeRecordatorio" value="¿Sigues interesado? Estoy aquí para ayudarte con tu cotización." />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-prev>Atrás</button>
+          <button class="btn" data-next>Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Sección 7: Confirmación -->
+      <section class="section" data-step="6">
+        <div class="grid">
+          <div>
+            <p>Revisa tus respuestas. Cuando estés listo, envíalas para configurar tu proyecto.</p>
+            <div class="row" style="justify-content: space-between;">
+              <span class="muted">Se enviará por método POST al webhook configurado.</span>
+              <span id="statusEnvio" class="muted"></span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn secondary" data-prev>Atrás</button>
+          <button class="btn" id="btnEnviar">Enviar respuestas</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal de Gracias -->
+  <div class="modal" id="modalGracias" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h2>¡Gracias! 🎉</h2>
+      <p>Hemos recibido tu formulario. En breve te contactaremos para los siguientes pasos.</p>
+      <div style="margin-top: 12px;">
+        <a href="index.html" class="btn">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./formulario.js"></script>
+  <script>
+    // Guardia de acceso: requiere token en URL para acceder (URL directa asignada)
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var token = params.get('t');
+      if (!token || token.length < 8) {
+        window.location.replace('../index.html');
+        return;
+      }
+      try {
+        if (localStorage.getItem('briefUsed:' + token) === '1') {
+          // Si ya fue usado en este navegador, vuelve al inicio
+          window.location.replace('../index.html');
+          return;
+        }
+      } catch (_) {}
+      // Exponer token para el script de envío
+      window.BRIEF_TOKEN = token;
+    })();
+  </script>
+</body>
+</html>
+
+

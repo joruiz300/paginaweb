@@ -3,45 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Términos de Servicio – Instancia Privada de Postiz | Math AI</title>
-    <meta name="robots" content="noindex,follow">
+    <title>Términos de Servicio | Math AI</title>
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
+                   script-src 'self' 'nonce-abc123' https://app.cal.com https://cal.com; 
                    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
                    font-src 'self' https://fonts.gstatic.com; 
                    img-src 'self' https://res.cloudinary.com data:; 
-                   connect-src 'self'; 
+                   connect-src 'self' https://app.cal.com; 
+                   frame-src https://cal.com https://app.cal.com; 
                    object-src 'none'; 
                    base-uri 'self';">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/style.css"></noscript>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Work+Sans:wght@400&display=swap">
     <link rel="icon" href="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" type="image/png">
 </head>
 <body>
-    <main class="container" style="padding: 120px 0 60px 0;">
-        <h1>Términos de Servicio – Instancia Privada de Postiz</h1>
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="https://res.cloudinary.com/dfuya0vrl/image/upload/v1746402411/logo_sxdfzb.png" alt="Math AI Logo" class="logo">
+                <span>Math AI</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/index.html#servicios">Servicios</a></li>
+                    <li><a href="/index.html#proceso">Proceso</a></li>
+                    <li><a href="/index.html#porque-nosotros">¿Por qué nosotros?</a></li>
+                    <li><a href="/index.html#faq">FAQ</a></li>
+                    <li class="nav-cta-mobile-dropdown">
+                        <div class="btn-container">
+                            <div class="btn-bg"></div>
+                            <a class="btn-consulta cal-popup-trigger"
+                               data-cal-link="math-ai/reunion-inicial"
+                               data-cal-namespace="reunion-inicial"
+                               data-cal-config='{"layout":"month_view"}'>
+                                Consulta Gratuita
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="btn-container nav-cta-always-visible">
+                    <div class="btn-bg"></div>
+                    <a class="btn-consulta cal-popup-trigger"
+                       data-cal-link="math-ai/reunion-inicial"
+                       data-cal-namespace="reunion-inicial"
+                       data-cal-config='{"layout":"month_view"}'>
+                        Consulta Gratuita
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-        <p><strong>Fecha de entrada en vigor:</strong> 18 de agosto de 2025</p>
+    <main>
+        <section class="hero-section section-with-svg-bg" style="padding-top:120px;">
+            <div class="container text-center">
+                <div class="hero-badge animate-on-scroll"><span class="badge-icon">📑</span><span>Legal</span></div>
+                <h1 class="hero-title animate-on-scroll">Términos de Servicio</h1>
+                <p class="animate-on-scroll">Condiciones de uso para integraciones privadas y autoalojadas.</p>
+            </div>
+        </section>
 
-        <p><strong>1. Aceptación de los Términos</strong><br>
-        Estos Términos de Servicio rigen el uso de una instancia privada y autoalojada de la aplicación Postiz, conectada a este dominio con fines de validación de API. El acceso y uso de la plataforma por parte de su administrador constituyen la aceptación de estos términos.</p>
-
-        <p><strong>2. Naturaleza del Servicio</strong><br>
-        Esta es una instancia privada del software de código abierto Postiz, desplegada y gestionada por su propietario para uso personal y exclusivo. No es un servicio comercial ofrecido al público general.</p>
-
-        <p><strong>3. Responsabilidad del Usuario</strong><br>
-        El administrador es el único responsable de:<br>
-        - El contenido que se publica en las diferentes plataformas de redes sociales a través de esta herramienta.<br>
-        - Cumplir con los términos de servicio de cada plataforma conectada (TikTok, etc.).<br>
-        - La seguridad y el mantenimiento del servidor donde se aloja la aplicación.</p>
-
-        <p><strong>4. Exención de Responsabilidad</strong><br>
-        Esta aplicación se proporciona "tal cual". No se ofrecen garantías de ningún tipo sobre su funcionamiento ininterrumpido o libre de errores.</p>
-
-        <p style="margin-top: 2rem;"><a href="/">← Volver al inicio</a></p>
+        <section class="section-with-svg-bg">
+            <div class="container">
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <h4>Vigencia</h4>
+                        <p><strong>Fecha de entrada en vigor:</strong> 18 de agosto de 2025</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>1. Aceptación de los Términos</h4>
+                        <p>Estos Términos rigen el uso de una instancia privada y autoalojada de Postiz, conectada a este dominio con fines de validación de API. El acceso y uso por parte del administrador constituyen la aceptación de estos términos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>2. Naturaleza del Servicio</h4>
+                        <p>Instancia privada de software open-source, gestionada por su propietario para uso personal y exclusivo. No es un servicio comercial ofrecido al público en general.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>3. Responsabilidad del Usuario</h4>
+                        <p>El administrador es responsable del contenido publicado, de cumplir los TOS de las plataformas conectadas (p. ej., TikTok) y de la seguridad y mantenimiento del servidor.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>4. Exención de Responsabilidad</h4>
+                        <p>La aplicación se proporciona "tal cual". No hay garantías de funcionamiento ininterrumpido o libre de errores.</p>
+                    </div>
+                </div>
+                <p class="text-center" style="margin-top:2rem;"><a href="/">← Volver al inicio</a></p>
+            </div>
+        </section>
     </main>
+
     <footer>
         <div class="container footer-container">
             <div class="footer-info">
@@ -51,8 +111,21 @@
                 </div>
                 <p>© 2025 Math-AI. Todos los derechos reservados.</p>
             </div>
+            <div class="footer-links">
+                <p>Legal</p>
+                <a href="/privacy-policy">Política de Privacidad</a>
+                <a href="/terms-of-service">Términos y Condiciones</a>
+                <a href="mailto:contacto@math-ai.com">contacto@math-ai.com</a>
+            </div>
         </div>
     </footer>
+
+    <script type="text/javascript" nonce="abc123">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "reunion-inicial", {origin:"https://cal.com"});
+      Cal.ns["reunion-inicial"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <script src="/script.js" defer></script>
 </body>
 </html>
 

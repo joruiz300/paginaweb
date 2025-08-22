@@ -35,6 +35,7 @@
   // Campos dinámicos: Campos extra (CRM)
   const camposExtraWrap = document.getElementById('camposExtra');
   const campoExtraInput = document.getElementById('campoExtraInput');
+  const camposBaseWrap = document.getElementById('camposBase');
   document.getElementById('agregarCampoExtra').addEventListener('click', () => {
     const value = (campoExtraInput.value || '').trim();
     if (!value) return;
@@ -43,6 +44,16 @@
     camposExtraWrap.appendChild(chip);
     campoExtraInput.value = '';
   });
+
+  // Permitir eliminar chips base predefinidos
+  if (camposBaseWrap) {
+    camposBaseWrap.addEventListener('click', (e) => {
+      if (e.target && e.target.classList.contains('remove')) {
+        const chip = e.target.closest('.chip');
+        if (chip) chip.remove();
+      }
+    });
+  }
 
   function createChip(text, onRemove) {
     const span = document.createElement('span');
@@ -195,10 +206,9 @@
       }
     };
     // Sección 2
+    const camposBase = Array.from(document.querySelectorAll('#camposBase .chip')).map(ch => ch.dataset.base || ch.textContent.replace('×', '').trim());
     const camposExtra = Array.from(document.querySelectorAll('#camposExtra .chip')).map(ch => ch.dataset.extra || ch.textContent.replace('×', '').trim());
-    const crm = { camposBase: [
-        'Nombre del Contacto','Número de WhatsApp','Correo Electrónico','Estado del Embudo','Tipo de Lead','Fuente del Lead','Agente Asignado','Sucursal de Interés','Link a la Conversación'
-      ], camposExtra };
+    const crm = { camposBase, camposExtra };
     // Sección 3
     const usuarios = Array.from(document.querySelectorAll('#usuariosWrap .user-row')).map(r => ({
       nombre: r.querySelector('[data-user="nombre"]').value.trim(),

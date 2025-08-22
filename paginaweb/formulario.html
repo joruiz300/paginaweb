@@ -26,7 +26,7 @@
     .progress > span { display:block; height:100%; width:0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); transition: width 260ms ease; }
     .grid { display:grid; gap:12px; grid-template-columns: 1fr; }
     @media (min-width: 760px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: repeat(3, 1fr); } }
-    label { font-size: 13px; color: var(--muted); margin-bottom: 6px; display:block; }
+    label { font-size: 16px; color: var(--text); font-weight: 700; margin-bottom: 6px; display:block; }
     input[type="text"], input[type="email"], input[type="number"], textarea, select { width: 100%; background: #0d1320; color: var(--text); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
     textarea { min-height: 96px; resize: vertical; }
     input:focus, textarea:focus, select:focus { border-color: rgba(110,231,183,0.45); box-shadow: 0 0 0 3px rgba(110,231,183,0.15); }
@@ -47,7 +47,7 @@
     .table th { background: #0f1627; color: var(--muted); font-weight: 600; }
     .error { color: var(--danger); font-size: 12px; margin-top: 4px; }
     .required::after { content: " *"; color: var(--danger); }
-    .hint { font-size: 12px; color: var(--muted); margin: 4px 0 6px; }
+    .hint { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 4px 0 8px; }
     /* Modal */
     .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.65); z-index: 50; }
     .modal.active { display: flex; }

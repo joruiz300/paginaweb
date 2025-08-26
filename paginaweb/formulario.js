@@ -2,8 +2,7 @@
 (function () {
   const WEBHOOK_URLS = [
     '/api/formulario',
-    'https://stack-sukhee-n8n.cs6xbk.easypanel.host/webhook-test/formulario',
-    'https://stack-sukhee-n8n.cs6xbk.easypanel.host/webhook/formulario'
+    'https://dev-n8n.sukhee.mx/webhook/formulario'
   ];
 
   const sections = Array.from(document.querySelectorAll('.section'));
@@ -276,7 +275,7 @@
     try { payload.briefToken = window.BRIEF_TOKEN || null; } catch (_) {}
     try {
       statusEnvio.textContent = 'Enviando…';
-      const res = await postToFirstAvailable(WEBHOOK_URLS, payload);
+      const res = await sendWithFallback(WEBHOOK_URLS, payload);
       statusEnvio.textContent = 'Enviado';
       // Marcar el token como usado en este navegador
       try { if (payload.briefToken) { localStorage.setItem('briefUsed:' + payload.briefToken, '1'); } } catch (_) {}
@@ -303,6 +302,31 @@
       }
     }
     throw lastError || new Error('No se pudo enviar a ningún endpoint');
+  }
+
+  async function getToFirstAvailable(urls, payload) {
+    let lastError;
+    const query = '?payload=' + encodeURIComponent(JSON.stringify(payload));
+    for (const baseUrl of urls) {
+      const url = baseUrl + query;
+      try {
+        const response = await fetch(url, { method: 'GET' });
+        if (response.ok) return response;
+        lastError = new Error('Solicitud no OK: ' + response.status);
+      } catch (e) {
+        lastError = e;
+      }
+    }
+    throw lastError || new Error('No se pudo enviar a ningún endpoint (GET)');
+  }
+
+  async function sendWithFallback(urls, payload) {
+    try {
+      return await postToFirstAvailable(urls, payload);
+    } catch (e) {
+      // Intentar GET si POST falla (nodo configurado como GET)
+      return await getToFirstAvailable(urls, payload);
+    }
   }
 
   function openGracias() { modalGracias.classList.add('active'); }

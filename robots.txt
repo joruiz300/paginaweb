@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://mathai.agency/sitemap.xml
+Sitemap: https://math-aiagency.com/sitemap.xml
 
 # Block access to admin/private areas (when they exist)
 Disallow: /admin/

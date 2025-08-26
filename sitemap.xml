@@ -6,7 +6,7 @@
         
     <!-- Homepage -->
     <url>
-        <loc>https://mathai.agency/</loc>
+        <loc>https://math-aiagency.com/</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
     
     <!-- Main sections (anchors) -->
     <url>
-        <loc>https://mathai.agency/#servicios</loc>
+        <loc>https://math-aiagency.com/#servicios</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -23,21 +23,21 @@
     
     
     <url>
-        <loc>https://mathai.agency/#proceso</loc>
+        <loc>https://math-aiagency.com/#proceso</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://mathai.agency/#porque-nosotros</loc>
+        <loc>https://math-aiagency.com/#porque-nosotros</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://mathai.agency/#faq</loc>
+        <loc>https://math-aiagency.com/#faq</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -45,13 +45,13 @@
     
     <!-- Legal pages for integrations -->
     <url>
-        <loc>https://mathai.agency/privacy-policy</loc>
+        <loc>https://math-aiagency.com/privacy-policy</loc>
         <lastmod>2025-08-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://mathai.agency/terms-of-service</loc>
+        <loc>https://math-aiagency.com/terms-of-service</loc>
         <lastmod>2025-08-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
@@ -60,14 +60,14 @@
     <!-- Future pages placeholder -->
     <!-- 
     <url>
-        <loc>https://mathai.agency/blog/</loc>
+        <loc>https://math-aiagency.com/blog/</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mathai.agency/casos-estudio/</loc>
+        <loc>https://math-aiagency.com/casos-estudio/</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

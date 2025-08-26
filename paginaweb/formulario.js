@@ -275,14 +275,14 @@
     try { payload.briefToken = window.BRIEF_TOKEN || null; } catch (_) {}
     try {
       statusEnvio.textContent = 'Enviando…';
-      const res = await getToFirstAvailable(WEBHOOK_URLS, payload);
+      const res = await postToFirstAvailable(WEBHOOK_URLS, payload);
       statusEnvio.textContent = 'Enviado';
       // Marcar el token como usado en este navegador
       try { if (payload.briefToken) { localStorage.setItem('briefUsed:' + payload.briefToken, '1'); } } catch (_) {}
       openGracias();
     } catch (err) {
-      statusEnvio.textContent = 'Error al enviar (GET): ' + (err && err.message ? err.message : 'ver consola');
-      console.error('Envio GET fallido:', err);
+      statusEnvio.textContent = 'Error al enviar (POST): ' + (err && err.message ? err.message : 'ver consola');
+      console.error('Envio POST fallido:', err);
     }
   });
 

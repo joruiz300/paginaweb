@@ -4,3 +4,7 @@
 # Proxy del formulario hacia n8n para evitar CORS (nuevo endpoint GET)
 /api/formulario https://dev-n8n.sukhee.mx/webhook/formulario 200
 
+# Limpieza de rutas: enviar tráfico a la raíz
+/paginaweb/index.html / 301
+/paginaweb / 301
+

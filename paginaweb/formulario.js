@@ -306,9 +306,16 @@
 
   async function getToFirstAvailable(urls, payload) {
     let lastError;
-    const query = '?payload=' + encodeURIComponent(JSON.stringify(payload));
+    const compact = JSON.stringify(payload);
+    const query = '?payload=' + encodeURIComponent(compact);
+    // Validar tamaño de URL para GET (aprox. umbral seguro ~1800-2000 chars)
+    const maxUrl = 1900;
     for (const baseUrl of urls) {
       const url = baseUrl + query;
+      if ((baseUrl.length + query.length) > maxUrl) {
+        lastError = new Error('URL demasiado larga para GET (' + (baseUrl.length + query.length) + ' chars)');
+        continue;
+      }
       try {
         const response = await fetch(url, { method: 'GET' });
         if (response.ok) return response;
@@ -321,11 +328,12 @@
   }
 
   async function sendWithFallback(urls, payload) {
+    // Priorizar GET (nodo configurado como GET). Si falla por longitud o status, intentar POST.
     try {
-      return await postToFirstAvailable(urls, payload);
-    } catch (e) {
-      // Intentar GET si POST falla (nodo configurado como GET)
       return await getToFirstAvailable(urls, payload);
+    } catch (e) {
+      console.warn('Fallo GET, intentando POST. Motivo:', e && e.message);
+      return await postToFirstAvailable(urls, payload);
     }
   }
 

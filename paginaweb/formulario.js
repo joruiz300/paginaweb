@@ -275,14 +275,14 @@
     try { payload.briefToken = window.BRIEF_TOKEN || null; } catch (_) {}
     try {
       statusEnvio.textContent = 'Enviando…';
-      const res = await sendWithFallback(WEBHOOK_URLS, payload);
+      const res = await getToFirstAvailable(WEBHOOK_URLS, payload);
       statusEnvio.textContent = 'Enviado';
       // Marcar el token como usado en este navegador
       try { if (payload.briefToken) { localStorage.setItem('briefUsed:' + payload.briefToken, '1'); } } catch (_) {}
       openGracias();
     } catch (err) {
-      statusEnvio.textContent = 'Ocurrió un error al enviar. Intenta nuevamente.';
-      console.error(err);
+      statusEnvio.textContent = 'Error al enviar (GET): ' + (err && err.message ? err.message : 'ver consola');
+      console.error('Envio GET fallido:', err);
     }
   });
 
@@ -327,15 +327,7 @@
     throw lastError || new Error('No se pudo enviar a ningún endpoint (GET)');
   }
 
-  async function sendWithFallback(urls, payload) {
-    // Priorizar GET (nodo configurado como GET). Si falla por longitud o status, intentar POST.
-    try {
-      return await getToFirstAvailable(urls, payload);
-    } catch (e) {
-      console.warn('Fallo GET, intentando POST. Motivo:', e && e.message);
-      return await postToFirstAvailable(urls, payload);
-    }
-  }
+  // Eliminado fallback a POST: el webhook en n8n está configurado como GET
 
   function openGracias() { modalGracias.classList.add('active'); }
 

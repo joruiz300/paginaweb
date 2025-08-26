@@ -1,6 +1,10 @@
 /* Formulario multipaso: lógica de navegación, validación, recolección y envío POST */
 (function () {
-  const WEBHOOK_URL = 'https://stack-sukhee-n8n.cs6xbk.easypanel.host/webhook/formulario';
+  const WEBHOOK_URLS = [
+    '/api/formulario',
+    'https://stack-sukhee-n8n.cs6xbk.easypanel.host/webhook-test/formulario',
+    'https://stack-sukhee-n8n.cs6xbk.easypanel.host/webhook/formulario'
+  ];
 
   const sections = Array.from(document.querySelectorAll('.section'));
   const stepPills = Array.from(document.querySelectorAll('#stepPills .step-pill'));
@@ -272,12 +276,7 @@
     try { payload.briefToken = window.BRIEF_TOKEN || null; } catch (_) {}
     try {
       statusEnvio.textContent = 'Enviando…';
-      const res = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error('Error en el envío');
+      const res = await postToFirstAvailable(WEBHOOK_URLS, payload);
       statusEnvio.textContent = 'Enviado';
       // Marcar el token como usado en este navegador
       try { if (payload.briefToken) { localStorage.setItem('briefUsed:' + payload.briefToken, '1'); } } catch (_) {}
@@ -287,6 +286,24 @@
       console.error(err);
     }
   });
+
+  async function postToFirstAvailable(urls, payload) {
+    let lastError;
+    for (const url of urls) {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (response.ok) return response;
+        lastError = new Error('Solicitud no OK: ' + response.status);
+      } catch (e) {
+        lastError = e;
+      }
+    }
+    throw lastError || new Error('No se pudo enviar a ningún endpoint');
+  }
 
   function openGracias() { modalGracias.classList.add('active'); }
 

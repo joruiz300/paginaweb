@@ -1,3 +1,6 @@
 /terms-of-service /terms-of-service/index.html 200
 /privacy-policy /privacy-policy/index.html 200
 
+# Proxy del formulario hacia n8n para evitar CORS
+/api/formulario https://stack-sukhee-n8n.cs6xbk.easypanel.host/webhook-test/formulario 200
+

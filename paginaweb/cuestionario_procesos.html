@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuestionario de Procesos de Negocio - Asistente de IA</title>
+  <meta name="description" content="Cuestionario profesional para definir reglas de negocio y procesos internos para el Asistente de IA." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Work+Sans:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg: #0b0f1a; --card: #121726; --muted: #9aa4b2; --text: #e6e9ef; --brand: #6ee7b7; --brand-2: #60a5fa; --danger:#ef4444; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: radial-gradient(1200px 600px at 20% -10%, rgba(96,165,250,0.15), transparent), radial-gradient(1000px 500px at 100% 0%, rgba(110,231,183,0.12), transparent), var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    a { color: inherit; }
+    .container { max-width: 900px; margin: 32px auto; padding: 16px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border: 1px solid rgba(255,255,255,0.07); box-shadow: 0 10px 30px rgba(0,0,0,0.35); border-radius: 16px; padding: 20px; backdrop-filter: blur(8px); }
+    h1 { font-size: 24px; margin: 0 0 12px; font-family: 'Space Grotesk', sans-serif; }
+    h2 { font-size: 18px; margin: 16px 0 8px; font-family: 'Space Grotesk', sans-serif; }
+    .muted { color: var(--muted); }
+    .grid { display:grid; gap:12px; grid-template-columns: 1fr; }
+    @media (min-width: 760px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+    label { font-size: 15px; color: var(--text); font-weight: 700; margin-bottom: 6px; display:block; }
+    .sub { font-size: 14px; color: var(--muted); margin: -2px 0 8px; }
+    textarea, input[type="text"], select { width: 100%; background: #0d1320; color: var(--text); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+    textarea { min-height: 110px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { border-color: rgba(110,231,183,0.45); box-shadow: 0 0 0 3px rgba(110,231,183,0.15); }
+    .btn { background: linear-gradient(170deg,#2B0D61,#3A1180); color: #fff; border: none; border-radius: 10px; padding: 10px 14px; font-weight: 700; cursor: pointer; transition: transform .08s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn.secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.18); font-weight: 600; }
+    .section { padding: 8px 0 0; }
+    .error { color: var(--danger); font-size: 12px; margin-top: 4px; }
+    .required::after { content: " *"; color: var(--danger); }
+    .divider { height: 1px; background: rgba(255,255,255,0.08); margin: 16px 0; }
+    .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#0d1320; border:1px solid rgba(255,255,255,0.12); font-size:12px; color:var(--muted); margin-bottom: 8px; }
+    /* Modal */
+    .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.65); z-index: 50; }
+    .modal.active { display: flex; }
+    .modal-card { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; max-width: 520px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Cuestionario de Procesos de Negocio para el Asistente de IA</h1>
+      <p class="muted">Este cuestionario captura las reglas de negocio esenciales para que el asistente califique leads y tome decisiones correctas en cada etapa. Responde con claridad y, si aplica, incluye ejemplos concretos.</p>
+
+      <!-- Sección 1: Proceso de Venta de Mayoreo -->
+      <div class="section">
+        <span class="badge">Sección 1</span>
+        <h2>Proceso de Venta de Mayoreo</h2>
+        <div class="grid">
+          <div>
+            <label class="required" for="mayoreo_lead_serio">¿Cómo debe el asistente identificar si es un lead serio?</label>
+            <p class="sub">Ej.: señales de intención de compra, validaciones mínimas (volumen, frecuencia, productos de interés, datos de contacto).</p>
+            <textarea id="mayoreo_lead_serio" placeholder="Describe las señales y criterios de calificación"></textarea>
+            <div class="error" data-error-for="mayoreo_lead_serio"></div>
+          </div>
+          <div>
+            <label class="required" for="mayoreo_productos_interes">¿Debe preguntar por productos específicos de interés?</label>
+            <p class="sub">Si sí, indica cómo formular las preguntas y qué nivel de detalle se requiere (SKU, categoría, cantidad).</p>
+            <textarea id="mayoreo_productos_interes" placeholder="Reglas para sondeo de interés"></textarea>
+            <div class="error" data-error-for="mayoreo_productos_interes"></div>
+          </div>
+          <div>
+            <label class="required" for="mayoreo_precios_protocolo">¿Cuál es el protocolo si el cliente pregunta por precios directamente?</label>
+            <p class="sub">Define qué puede responder el bot (rangos, lista base, remitir a cotización) y cuándo escalar a humano.</p>
+            <textarea id="mayoreo_precios_protocolo" placeholder="Protocolo ante solicitud de precios"></textarea>
+            <div class="error" data-error-for="mayoreo_precios_protocolo"></div>
+          </div>
+          <div>
+            <label class="required" for="mayoreo_cotizacion_proceso">¿Cuál es el proceso formal para generar una cotización?</label>
+            <p class="sub">Incluye si el bot recopila datos previos (productos, cantidades, datos fiscales) y cuándo interviene un vendedor.</p>
+            <textarea id="mayoreo_cotizacion_proceso" placeholder="Proceso de cotización"></textarea>
+            <div class="error" data-error-for="mayoreo_cotizacion_proceso"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Sección 2: Proceso de Venta de Menudeo -->
+      <div class="section">
+        <span class="badge">Sección 2</span>
+        <h2>Proceso de Venta de Menudeo</h2>
+        <div class="grid">
+          <div>
+            <label class="required" for="menudeo_contado_flujo">Flujo de venta de contado</label>
+            <p class="sub">Para clientes que compran equipo/accesorio de contado: pasos sugeridos y objetivo (visita a sucursal, pago online, reserva, etc.).</p>
+            <textarea id="menudeo_contado_flujo" placeholder="Describir flujo de conversación y objetivo"></textarea>
+            <div class="error" data-error-for="menudeo_contado_flujo"></div>
+          </div>
+          <div>
+            <label class="required" for="menudeo_credito_terminos">Términos informativos del crédito</label>
+            <p class="sub">Información general que el bot puede compartir (plazos típicos, enganche, requisitos) antes de referir a sucursal.</p>
+            <textarea id="menudeo_credito_terminos" placeholder="Términos informativos permitidos"></textarea>
+            <div class="error" data-error-for="menudeo_credito_terminos"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Sección 3: Lógica de Servicios y Operaciones -->
+      <div class="section">
+        <span class="badge">Sección 3</span>
+        <h2>Lógica de Servicios y Operaciones</h2>
+        <div class="grid">
+          <div>
+            <label class="required" for="oper_sucursales_protocolo">Protocolo de sucursales</label>
+            <p class="sub">Si una sucursal no ofrece el servicio (ej. reparación), ¿cómo se deriva al cliente a la sucursal más cercana que sí lo ofrece?</p>
+            <textarea id="oper_sucursales_protocolo" placeholder="Regla de negocio para derivación entre sucursales"></textarea>
+            <div class="error" data-error-for="oper_sucursales_protocolo"></div>
+          </div>
+          <div>
+            <label class="required" for="oper_politicas_devolucion">Políticas de devolución/cambio</label>
+            <p class="sub">Términos, condiciones y plazos exactos que el bot puede responder (ventana de días, estado del producto, comprobantes, restricciones).</p>
+            <textarea id="oper_politicas_devolucion" placeholder="Política detallada y excepciones"></textarea>
+            <div class="error" data-error-for="oper_politicas_devolucion"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Sección 4: Mensajes de Bienvenida -->
+      <div class="section">
+        <span class="badge">Sección 4</span>
+        <h2>Mensajes de Bienvenida Pre-configurados</h2>
+        <div class="grid">
+          <div>
+            <label class="required" for="msg_bienvenida_1">Ejemplo de mensaje de bienvenida #1</label>
+            <textarea id="msg_bienvenida_1" placeholder="Pega aquí el mensaje"></textarea>
+            <div class="error" data-error-for="msg_bienvenida_1"></div>
+          </div>
+          <div>
+            <label for="msg_bienvenida_2">Ejemplo de mensaje de bienvenida #2 (opcional)</label>
+            <textarea id="msg_bienvenida_2" placeholder="Pega aquí el mensaje (opcional)"></textarea>
+          </div>
+          <div>
+            <label for="msg_bienvenida_3">Ejemplo de mensaje de bienvenida #3 (opcional)</label>
+            <textarea id="msg_bienvenida_3" placeholder="Pega aquí el mensaje (opcional)"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid">
+        <div class="sub">Revisaremos tu información y la convertiremos en reglas operativas para el asistente de IA.</div>
+        <div style="display:flex; justify-content: space-between; align-items:center; gap:8px;">
+          <span id="statusEnvio" class="muted"></span>
+          <div style="display:flex; gap:8px;">
+            <a href="/" class="btn secondary">Volver al inicio</a>
+            <button class="btn" id="btnEnviar">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Gracias -->
+  <div class="modal" id="modalGracias" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h2>¡Gracias! 🎉</h2>
+      <p>Recibimos tus respuestas. Te contactaremos con el siguiente paso y la matriz de procesos.</p>
+      <div style="margin-top: 12px;">
+        <a href="/" class="btn">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./cuestionario_procesos.js"></script>
+</body>
+</html>
+
+
